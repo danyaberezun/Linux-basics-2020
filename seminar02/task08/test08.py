@@ -13,7 +13,6 @@ class Test8(unittest.TestCase):
 
         with open('hamlet.txt', 'r') as f:
             hamlet = list(map(lambda word: ''.join(c for c in word if c.isalpha()), f.read().split()))
-            print(hamlet)
             only_the = list(filter(lambda word: 'the' == word.lower(), hamlet))
             result = len(only_the)
             f.close()
