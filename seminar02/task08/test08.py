@@ -16,7 +16,7 @@ class Test8(unittest.TestCase):
             only_the = list(filter(lambda word: 'the' == word.lower(), hamlet))
             result = len(only_the)
             f.close()
-
+        print(result)
         self.assertEqual(result, int(stdout))
 
 
