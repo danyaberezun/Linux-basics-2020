@@ -1,1 +1,3 @@
 #! /bin/bash
+# Outputs 1091, notepad++ search too, regex101.com also matched 1091...
+grep -oiP "\bthe\b" hamlet.txt | wc -l
