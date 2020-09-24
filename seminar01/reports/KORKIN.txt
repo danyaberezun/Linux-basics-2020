@@ -238,3 +238,41 @@ landscape:x:110:115::/var/lib/landscape:/usr/sbin/nologin
 pollinate:x:111:1::/var/cache/pollinate:/bin/false
 root@NITRO:~/work# cat /etc/passwd | tail -5 | wc
       5       5     251
+
+
+Задание 10
+
+№1
+
+root@NITRO:~/work# echo new_file > new_file.txt
+root@NITRO:~/work# mkdir new_dir
+root@NITRO:~/work# ls -l
+total 24
+-rw-r---w- 1 root root     2 Sep 24 11:44 a.txt
+-rw-r--r-- 1 root root   195 Sep 24 11:07 archive.tar
+-rw-r--r-- 1 root root  2180 Sep 24 10:14 calendar.txt
+-rw-r--r-- 1 root root    11 Sep 23 20:33 digits.txt
+-rw-r--r-- 1 root root    22 Sep 23 20:35 digits_2.txt
+-rw-r--r-- 1 root root   715 Sep 23 20:41 digits_65.txt
+-rw-r--r-- 1 root root    36 Sep 24 09:48 file_1234.txt
+-rw-r--r-- 1 root root   189 Sep 23 20:57 head_5.txt
+-rw-r--r-- 1 root root   273 Sep 24 10:11 info.txt
+-rw-r--r-- 1 root root 10066 Sep 23 21:01 list.txt
+drwxr-xr-x 1 root root  4096 Sep 24 12:23 new_dir // смотреть сюда
+-rw-r--r-- 1 root root     9 Sep 24 12:23 new_file.txt // и-и сюда
+drw-rw-rw- 1 root root  4096 Sep 24 10:50 rights
+-rw-r--r-- 1 root root   251 Sep 23 20:58 tail_5.txt
+
+№2
+
+root@NITRO:~/work# ls /etc | grep ".conf" | head -10
+adduser.conf
+ca-certificates.conf
+ca-certificates.conf.dpkg-old
+dconf
+debconf.conf
+deluser.conf
+e2scrub.conf
+fuse.conf
+gai.conf
+hdparm.conf
