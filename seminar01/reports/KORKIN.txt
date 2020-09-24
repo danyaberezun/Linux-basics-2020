@@ -164,3 +164,33 @@ root@NITRO:~/work# chmod 640 a.txt
 №2
 
 root@NITRO:~/work# chmod g-r a.txt
+
+
+Задание 6
+
+№1
+
+root@NITRO:~/work# tar -zcvf archive.tar digits.txt digits_2.txt digits_65.txt
+digits.txt
+digits_2.txt
+digits_65.txt
+
+№2
+
+root@NITRO:~/work# tar -xvf archive.tar
+digits.txt
+digits_2.txt
+digits_65.txt
+
+
+Задание 7
+
+№1
+
+root@NITRO:~/work# rm a.txt // файл a.txt уже существовал, если что
+root@NITRO:~/work# echo a > a.txt
+root@NITRO:~/work# chmod 640 a.txt
+
+№2
+
+root@NITRO:~/work# chmod o+w a.txt
