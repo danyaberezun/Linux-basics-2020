@@ -1,0 +1,48 @@
+Первая группа заданий:
+
+№1
+root@NITRO:~# id
+uid=0(root) gid=0(root) groups=0(root)
+
+№2
+root@NITRO:~# date
+Wed Sep 23 20:10:12 MSK 2020
+
+№3
+root@NITRO:~# pwd
+/root
+
+№4
+root@NITRO:~# ls
+root@NITRO:~# ls -l
+total 0
+
+№5
+root@NITRO:~# mkdir work
+root@NITRO:~# cd work
+
+№6
+root@NITRO:~/work# echo 1234567890 > digits.txt
+root@NITRO:~/work# cat digits.txt
+1234567890
+
+№7
+root@NITRO:~/work# cat digits.txt digits.txt > digits_2.txt
+
+№8
+root@NITRO:~/work# for i in {1..65}; do cat digits.txt >> digits_65.txt; done
+
+№9
+root@NITRO:~/work# wc digits_65.txt
+ 65  65 715 digits_65.txt // 65 строк
+
+№10
+root@NITRO:~/work# head -5 /etc/passwd > head_5.txt
+root@NITRO:~/work# tail -5 /etc/passwd > tail_5.txt
+
+№11
+root@NITRO:~/work# ls -l /etc > list.txt
+
+№12
+root@NITRO:~/work# wc list.txt
+  175  1580 10066 list.txt // 174 файла, первая строка под поле total
