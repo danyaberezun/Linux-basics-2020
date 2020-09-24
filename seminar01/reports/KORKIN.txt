@@ -89,3 +89,19 @@ root:x:0:0:root:/root:/bin/bash
 
 root@NITRO:~/work# date -d "01 june 2021"
 Tue Jun  1 00:00:00 MSK 2021 // вторник
+
+
+Задание 3
+
+№1
+
+root@NITRO:~/work# id > info.txt
+root@NITRO:~/work# ls >> info.txt
+root@NITRO:~/work# ps >> info.txt
+root@NITRO:~/work# date >> info.txt
+root@NITRO:~/work# grep 'info.txt' info.txt
+info.txt
+
+№2
+
+root@NITRO:~/work# cal 2019 > calendar.txt
