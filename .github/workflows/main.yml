@@ -1,32 +1,35 @@
 name: gsheet.action test
-on: [push]
-#   pull_request:
-#     types: [opened, reopened, edited]
+on: # [push]
+  # pull_request:
+  pull_request_target:
+    types: [opened, reopened, edited]
 
 jobs:
-  job0:
-    runs-on: ubuntu-latest
-    outputs:
-      output_test_number: ${{ steps.step1.outputs.id }}
-    steps:
-      - id: step1
-        run: |
-          cd seminar02
-          i=$(python3 checker.py)
-          echo "$i"
-          echo "::set-output name=id::$i"
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
     outputs:
       output_id: ${{ steps.step1.outputs.id }}
+      output_result: ${{ steps.step1.outputs.res }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+#          fetch-depth: 2
+#          ref: ${{ github.head_ref }}
+          ref: refs/pull/${{ github.event.pull_request.number }}/head
       - id: step1
-        run: echo "::set-output name=id::\"$(git log -1 --pretty=format:'%an')\""
+        run: |
+          cd seminar02
+          re=$(python3 checker.py)
+          echo "$re"
+          echo "::set-output name=res::$re"
+          login=${{ github.event.pull_request.user.login }}
+          echo "$login"
+          echo "::set-output name=id::\"$login\""
+#          echo "::set-output name=id::\"$(git log --perl-regexp --author='^((?!danyaberezun).*)$' -1 --pretty=format:'%an')\""
   job2:
     runs-on: ubuntu-latest
-    needs: [job0, job1]
+    needs: job1
     outputs:
       output_id_number: ${{ steps.step1.outputs.id }}
     steps:
@@ -49,10 +52,9 @@ jobs:
         run: |
           cmd=$(echo "${RESULTS}" | jq ".results[0].result.rawData")
           gitid=\"${{needs.job1.outputs.output_id}}\"
+          result=\"${{needs.job1.outputs.output_result}}\"
+          j=0
           for i in {1..60}
-          test_succ=${{needs.job0.outputs.output_test_number}}
-          echo "succ tests:"
-          echo "$test_succ"
           do
             t=$(echo "${cmd}" | jq ".[$i][0]")
             echo "$t"
@@ -60,13 +62,19 @@ jobs:
             if [ "$t" = "$gitid" ]; then
               echo "FOUND"
               echo "$i"
-              j="[{ \"command\": \"updateData\", \"args\": {\"worksheetTitle\": \"Sheet1\", \"data\": [[\"$(test_succ)\"]], \"minCol\": 2, \"minRow\": $((i+1)) }} ]"
+              j="[{ \"command\": \"updateData\", \"args\": {\"worksheetTitle\": \"Sheet1\", \"data\": [["$result", "$result"]], \"minCol\": 2, \"minRow\": $((i+1)) }} ]"
               echo "$j"
               echo "::set-output name=id::$j"
             else
               echo "Strings are not equal."
             fi
           done
+          if [[ $j -eq 0 ]]
+          then
+            j="[{ \"command\": \"appendData\", \"args\": {\"worksheetTitle\": \"Sheet1\", \"data\": [["$gitid", "$result", "$result"]], \"minCol\": 1 }} ]"
+            echo "::set-output name=id::$j"
+          fi
+          echo $j
           echo "$gitid"
 #        echo "::set-output name=id::$i"
   job3:
