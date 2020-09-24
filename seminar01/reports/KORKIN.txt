@@ -218,3 +218,23 @@ znew
 
 root@NITRO:~/work# find / -mtime -1
 // я не уверен, что готов вкинуть в гит практически все файлы на своем ноутбуке, так что вывода нет
+
+
+Задание 9
+
+№1
+
+root@NITRO:~/work# find . -user student | wc
+find: ‘student’ is not the name of a known user
+      0       0       0
+
+№2
+
+root@NITRO:~/work# cat /etc/passwd | tail -5
+uuidd:x:107:112::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:108:113::/nonexistent:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+landscape:x:110:115::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:111:1::/var/cache/pollinate:/bin/false
+root@NITRO:~/work# cat /etc/passwd | tail -5 | wc
+      5       5     251
