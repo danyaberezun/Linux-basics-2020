@@ -46,3 +46,29 @@ root@NITRO:~/work# ls -l /etc > list.txt
 №12
 root@NITRO:~/work# wc list.txt
   175  1580 10066 list.txt // 174 файла, первая строка под поле total
+
+Вторая группа заданий:
+
+Задание 1
+
+№1
+
+root@NITRO:~/work# mkdir DirA
+root@NITRO:~/work# cd DirA
+root@NITRO:~/work/DirA# echo random_1 > file_1.txt
+root@NITRO:~/work/DirA# echo random_2 > file_2.txt
+root@NITRO:~/work/DirA# cd ..
+root@NITRO:~/work# mkdir DirB
+root@NITRO:~/work# cd DirB
+root@NITRO:~/work/DirB# echo random_3 > file_3.txt
+root@NITRO:~/work/DirB# echo random_4 > file_4.txt
+root@NITRO:~/work/DirB# cd ..
+root@NITRO:~/work# cat DirA/file_1.txt > file_1234.txt
+root@NITRO:~/work# cat DirA/file_2.txt >> file_1234.txt
+root@NITRO:~/work# cat DirB/file_3.txt >> file_1234.txt
+root@NITRO:~/work# cat DirB/file_4.txt >> file_1234.txt
+
+№2
+
+root@NITRO:~/work# rm -R DirA
+root@NITRO:~/work# rm -R DirB
