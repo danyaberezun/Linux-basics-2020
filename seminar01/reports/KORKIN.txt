@@ -194,3 +194,27 @@ root@NITRO:~/work# chmod 640 a.txt
 №2
 
 root@NITRO:~/work# chmod o+w a.txt
+
+
+Задание 8
+
+№1
+
+root@NITRO:~/work# ls /usr/bin | grep ^z
+zcat
+zcmp
+zdiff
+zdump
+zegrep
+zfgrep
+zforce
+zgrep
+zipdetails
+zless
+zmore
+znew
+
+№2
+
+root@NITRO:~/work# find / -mtime -1
+// я не уверен, что готов вкинуть в гит практически все файлы на своем ноутбуке, так что вывода нет
