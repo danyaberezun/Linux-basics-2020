@@ -152,3 +152,15 @@ total 24
 drw-rw-rw- 1 root root  4096 Sep 24 10:50 rights
 -rw-r--r-- 1 root root   251 Sep 23 20:58 tail_5.txt
 // сказать честно, я вообще не понял, что такое ""право на исполнение" для каталога", а гугл сказал "право на исполнение – доступ к номерам индексных дескрипторов" и тут мой мозг вымер.
+
+
+Задание 5
+
+№1
+
+root@NITRO:~/work# echo a > a.txt
+root@NITRO:~/work# chmod 640 a.txt
+
+№2
+
+root@NITRO:~/work# chmod g-r a.txt
