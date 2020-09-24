@@ -47,7 +47,11 @@ root@NITRO:~/work# ls -l /etc > list.txt
 root@NITRO:~/work# wc list.txt
   175  1580 10066 list.txt // 174 файла, первая строка под поле total
 
+
+
+
 Вторая группа заданий:
+
 
 Задание 1
 
@@ -72,3 +76,16 @@ root@NITRO:~/work# cat DirB/file_4.txt >> file_1234.txt
 
 root@NITRO:~/work# rm -R DirA
 root@NITRO:~/work# rm -R DirB
+
+
+Задание 2
+
+№1
+
+root@NITRO:~/work# grep 'root' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+
+№2
+
+root@NITRO:~/work# date -d "01 june 2021"
+Tue Jun  1 00:00:00 MSK 2021 // вторник
