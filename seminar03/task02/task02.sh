@@ -10,8 +10,8 @@ function isPrime() {
 }
 
 rnd1=$RANDOM
-rnd2=$(( $RANDOM % 32 ))
-rnd=$(( rnd1+2**16*rnd2 ))
+rnd2=$(($RANDOM % 32))
+rnd=$((rnd1+2**16*rnd2))
 
 isPrime $rnd
 if [ $? -eq 0 ];

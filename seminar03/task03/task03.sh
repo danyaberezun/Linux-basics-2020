@@ -4,7 +4,7 @@ function gcd() {
         #echo "$1"
         return $1
     fi
-    gcd $2 $(( $1 % $2 ))
+    gcd $2 $(($1 % $2))
     return $?
 }
 
