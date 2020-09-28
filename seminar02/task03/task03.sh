@@ -1,1 +1,2 @@
-#!/bin/bash
+#!/bin/bashps 
+axu | grep /dev/null | kill
