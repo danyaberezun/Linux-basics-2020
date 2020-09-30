@@ -5,4 +5,3 @@ do
 	echo -n "$line "
 	echo $line | wc -w
 done < $file
-
