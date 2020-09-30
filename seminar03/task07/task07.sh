@@ -7,6 +7,6 @@ for file in find -name "*.cpp"
 do
    echo ${file};
    makeclean newFile
-   g++ ${file} -o myProg
-   newFile
+   g++ ${file} -o newFile
+   ./newFile
 done
