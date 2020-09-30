@@ -1,3 +1,17 @@
 #! /bin/bash
 
-echo 2 24 120
+function fact {
+	if [ $1 -eq 0 ]; then
+		return 1
+	else 
+		fact $(($1 - 1))
+		return $(($? * $1))
+	fi
+}
+
+read -ra a < numbers.txt
+for item in ${a[*]}
+do
+	fact $item
+	printf "$? "
+done
