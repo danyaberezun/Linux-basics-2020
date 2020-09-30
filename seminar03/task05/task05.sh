@@ -1,1 +1,4 @@
 #! /bin/bash
+file=$1
+sed '/^$/d' "$file" > out.txt
+cat out.txt
