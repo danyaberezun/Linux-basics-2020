@@ -1,3 +1,3 @@
 #! /bin/bash
-read file
+file="blank.txt"
 grep -v "^$" "$file"

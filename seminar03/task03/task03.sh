@@ -9,6 +9,7 @@ gcd(){
     echo $(gcd $cur $1)
 }
 
-read A B
+A=$RANDOM
+B=$RANDOM
 x=$(gcd $A $B)
 echo "$A $B $x"
