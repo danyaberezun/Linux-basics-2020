@@ -18,22 +18,28 @@ class Test5(unittest.TestCase):
 
 
     def bash_result(self, script_name: str, filename: str):
-        print(script_name)
         p = subprocess.Popen(['bash', script_name, filename], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, _ = p.communicate()
-        stdout = stdout.decode('utf-8').split()
+        stdout = stdout.decode('utf-8').split('\n')
 
-        return stdout
+        return stdout[:-1]
         
 
     def test1(self):
         script = 'task05.sh'
+<<<<<<< HEAD
         br = self.bash_result(script, filename='blank.txt')
         print(self.delete_blank(filename='blank.txt'))
         print(br)
         self.assertEqual(br, self.delete_blank(filename='blank.txt'))
+=======
+        bash = self.bash_result(script, filename='blank.txt')
+        gold = self.delete_blank(filename='blank.txt')
+>>>>>>> 247a192c904e66a61efda6af00faeabf3e75172f
 
+        self.assertEqual(bash, gold)
 
 
 if __name__ == '__main__':
     unittest.main()
+x
