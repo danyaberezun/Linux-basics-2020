@@ -29,7 +29,8 @@ class Test5(unittest.TestCase):
     def test1(self):
         script = 'task05.sh'
         br = self.bash_result(script, filename='blank.txt')
-
+        print(self.delete_blank(filename='blank.txt'))
+        print(br)
         self.assertEqual(br, self.delete_blank(filename='blank.txt'))
 
 
