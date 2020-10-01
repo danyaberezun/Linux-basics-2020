@@ -31,7 +31,7 @@ class Test6(unittest.TestCase):
 
         bash = self.bash_result(script, filename)
         gold = self.print_wc_in_line(filename)
-
+        
         self.assertEqual(bash, gold)
 
 

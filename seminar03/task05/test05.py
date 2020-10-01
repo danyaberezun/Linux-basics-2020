@@ -27,15 +27,8 @@ class Test5(unittest.TestCase):
 
     def test1(self):
         script = 'task05.sh'
-<<<<<<< HEAD
-        br = self.bash_result(script, filename='blank.txt')
-        print(self.delete_blank(filename='blank.txt'))
-        print(br)
-        self.assertEqual(br, self.delete_blank(filename='blank.txt'))
-=======
         bash = self.bash_result(script, filename='blank.txt')
         gold = self.delete_blank(filename='blank.txt')
->>>>>>> 247a192c904e66a61efda6af00faeabf3e75172f
 
         self.assertEqual(bash, gold)
 
