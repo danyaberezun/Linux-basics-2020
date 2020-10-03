@@ -1,7 +1,6 @@
 #! /bin/bash
 
-while read -r line; do
+while read -r line || [ -n "$line" ]; do
 	printf "$line"
 	echo $line | wc -w
-	# printf "$x"
 done <file.txt
