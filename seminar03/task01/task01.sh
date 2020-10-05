@@ -1,3 +1,4 @@
 #!/bin/bash
-x=$((RANDOM % (1 << 15)))
+x=$RANDOM
 echo $x
+head -c $x /dev/urandom >rnd.txt

@@ -1,5 +1,5 @@
 #! /bin/bash
-x=$((RANDOM % (1 << 20)))
+x=$(((RANDOM << 5) ^ RANDOM))
 isPrime=1
 for ((i = 2; i * i <= x; i++)) 
 do
