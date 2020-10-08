@@ -1,6 +1,8 @@
 # print your code here
 cmake_minimum_required(VERSION 2.8)
 
+project(HW4 VERSION 1.0)
+
 set(SOURCES src/fast.cpp src/main.cpp)
 set(EXE fast)
 add_executable(${EXE} ${SOURCES})
