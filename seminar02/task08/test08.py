@@ -19,11 +19,8 @@ class Test8(unittest.TestCase):
             result = int(stdout)
             f.close()
 
-
         self.assertTrue(abs(gold - result) <= 1)
-
 
 
 if __name__ == '__main__':
     unittest.main()
-
