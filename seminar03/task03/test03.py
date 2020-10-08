@@ -8,18 +8,19 @@ from math import gcd
 class Test3(unittest.TestCase):
     def bash_result(self, script_name : str):
         print(script_name)
-        p = subprocess.Popen(['bash', script_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen(['bash', script_name], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p.stdin.write(b'1071\n462\n')
         stdout, stderr = p.communicate()
         stdout = stdout.decode('utf-8').split()
-        a, b, g = list(map(int, stdout))
+        _, _, g = list(map(int, stdout))
 
-        return a, b, g
+        return g
 
     def test1(self):
         script = 'task03.sh'
-        a, b, g = self.bash_result(script)
+        g = self.bash_result(script)
 
-        self.assertEqual(g, gcd(a, b))
+        self.assertEqual(g, gcd(1071, 462))
 
 
 if __name__ == '__main__':
