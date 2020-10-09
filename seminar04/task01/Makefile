@@ -21,8 +21,8 @@ run_slow:
 run_fast:
 	./fast `sh src/generator.sh` 
 
-time:
-	time $^
+time: $(ARGS)
+	time $$(src/generator.sh)
 
 clean:
 	rm fast
