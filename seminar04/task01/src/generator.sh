@@ -1,3 +1,2 @@
 #!/bin/bash
-t=$RANDOM
-echo $(( 1 + t % 20 ))
+echo $(( 1 + $RANDOM % 20 ))
