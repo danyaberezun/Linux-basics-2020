@@ -4,7 +4,7 @@ CFLAGS = --std=c++11 -g -O2
 all: build_fast build_slow
 
 fast.o: src/fast.cpp src/fast.hpp
-	$(CC) -c src/slow.cpp $(CFLAGS) -o $@
+	$(CC) -c src/fast.cpp $(CFLAGS) -o $@
 
 slow.o: src/slow.cpp src/slow.hpp
 	$(CC) -c src/slow.cpp $(CFLAGS) -o $@
