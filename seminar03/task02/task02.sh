@@ -7,7 +7,7 @@ prime() {
 		return 0
 	fi
 
-	for ((i = 2 ; $(( i * i )) < $1 ; i++)); do
+	for ((i = 2 ; $(( i * i )) <= $1 ; i++)); do
 		if [[ $(( $1 % $i )) -eq 0 ]]; then
 			return 0
 		fi

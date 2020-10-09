@@ -6,13 +6,13 @@ from math import sqrt
 
 
 class Test2(unittest.TestCase):
-    def is_prime(self, n: int):
+    def is_prime(self, n):
         for i in range(2, int(sqrt(n)) + 1):
             if n % i == 0:
                 return False
         return True
 
-    def bash_result(self, script_name : str):
+    def bash_result(self, script_name):
         print(script_name)
         p = subprocess.Popen(['bash', script_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = p.communicate()
