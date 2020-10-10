@@ -1,0 +1,11 @@
+diff <(./fast 1) <(echo 1)
+diff <(./fast 2) <(echo 1)
+diff <(./fast 3) <(echo 2)
+diff <(./fast 4) <(echo 3)
+diff <(./fast 5) <(echo 5)
+diff <(./fast 6) <(echo 8)
+diff <(./fast 7) <(echo 13)
+diff <(./fast 8) <(echo 21)
+diff <(./fast 9) <(echo 34)
+diff <(./fast 10) <(echo 55)
+
