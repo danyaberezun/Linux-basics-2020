@@ -16,6 +16,6 @@ The time we greeted you.
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
+uses: volivan239/Linux-basics-2020
 with:
   who-to-greet: 'kek'
