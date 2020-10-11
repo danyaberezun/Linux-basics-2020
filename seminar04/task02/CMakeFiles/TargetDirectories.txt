@@ -1,0 +1,4 @@
+/home/stephen/linprac/Linux-basics-2020/seminar04/task02/CMakeFiles/rebuild_cache.dir
+/home/stephen/linprac/Linux-basics-2020/seminar04/task02/CMakeFiles/edit_cache.dir
+/home/stephen/linprac/Linux-basics-2020/seminar04/task02/CMakeFiles/src/fast.cpp.dir
+/home/stephen/linprac/Linux-basics-2020/seminar04/task02/CMakeFiles/test.dir

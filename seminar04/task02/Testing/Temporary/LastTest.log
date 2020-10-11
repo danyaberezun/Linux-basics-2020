@@ -1,0 +1,18 @@
+Start testing: Oct 11 20:04 MSK
+----------------------------------------------------------
+1/1 Testing: tests
+1/1 Test: tests
+Command: "/bin/bash" "run_tests.sh"
+Directory: /home/stephen/linprac/Linux-basics-2020/seminar04/task02
+"tests" start time: Oct 11 20:04 MSK
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"tests" end time: Oct 11 20:04 MSK
+"tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 11 20:04 MSK
