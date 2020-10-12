@@ -1,0 +1,57 @@
+Start testing: Oct 12 23:29 MSK
+----------------------------------------------------------
+1/3 Testing: FirstTest
+1/3 Test: FirstTest
+Command: "/Users/electfreak/study/prog/Linux-basics-2020/seminar04/task02/main" "1"
+Directory: /Users/electfreak/study/prog/Linux-basics-2020/seminar04/task02
+"FirstTest" start time: Oct 12 23:29 MSK
+Output:
+----------------------------------------------------------
+1
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[1
+]
+"FirstTest" end time: Oct 12 23:29 MSK
+"FirstTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: SecondTest
+2/3 Test: SecondTest
+Command: "/Users/electfreak/study/prog/Linux-basics-2020/seminar04/task02/main" "5"
+Directory: /Users/electfreak/study/prog/Linux-basics-2020/seminar04/task02
+"SecondTest" start time: Oct 12 23:29 MSK
+Output:
+----------------------------------------------------------
+5
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[5
+]
+"SecondTest" end time: Oct 12 23:29 MSK
+"SecondTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: ThirdTest
+3/3 Test: ThirdTest
+Command: "/Users/electfreak/study/prog/Linux-basics-2020/seminar04/task02/main" "30"
+Directory: /Users/electfreak/study/prog/Linux-basics-2020/seminar04/task02
+"ThirdTest" start time: Oct 12 23:29 MSK
+Output:
+----------------------------------------------------------
+832040
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found.Regex=[832040
+]
+"ThirdTest" end time: Oct 12 23:29 MSK
+"ThirdTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 12 23:29 MSK
