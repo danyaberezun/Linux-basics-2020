@@ -5,22 +5,22 @@ SHELL := /bin/bash
 all: build_fast build_slow clean
 
 build_fast: src/fast.hpp src/fast.cpp src/main_fast.cpp
-	g++ -std=c++17 src/main_fast.cpp src/fast.cpp -o fast.o
+	g++ -std=c++17 src/main_fast.cpp src/fast.cpp -o fast
 
 run_fast: build_fast
-	./fast.o `bash ./src/generator.sh` 
+	./fast `bash ./src/generator.sh` 
 
 build_slow: src/slow.hpp src/slow.cpp src/main_slow.cpp
-	g++ -std=c++17 src/main_slow.cpp src/slow.cpp -o slow.o
+	g++ -std=c++17 src/main_slow.cpp src/slow.cpp -o slow
 
 run_slow: build_slow
-	./slow.o `bash ./src/generator.sh` 
+	./slow `bash ./src/generator.sh` 
 
 
 time:
-	time $@
+	time $(ARGS)
 
 clean:
-	rm -rf *.o
+	rm fast slow
 
-.PHONY: time clean
+.PHONY: clean

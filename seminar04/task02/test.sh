@@ -1,0 +1,1 @@
+diff <(echo 13) <(./fast 7)
