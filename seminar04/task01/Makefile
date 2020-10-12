@@ -16,8 +16,5 @@ run_fast: build_fast
 run_slow: buld_slow
 	./slow `./src/generator.sh`
 
-logargs: 
-	time ./$(ARGS)
-
 clean: 
 	rm fast slow
