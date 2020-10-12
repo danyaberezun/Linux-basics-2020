@@ -10,10 +10,10 @@ build_fast:
 build_slow: 
 	g++ src/main_slow.cpp src/slow.cpp -o slow
 
-run_fast: fast 
+run_fast: build_fast 
 	./fast `./src/generator.sh`
 
-run_slow: 
+run_slow: buld_slow
 	./slow `./src/generator.sh`
 
 logargs: 
