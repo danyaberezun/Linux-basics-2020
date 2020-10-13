@@ -14,7 +14,6 @@ run_fast: fast src/generator.sh
 	./fast $$(bash src/generator.sh)
 
 run_slow: slow
-	chmod +x slow
 	./slow $$(bash src/generator.sh)
 
 time:
