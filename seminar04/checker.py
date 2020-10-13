@@ -24,6 +24,8 @@ for i in range(1, TASK_COUNT + 1):
 
     if cur > 0:
         completed_taks += 1
+    else:
+        print(f'Task {i} failed, output: err:{stderr}, out:{stdout}')
 
     os.chdir('../')
 
