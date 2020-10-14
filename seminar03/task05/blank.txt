@@ -103,4 +103,4 @@ main = do
         ,("wc_l",        interact wc_l             )
         ,("wc_w",        interact wc_w             )
         ]
-        
+

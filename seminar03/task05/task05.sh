@@ -1,2 +1,2 @@
 #! /bin/bash
-sed '/^$/d' $1
+sed -r '/^\s*$/d' $1
