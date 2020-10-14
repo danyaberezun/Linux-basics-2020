@@ -1,0 +1,4 @@
+./dirA/dirAB/main.cpp
+./dirA/dirAA/main.cpp
+./dirB/dir/main.cpp
+./dirB/cplusplus.cpp
