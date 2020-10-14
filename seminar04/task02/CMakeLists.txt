@@ -8,3 +8,4 @@ add_executable(fast src/fast.cpp src/main.cpp)
 
 enable_testing()
 add_test(KEK bash test.sh)
+
