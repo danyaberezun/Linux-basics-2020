@@ -1,0 +1,18 @@
+Start testing: Oct 14 23:39 MSK
+----------------------------------------------------------
+1/1 Testing: KEK
+1/1 Test: KEK
+Command: "/usr/bin/bash" "test.sh"
+Directory: /home/monic/Linux(I_semestr)/Linux-basics-2020/seminar04/task02
+"KEK" start time: Oct 14 23:39 MSK
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"KEK" end time: Oct 14 23:39 MSK
+"KEK" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 14 23:39 MSK

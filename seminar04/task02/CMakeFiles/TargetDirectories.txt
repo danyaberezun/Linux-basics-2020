@@ -1,0 +1,4 @@
+/home/monic/Linux(I_semestr)/Linux-basics-2020/seminar04/task02/CMakeFiles/rebuild_cache.dir
+/home/monic/Linux(I_semestr)/Linux-basics-2020/seminar04/task02/CMakeFiles/edit_cache.dir
+/home/monic/Linux(I_semestr)/Linux-basics-2020/seminar04/task02/CMakeFiles/test.dir
+/home/monic/Linux(I_semestr)/Linux-basics-2020/seminar04/task02/CMakeFiles/fast.dir

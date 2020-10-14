@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/fast.dir/src/fast.cpp.o CMakeFiles/fast.dir/src/main.cpp.o  -o fast 
