@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arrias/Projects/Linux-basics-2020/seminar04/task02/src/fast.cpp
+fast.hpp
+/home/arrias/Projects/Linux-basics-2020/seminar04/task02/src/fast.hpp
+
+/home/arrias/Projects/Linux-basics-2020/seminar04/task02/src/fast.hpp
+cstddef
+-
+
+/home/arrias/Projects/Linux-basics-2020/seminar04/task02/src/main.cpp
+iostream
+-
+fast.hpp
+/home/arrias/Projects/Linux-basics-2020/seminar04/task02/src/fast.hpp
+
