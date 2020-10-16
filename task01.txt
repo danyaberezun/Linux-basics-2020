@@ -1,0 +1,137 @@
+(а)
+$ ifconfig
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 358700  bytes 88230172 (88.2 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 358700  bytes 88230172 (88.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.43.118  netmask 255.255.255.0  broadcast 192.168.43.255
+        inet6 2a00:1fa0:8469:1f4b:305a:3631:9909:77f2  prefixlen 64  scopeid 0x0<global>
+        inet6 2a00:1fa0:8469:1f4b:2417:7534:8564:c0f8  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::dee:6fa6:201a:7e41  prefixlen 64  scopeid 0x20<link>
+        ether 38:ba:f8:2a:28:3a  txqueuelen 1000  (Ethernet)
+        RX packets 561708  bytes 512840257 (512.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 408429  bytes 118006424 (118.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+$ hostname
+idkwntc-UX331UA
+$ netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 idkwntc-UX331UA:54916   149.154.167.51:https    ESTABLISHED
+tcp        0      0 idkwntc-UX331UA:56594   149.154.167.51:https    ESTABLISHED
+tcp        0      0 idkwntc-UX331UA:34720   srv78-190-240-87.:https ESTABLISHED
+tcp        0      0 idkwntc-UX331UA:54188   lb-140-82-112-25-:https ESTABLISHED
+tcp        0      0 idkwntc-UX331UA:44986   ec2-54-213-36-182:https ESTABLISHED
+tcp        0      0 idkwntc-UX331UA:38440   srv186-129-240-87:https ESTABLISHED
+tcp        0      0 idkwntc-UX331UA:38112   srv157-204.vkonta:https ESTABLISHED
+tcp        0      0 idkwntc-UX331UA:49842   93.186.225.201:https    ESTABLISHED
+tcp6       0      0 idkwntc-UX331UA:60872   arn09s10-in-x0e.1:https ESTABLISHED
+tcp6       0      0 idkwntc-UX331UA:38082   arn09s19-in-x0a.1:https ESTABLISHED
+tcp6       0      0 idkwntc-UX331UA:47118   arn11s04-in-x0e.1:https ESTABLISHED
+tcp6       0      0 idkwntc-UX331UA:47626   arn09s19-in-x04.1:https TIME_WAIT  
+udp        0      0 idkwntc-UX331UA:bootpc  _gateway:bootps         ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ]         DGRAM                    35282    /run/user/1000/systemd/notify
+unix  4      [ ]         DGRAM                    20501    /run/systemd/notify
+unix  2      [ ]         DGRAM                    20515    /run/systemd/journal/syslog
+unix  21     [ ]         DGRAM                    20525    /run/systemd/journal/dev-log
+unix  8      [ ]         DGRAM                    20529    /run/systemd/journal/socket
+unix  2      [ ]         DGRAM                    1676073  /run/wpa_supplicant/wlp2s0
+unix  3      [ ]         SEQPACKET  CONNECTED     65369    @0000d
+unix  2      [ ]         DGRAM                    1673169  /run/wpa_supplicant/p2p-dev-wlp2s0
+//ещё 1000 строк подобной информации
+$ dig
+
+; <<>> DiG 9.16.1-Ubuntu <<>>
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24390
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			28596	IN	NS	l.root-servers.net.
+.			28596	IN	NS	m.root-servers.net.
+.			28596	IN	NS	a.root-servers.net.
+.			28596	IN	NS	b.root-servers.net.
+.			28596	IN	NS	c.root-servers.net.
+.			28596	IN	NS	d.root-servers.net.
+.			28596	IN	NS	e.root-servers.net.
+.			28596	IN	NS	f.root-servers.net.
+.			28596	IN	NS	g.root-servers.net.
+.			28596	IN	NS	h.root-servers.net.
+.			28596	IN	NS	i.root-servers.net.
+.			28596	IN	NS	j.root-servers.net.
+.			28596	IN	NS	k.root-servers.net.
+
+;; Query time: 68 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Пт окт 16 18:24:35 MSK 2020
+;; MSG SIZE  rcvd: 239
+
+(б)
+$ ifconfig | grep -oE '[a-zA-Z0-9][a-zA-Z0-9]:[a-zA-Z0-9][a-zA-Z0-9]:[a-zA-Z0-9][a-zA-Z0-9]:[a-zA-Z0-9][a-zA-Z0-9]:[a-zA-Z0-9][a-zA-Z0-9]:[a-zA-Z0-9][a-zA-Z0-9]'
+38:ba:f8:2a:28:3a
+
+(в)
+$ sudo ifconfig wlp2s0 down
+$ sudo ifconfig wlp2s0 up
+
+(г)
+$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=107 time=51.5 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=107 time=45.1 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=107 time=28.0 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=107 time=47.3 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=107 time=47.8 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=107 time=22.5 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=107 time=23.6 ms
+^C
+--- 8.8.8.8 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6010ms
+rtt min/avg/max/mdev = 22.506/37.959/51.487/11.721 ms
+
+$ ping www.debian.org
+PING www.debian.org(klecker.debian.org (2001:67c:2564:a119::77)) 56 data bytes
+64 bytes from klecker.debian.org (2001:67c:2564:a119::77): icmp_seq=1 ttl=51 time=87.6 ms
+64 bytes from klecker.debian.org (2001:67c:2564:a119::77): icmp_seq=2 ttl=51 time=71.8 ms
+64 bytes from klecker.debian.org (2001:67c:2564:a119::77): icmp_seq=3 ttl=51 time=72.0 ms
+64 bytes from klecker.debian.org (2001:67c:2564:a119::77): icmp_seq=4 ttl=51 time=66.3 ms
+64 bytes from klecker.debian.org (2001:67c:2564:a119::77): icmp_seq=5 ttl=51 time=61.1 ms
+64 bytes from klecker.debian.org (2001:67c:2564:a119::77): icmp_seq=6 ttl=51 time=72.0 ms
+64 bytes from klecker.debian.org (2001:67c:2564:a119::77): icmp_seq=7 ttl=51 time=62.7 ms
+^C
+--- www.debian.org ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6008ms
+rtt min/avg/max/mdev = 61.149/70.521/87.642/8.156 ms
+
+(д)
+$ traceroute www.ubuntu.com
+traceroute to www.ubuntu.com (91.189.91.44), 64 hops max
+  1   192.168.43.1  5,764ms  2,187ms  2,315ms 
+  2   10.17.132.90  41,850ms  *  * 
+  3   *  212.188.44.101  55,159ms  53,739ms 
+  4   212.188.44.101  21,487ms  *  * 
+  5   *  *  * 
+  6   *  195.34.50.146  60,217ms  39,726ms 
+  7   195.34.50.146  54,261ms  194.68.128.187  35,044ms  46,020ms 
+  8   194.68.128.187  29,496ms  *  184.105.65.125  71,669ms 
+  9   184.105.65.125  65,644ms  72.52.92.213  82,669ms  91,106ms 
+ 10   72.52.92.213  88,071ms  72.52.92.166  182,274ms  139,054ms 
+ 11   72.52.92.166  167,760ms  184.104.195.170  229,956ms  180,044ms 
+ 12   184.104.195.170  204,035ms  184.105.64.54  203,412ms  220,325ms 
+ 13   184.105.64.54  188,613ms  209.51.171.154  205,107ms  243,077ms 
+ 14   209.51.171.154  172,753ms  91.189.91.44  197,944ms  215,872ms
