@@ -1,0 +1,2424 @@
+kira@kira-Vostro-5568:~/Linux-basics-2020$ man ifconfig
+kira@kira-Vostro-5568:~/Linux-basics-2020$ ifconfig -v
+enp2s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 8c:ec:4b:1f:c4:48  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 161876  bytes 171886728 (171.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 161876  bytes 171886728 (171.8 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp1s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.11  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::afdb:9492:8708:b3fc  prefixlen 64  scopeid 0x20<link>
+        ether e4:70:b8:3a:58:8b  txqueuelen 1000  (Ethernet)
+        RX packets 1652429  bytes 2128485457 (2.1 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 450409  bytes 79920108 (79.9 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ hostname
+kira-Vostro-5568
+kira@kira-Vostro-5568:~/Linux-basics-2020$ netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 kira-vostro-5568:38068  201.181.244.35.bc:https ESTABLISHED
+tcp        0      0 kira-vostro-5568:50348  lo-in-f139.1e100.:https TIME_WAIT  
+tcp        0      0 kira-vostro-5568:59602  yandex.ru:https         ESTABLISHED
+tcp        5      0 192.168.0.10:57028      csp1.zte.co:netbios-ssn CLOSE_WAIT 
+tcp        0      0 kira-vostro-5568:41766  lq-in-f95.1e100.n:https ESTABLISHED
+tcp        0      0 kira-vostro-5568:33960  ec2-52-25-121-22.:https ESTABLISHED
+tcp        0      0 kira-vostro-5568:42414  srv67-190-240-87.:https ESTABLISHED
+tcp        0      0 kira-vostro-5568:40766  ec2-44-238-207-5.:https TIME_WAIT  
+tcp        0      0 kira-vostro-5568:56532  93.186.225.201:https    ESTABLISHED
+tcp        0      0 kira-vostro-5568:41386  93.184.220.29:http      ESTABLISHED
+tcp        0     89 kira-vostro-5568:34850  149.154.167.50:https    ESTABLISHED
+tcp        0      0 kira-vostro-5568:55604  ec2-54-186-25-159:https ESTABLISHED
+tcp        0      0 kira-vostro-5568:45236  149.154.167.51:https    ESTABLISHED
+tcp        0      0 kira-vostro-5568:52328  lb-140-82-114-26-:https ESTABLISHED
+tcp        0      0 kira-vostro-5568:41384  93.184.220.29:http      ESTABLISHED
+tcp        0      0 kira-vostro-5568:34768  149.154.167.50:https    ESTABLISHED
+tcp        0      0 kira-vostro-5568:55484  srv186-129-240-87:https ESTABLISHED
+tcp        0      0 kira-vostro-5568:57374  suggest.yandex.ne:https ESTABLISHED
+tcp6       0      0 127.0.0.1:37363         127.0.0.1:47874         ESTABLISHED
+tcp6       0      0 127.0.0.1:47874         127.0.0.1:37363         ESTABLISHED
+udp        0      0 kira-vostro-5568:bootpc csp1.zte.com.cn:bootps  ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ]         DGRAM                    36902    /run/user/1000/systemd/notify
+unix  2      [ ]         DGRAM                    15630    /run/systemd/journal/syslog
+unix  19     [ ]         DGRAM                    15640    /run/systemd/journal/dev-log
+unix  8      [ ]         DGRAM                    15644    /run/systemd/journal/socket
+unix  2      [ ]         DGRAM                    1306241  /run/wpa_supplicant/wlp1s0
+unix  2      [ ]         DGRAM                    1307161  /run/wpa_supplicant/p2p-dev-wlp1s0
+unix  3      [ ]         SEQPACKET  CONNECTED     1012598  @0000e
+unix  4      [ ]         DGRAM                    15616    /run/systemd/notify
+unix  3      [ ]         STREAM     CONNECTED     1264415  
+unix  3      [ ]         STREAM     CONNECTED     1221114  
+unix  3      [ ]         STREAM     CONNECTED     1201287  
+unix  3      [ ]         STREAM     CONNECTED     603424   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     581160   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40704    
+unix  3      [ ]         STREAM     CONNECTED     1311534  
+unix  3      [ ]         STREAM     CONNECTED     1051049  
+unix  3      [ ]         STREAM     CONNECTED     1021127  
+unix  3      [ ]         STREAM     CONNECTED     1026595  
+unix  3      [ ]         STREAM     CONNECTED     1021073  
+unix  3      [ ]         STREAM     CONNECTED     610922   
+unix  3      [ ]         STREAM     CONNECTED     602885   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     604219   @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     604218   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     40598    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     36867    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     24569    
+unix  3      [ ]         STREAM     CONNECTED     604210   
+unix  3      [ ]         STREAM     CONNECTED     40783    
+unix  3      [ ]         STREAM     CONNECTED     26909    
+unix  2      [ ]         SEQPACKET  CONNECTED     1204185  
+unix  3      [ ]         STREAM     CONNECTED     1030932  /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     40654    
+unix  3      [ ]         STREAM     CONNECTED     40631    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38716    
+unix  3      [ ]         STREAM     CONNECTED     38027    /run/user/1000/bus
+unix  2      [ ]         DGRAM                    25066    
+unix  3      [ ]         STREAM     CONNECTED     1312104  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1178200  
+unix  3      [ ]         STREAM     CONNECTED     1021086  
+unix  3      [ ]         STREAM     CONNECTED     515964   
+unix  3      [ ]         STREAM     CONNECTED     23893    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313151  /run/user/1000/pulse/native
+unix  2      [ ]         SEQPACKET  CONNECTED     1028975  
+unix  3      [ ]         STREAM     CONNECTED     610057   
+unix  2      [ ]         DGRAM                    603440   
+unix  3      [ ]         STREAM     CONNECTED     514795   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     168800   
+unix  3      [ ]         STREAM     CONNECTED     41153    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1268821  
+unix  3      [ ]         STREAM     CONNECTED     1023861  
+unix  3      [ ]         STREAM     CONNECTED     24557    
+unix  3      [ ]         STREAM     CONNECTED     27233    
+unix  3      [ ]         STREAM     CONNECTED     41642    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     42174    
+unix  3      [ ]         STREAM     CONNECTED     43095    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     40637    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40452    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     37129    
+unix  3      [ ]         STREAM     CONNECTED     34932    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1311531  
+unix  3      [ ]         STREAM     CONNECTED     1178202  
+unix  3      [ ]         STREAM     CONNECTED     1027932  
+unix  2      [ ]         STREAM     CONNECTED     1026592  
+unix  3      [ ]         STREAM     CONNECTED     33187    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27687    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1314071  @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     1192850  
+unix  3      [ ]         SEQPACKET  CONNECTED     1021079  
+unix  3      [ ]         STREAM     CONNECTED     610924   @/dbus-vfs-daemon/socket-bX3r0vN1
+unix  3      [ ]         STREAM     CONNECTED     510700   
+unix  3      [ ]         STREAM     CONNECTED     40526    /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM                    28250    
+unix  3      [ ]         STREAM     CONNECTED     27624    
+unix  3      [ ]         STREAM     CONNECTED     1190396  /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     40836    
+unix  3      [ ]         STREAM     CONNECTED     24558    
+unix  3      [ ]         STREAM     CONNECTED     25325    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1021707  
+unix  3      [ ]         STREAM     CONNECTED     41265    
+unix  3      [ ]         STREAM     CONNECTED     40586    
+unix  3      [ ]         STREAM     CONNECTED     38723    
+unix  3      [ ]         STREAM     CONNECTED     37695    
+unix  3      [ ]         STREAM     CONNECTED     38934    /run/user/1000/bus
+unix  2      [ ]         DGRAM                    15286    
+unix  3      [ ]         STREAM     CONNECTED     1313028  @/dbus-vfs-daemon/socket-sbuBZjvW
+unix  3      [ ]         STREAM     CONNECTED     1178201  
+unix  3      [ ]         STREAM     CONNECTED     1026598  
+unix  3      [ ]         STREAM     CONNECTED     888882   
+unix  3      [ ]         STREAM     CONNECTED     1221073  
+unix  3      [ ]         STREAM     CONNECTED     1182964  
+unix  3      [ ]         STREAM     CONNECTED     1024581  
+unix  3      [ ]         STREAM     CONNECTED     1021071  
+unix  3      [ ]         STREAM     CONNECTED     517292   
+unix  3      [ ]         STREAM     CONNECTED     168799   
+unix  3      [ ]         STREAM     CONNECTED     38732    
+unix  3      [ ]         STREAM     CONNECTED     1015850  
+unix  3      [ ]         STREAM     CONNECTED     602091   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27692    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1192851  @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     602820   
+unix  3      [ ]         STREAM     CONNECTED     38710    
+unix  3      [ ]         STREAM     CONNECTED     39069    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     36495    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     34088    
+unix  3      [ ]         STREAM     CONNECTED     1267701  
+unix  3      [ ]         STREAM     CONNECTED     1221070  
+unix  3      [ ]         STREAM     CONNECTED     1178204  
+unix  3      [ ]         SEQPACKET  CONNECTED     1021138  
+unix  3      [ ]         STREAM     CONNECTED     987472   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     515967   
+unix  3      [ ]         STREAM     CONNECTED     1021084  
+unix  3      [ ]         STREAM     CONNECTED     611687   @/dbus-vfs-daemon/socket-L4Wr2GLg
+unix  3      [ ]         STREAM     CONNECTED     604221   @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     38787    
+unix  3      [ ]         STREAM     CONNECTED     28052    
+unix  3      [ ]         STREAM     CONNECTED     1268822  
+unix  3      [ ]         STREAM     CONNECTED     40776    
+unix  2      [ ]         DGRAM                    27678    
+unix  3      [ ]         STREAM     CONNECTED     23942    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    23884    
+unix  3      [ ]         STREAM     CONNECTED     1021706  
+unix  3      [ ]         STREAM     CONNECTED     1025778  
+unix  3      [ ]         STREAM     CONNECTED     40659    
+unix  3      [ ]         STREAM     CONNECTED     40650    
+unix  3      [ ]         STREAM     CONNECTED     41034    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     37130    
+unix  3      [ ]         STREAM     CONNECTED     36275    
+unix  2      [ ]         DGRAM                    25068    
+unix  3      [ ]         STREAM     CONNECTED     1311545  
+unix  3      [ ]         STREAM     CONNECTED     1221069  
+unix  2      [ ]         SEQPACKET  CONNECTED     1062595  
+unix  3      [ ]         STREAM     CONNECTED     1314929  
+unix  3      [ ]         STREAM     CONNECTED     1182963  
+unix  3      [ ]         STREAM     CONNECTED     1021081  
+unix  3      [ ]         STREAM     CONNECTED     602094   
+unix  3      [ ]         STREAM     CONNECTED     510701   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     41167    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31933    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1268820  
+unix  3      [ ]         STREAM     CONNECTED     41535    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27679    
+unix  3      [ ]         STREAM     CONNECTED     27073    
+unix  3      [ ]         STREAM     CONNECTED     1184053  
+unix  3      [ ]         STREAM     CONNECTED     41641    
+unix  3      [ ]         STREAM     CONNECTED     40641    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     38724    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     37121    
+unix  3      [ ]         STREAM     CONNECTED     38913    /run/systemd/journal/stdout
+unix  2      [ ]         SEQPACKET  CONNECTED     1027478  
+unix  3      [ ]         STREAM     CONNECTED     1021130  
+unix  3      [ ]         STREAM     CONNECTED     1026599  
+unix  3      [ ]         STREAM     CONNECTED     887308   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1195390  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     1182962  
+unix  3      [ ]         STREAM     CONNECTED     1021072  
+unix  3      [ ]         STREAM     CONNECTED     610051   /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     41439    
+unix  3      [ ]         STREAM     CONNECTED     24541    
+unix  3      [ ]         STREAM     CONNECTED     599029   
+unix  3      [ ]         STREAM     CONNECTED     40837    /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     23901    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27682    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1264419  
+unix  3      [ ]         STREAM     CONNECTED     1221074  
+unix  3      [ ]         STREAM     CONNECTED     43140    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     41352    
+unix  3      [ ]         STREAM     CONNECTED     38456    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     37154    
+unix  3      [ ]         STREAM     CONNECTED     36318    
+unix  2      [ ]         DGRAM                    24546    
+unix  3      [ ]         STREAM     CONNECTED     1178199  
+unix  3      [ ]         STREAM     CONNECTED     1021132  
+unix  3      [ ]         STREAM     CONNECTED     1026597  
+unix  3      [ ]         STREAM     CONNECTED     24935    
+unix  3      [ ]         STREAM     CONNECTED     1035669  
+unix  3      [ ]         STREAM     CONNECTED     1021074  
+unix  3      [ ]         STREAM     CONNECTED     611692   @/dbus-vfs-daemon/socket-yKA2y46O
+unix  3      [ ]         STREAM     CONNECTED     514794   
+unix  3      [ ]         STREAM     CONNECTED     40527    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29877    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27913    /run/dbus/system_bus_socket
+unix  3      [ ]         SEQPACKET  CONNECTED     1026517  
+unix  3      [ ]         STREAM     CONNECTED     603428   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     25503    
+unix  3      [ ]         STREAM     CONNECTED     26842    
+unix  3      [ ]         SEQPACKET  CONNECTED     1221079  
+unix  3      [ ]         STREAM     CONNECTED     38911    @/tmp/.ICE-unix/1753
+unix  3      [ ]         STREAM     CONNECTED     41169    
+unix  3      [ ]         STREAM     CONNECTED     38718    
+unix  3      [ ]         STREAM     CONNECTED     36835    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     37976    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29915    
+unix  3      [ ]         STREAM     CONNECTED     1310525  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     1178205  
+unix  3      [ ]         STREAM     CONNECTED     1021139  
+unix  3      [ ]         STREAM     CONNECTED     517295   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1311735  
+unix  3      [ ]         STREAM     CONNECTED     1023858  /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     610052   
+unix  3      [ ]         STREAM     CONNECTED     602882   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     603433   
+unix  3      [ ]         STREAM     CONNECTED     38746    
+unix  3      [ ]         STREAM     CONNECTED     36134    
+unix  3      [ ]         SEQPACKET  CONNECTED     1026514  
+unix  3      [ ]         STREAM     CONNECTED     603422   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1264420  
+unix  3      [ ]         STREAM     CONNECTED     604212   
+unix  3      [ ]         STREAM     CONNECTED     43666    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     40646    
+unix  3      [ ]         STREAM     CONNECTED     41035    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     39070    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35820    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29920    
+unix  3      [ ]         STREAM     CONNECTED     1267703  
+unix  3      [ ]         STREAM     CONNECTED     1178203  
+unix  2      [ ]         STREAM     CONNECTED     1066700  @/tmp/dbus-V3uJg1WJ
+unix  3      [ ]         STREAM     CONNECTED     517298   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     34448    
+unix  3      [ ]         STREAM     CONNECTED     1240058  
+unix  3      [ ]         STREAM     CONNECTED     1028738  
+unix  3      [ ]         STREAM     CONNECTED     1024582  
+unix  3      [ ]         STREAM     CONNECTED     1021070  
+unix  3      [ ]         STREAM     CONNECTED     610926   
+unix  3      [ ]         STREAM     CONNECTED     603439   
+unix  3      [ ]         STREAM     CONNECTED     41440    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27631    
+unix  3      [ ]         STREAM     CONNECTED     27693    /run/dbus/system_bus_socket
+unix  3      [ ]         SEQPACKET  CONNECTED     1026515  
+unix  3      [ ]         STREAM     CONNECTED     408365   
+unix  3      [ ]         STREAM     CONNECTED     1034621  
+unix  3      [ ]         STREAM     CONNECTED     41308    
+unix  3      [ ]         STREAM     CONNECTED     38743    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     38725    
+unix  3      [ ]         STREAM     CONNECTED     37663    
+unix  3      [ ]         STREAM     CONNECTED     36986    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     29919    
+unix  3      [ ]         STREAM     CONNECTED     1312103  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1178198  
+unix  3      [ ]         STREAM     CONNECTED     1052174  
+unix  3      [ ]         STREAM     CONNECTED     517299   @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     410627   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     27146    
+unix  3      [ ]         STREAM     CONNECTED     24807    
+unix  3      [ ]         STREAM     CONNECTED     1021069  
+unix  3      [ ]         STREAM     CONNECTED     517359   
+unix  3      [ ]         STREAM     CONNECTED     169290   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     38741    
+unix  2      [ ]         DGRAM                    33281    
+unix  3      [ ]         STREAM     CONNECTED     1025329  @/tmp/.ICE-unix/1753
+unix  3      [ ]         STREAM     CONNECTED     901348   @/dbus-vfs-daemon/socket-AsNqRfnI
+unix  3      [ ]         STREAM     CONNECTED     1031570  
+unix  3      [ ]         STREAM     CONNECTED     41395    
+unix  3      [ ]         STREAM     CONNECTED     38744    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40479    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     38439    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     36399    
+unix  2      [ ]         STREAM     CONNECTED     1027906  
+unix  3      [ ]         STREAM     CONNECTED     1021128  
+unix  3      [ ]         STREAM     CONNECTED     1026596  
+unix  3      [ ]         STREAM     CONNECTED     23896    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1219946  
+unix  3      [ ]         STREAM     CONNECTED     1035668  
+unix  3      [ ]         STREAM     CONNECTED     1021083  
+unix  3      [ ]         STREAM     CONNECTED     604217   
+unix  3      [ ]         STREAM     CONNECTED     516520   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     38733    
+unix  3      [ ]         DGRAM                    28249    
+unix  3      [ ]         STREAM     CONNECTED     1015849  
+unix  3      [ ]         STREAM     CONNECTED     902336   
+unix  3      [ ]         STREAM     CONNECTED     23887    
+unix  3      [ ]         STREAM     CONNECTED     1034620  
+unix  3      [ ]         STREAM     CONNECTED     41516    
+unix  3      [ ]         STREAM     CONNECTED     40712    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     41396    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     38839    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38715    
+unix  3      [ ]         STREAM     CONNECTED     37155    
+unix  3      [ ]         STREAM     CONNECTED     37131    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29916    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27685    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1311532  
+unix  3      [ ]         STREAM     CONNECTED     1051046  
+unix  3      [ ]         STREAM     CONNECTED     1021131  
+unix  3      [ ]         STREAM     CONNECTED     515969   
+unix  3      [ ]         STREAM     CONNECTED     24999    
+unix  3      [ ]         STREAM     CONNECTED     1021026  
+unix  3      [ ]         STREAM     CONNECTED     603437   
+unix  3      [ ]         STREAM     CONNECTED     603435   @/home/kira/.cache/ibus/dbus-uGjPXo3h
+unix  3      [ ]         STREAM     CONNECTED     602877   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     38835    
+unix  3      [ ]         STREAM     CONNECTED     25402    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1190395  
+unix  3      [ ]         STREAM     CONNECTED     41595    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     30232    
+unix  3      [ ]         STREAM     CONNECTED     24562    
+unix  3      [ ]         STREAM     CONNECTED     1264414  
+unix  3      [ ]         STREAM     CONNECTED     1025779  
+unix  3      [ ]         STREAM     CONNECTED     40660    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     40606    
+unix  3      [ ]         STREAM     CONNECTED     37878    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     37516    
+unix  3      [ ]         STREAM     CONNECTED     36424    
+unix  3      [ ]         STREAM     CONNECTED     1267702  
+unix  3      [ ]         STREAM     CONNECTED     1221071  
+unix  3      [ ]         STREAM     CONNECTED     1051048  
+unix  3      [ ]         SEQPACKET  CONNECTED     1021137  
+unix  2      [ ]         STREAM     CONNECTED     1026520  
+unix  3      [ ]         STREAM     CONNECTED     1240059  /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1034623  
+unix  3      [ ]         STREAM     CONNECTED     1028737  
+unix  3      [ ]         SEQPACKET  CONNECTED     1021080  
+unix  3      [ ]         STREAM     CONNECTED     602096   
+unix  3      [ ]         STREAM     CONNECTED     517293   
+unix  3      [ ]         STREAM     CONNECTED     158682   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40601    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27625    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     27684    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1268819  
+unix  3      [ ]         STREAM     CONNECTED     40784    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     29482    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27689    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     42332    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     40639    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40587    
+unix  3      [ ]         STREAM     CONNECTED     40459    @/home/kira/.cache/ibus/dbus-uGjPXo3h
+unix  3      [ ]         STREAM     CONNECTED     38440    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     36340    
+unix  3      [ ]         STREAM     CONNECTED     25078    
+unix  2      [ ]         SEQPACKET  CONNECTED     1213700  
+unix  3      [ ]         STREAM     CONNECTED     1052173  
+unix  3      [ ]         STREAM     CONNECTED     1021140  
+unix  3      [ ]         STREAM     CONNECTED     989075   
+unix  3      [ ]         STREAM     CONNECTED     1219945  
+unix  3      [ ]         STREAM     CONNECTED     1021085  
+unix  3      [ ]         STREAM     CONNECTED     604220   
+unix  3      [ ]         STREAM     CONNECTED     515963   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40575    /run/user/1000/bus
+unix  2      [ ]         DGRAM                    24568    
+unix  3      [ ]         STREAM     CONNECTED     26844    
+unix  3      [ ]         STREAM     CONNECTED     410611   @/dbus-vfs-daemon/socket-whTxPQEz
+unix  3      [ ]         STREAM     CONNECTED     41599    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     25177    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313293  
+unix  3      [ ]         STREAM     CONNECTED     1184052  
+unix  3      [ ]         STREAM     CONNECTED     41544    
+unix  3      [ ]         STREAM     CONNECTED     38727    
+unix  3      [ ]         STREAM     CONNECTED     37664    
+unix  3      [ ]         STREAM     CONNECTED     36395    
+unix  3      [ ]         STREAM     CONNECTED     1267700  
+unix  3      [ ]         STREAM     CONNECTED     1221072  
+unix  3      [ ]         SEQPACKET  CONNECTED     1178210  
+unix  3      [ ]         STREAM     CONNECTED     1021129  
+unix  3      [ ]         SEQPACKET  CONNECTED     1026518  
+unix  3      [ ]         STREAM     CONNECTED     1034624  
+unix  3      [ ]         STREAM     CONNECTED     1021082  
+unix  3      [ ]         STREAM     CONNECTED     515962   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     38856    
+unix  3      [ ]         STREAM     CONNECTED     34086    
+unix  3      [ ]         STREAM     CONNECTED     408366   
+unix  3      [ ]         STREAM     CONNECTED     40790    
+unix  3      [ ]         STREAM     CONNECTED     27680    
+unix  2      [ ]         DGRAM                    23917    
+unix  3      [ ]         STREAM     CONNECTED     1182953  
+unix  3      [ ]         STREAM     CONNECTED     1027944  
+unix  3      [ ]         STREAM     CONNECTED     514769   
+unix  3      [ ]         STREAM     CONNECTED     40448    
+unix  3      [ ]         STREAM     CONNECTED     987473   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     32438    
+unix  3      [ ]         STREAM     CONNECTED     1312256  
+unix  3      [ ]         STREAM     CONNECTED     1021399  
+unix  3      [ ]         STREAM     CONNECTED     1018129  
+unix  3      [ ]         STREAM     CONNECTED     37716    
+unix  3      [ ]         STREAM     CONNECTED     36425    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1182954  
+unix  3      [ ]         SEQPACKET  CONNECTED     1027943  
+unix  3      [ ]         STREAM     CONNECTED     38705    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     33276    /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    712308   
+unix  3      [ ]         STREAM     CONNECTED     25398    
+unix  3      [ ]         STREAM     CONNECTED     1313142  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     1168266  
+unix  3      [ ]         STREAM     CONNECTED     1026609  
+unix  3      [ ]         STREAM     CONNECTED     994313   
+unix  3      [ ]         STREAM     CONNECTED     602092   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     46763    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     40578    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     37110    
+unix  3      [ ]         STREAM     CONNECTED     26225    
+unix  3      [ ]         STREAM     CONNECTED     1314927  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     408979   
+unix  3      [ ]         STREAM     CONNECTED     37679    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38057    
+unix  3      [ ]         DGRAM                    36904    
+unix  3      [ ]         STREAM     CONNECTED     25321    
+unix  3      [ ]         STREAM     CONNECTED     1021409  
+unix  2      [ ]         DGRAM                    991010   
+unix  3      [ ]         STREAM     CONNECTED     516107   
+unix  3      [ ]         STREAM     CONNECTED     44057    @/dbus-vfs-daemon/socket-llZj2wSz
+unix  3      [ ]         STREAM     CONNECTED     38652    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     1182949  
+unix  3      [ ]         STREAM     CONNECTED     1021141  
+unix  2      [ ]         STREAM     CONNECTED     987491   
+unix  3      [ ]         STREAM     CONNECTED     39067    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     32706    
+unix  3      [ ]         STREAM     CONNECTED     38221    
+unix  3      [ ]         STREAM     CONNECTED     36217    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     28309    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1312148  /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     1021400  
+unix  3      [ ]         STREAM     CONNECTED     1026607  
+unix  3      [ ]         STREAM     CONNECTED     508751   
+unix  3      [ ]         STREAM     CONNECTED     37820    
+unix  3      [ ]         STREAM     CONNECTED     36352    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     25400    
+unix  3      [ ]         STREAM     CONNECTED     1313301  
+unix  3      [ ]         STREAM     CONNECTED     1208953  
+unix  3      [ ]         STREAM     CONNECTED     1027946  
+unix  3      [ ]         STREAM     CONNECTED     1017301  
+unix  3      [ ]         STREAM     CONNECTED     989306   
+unix  3      [ ]         STREAM     CONNECTED     38921    /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    1312193  
+unix  3      [ ]         STREAM     CONNECTED     1021406  
+unix  3      [ ]         STREAM     CONNECTED     1018130  
+unix  3      [ ]         STREAM     CONNECTED     37887    
+unix  3      [ ]         STREAM     CONNECTED     37945    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1182952  
+unix  3      [ ]         STREAM     CONNECTED     1027947  
+unix  3      [ ]         STREAM     CONNECTED     1021142  
+unix  3      [ ]         STREAM     CONNECTED     986468   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     40234    
+unix  3      [ ]         STREAM     CONNECTED     25324    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1168265  
+unix  3      [ ]         STREAM     CONNECTED     1021407  
+unix  3      [ ]         STREAM     CONNECTED     509027   /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     37883    
+unix  3      [ ]         STREAM     CONNECTED     36933    
+unix  3      [ ]         STREAM     CONNECTED     1027934  
+unix  2      [ ]         STREAM     CONNECTED     987476   
+unix  3      [ ]         STREAM     CONNECTED     410630   
+unix  3      [ ]         STREAM     CONNECTED     36455    
+unix  3      [ ]         STREAM     CONNECTED     39102    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     36941    
+unix  3      [ ]         STREAM     CONNECTED     602876   @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     582191   
+unix  3      [ ]         STREAM     CONNECTED     515412   @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     48234    
+unix  3      [ ]         STREAM     CONNECTED     36417    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1182950  
+unix  3      [ ]         SEQPACKET  CONNECTED     1027942  
+unix  2      [ ]         STREAM     CONNECTED     1026935  
+unix  3      [ ]         STREAM     CONNECTED     1017287  
+unix  3      [ ]         STREAM     CONNECTED     32705    
+unix  3      [ ]         STREAM     CONNECTED     36906    
+unix  3      [ ]         STREAM     CONNECTED     1312147  
+unix  3      [ ]         STREAM     CONNECTED     1026652  
+unix  3      [ ]         STREAM     CONNECTED     604216   
+unix  3      [ ]         STREAM     CONNECTED     40590    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1027937  
+unix  3      [ ]         STREAM     CONNECTED     513847   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     402128   @/dbus-vfs-daemon/socket-U0xTXu1w
+unix  3      [ ]         STREAM     CONNECTED     36850    
+unix  3      [ ]         STREAM     CONNECTED     29015    
+unix  2      [ ]         STREAM     CONNECTED     1149399  
+unix  3      [ ]         STREAM     CONNECTED     1021405  
+unix  3      [ ]         STREAM     CONNECTED     1024380  
+unix  3      [ ]         SEQPACKET  CONNECTED     1026606  
+unix  3      [ ]         STREAM     CONNECTED     992228   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40297    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     37111    
+unix  3      [ ]         STREAM     CONNECTED     27688    /run/dbus/system_bus_socket
+unix  3      [ ]         SEQPACKET  CONNECTED     1182959  
+unix  3      [ ]         STREAM     CONNECTED     1027933  
+unix  3      [ ]         STREAM     CONNECTED     513848   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     39843    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30365    
+unix  3      [ ]         STREAM     CONNECTED     27883    /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM                    15618    
+unix  3      [ ]         STREAM     CONNECTED     1314075  /run/user/1000/pulse/native
+unix  3      [ ]         SEQPACKET  CONNECTED     1170505  
+unix  2      [ ]         STREAM     CONNECTED     1024406  
+unix  3      [ ]         STREAM     CONNECTED     1026617  
+unix  3      [ ]         STREAM     CONNECTED     993598   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     39627    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     36935    
+unix  3      [ ]         STREAM     CONNECTED     27904    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1027936  
+unix  3      [ ]         STREAM     CONNECTED     410629   
+unix  3      [ ]         STREAM     CONNECTED     40071    
+unix  3      [ ]         STREAM     CONNECTED     38220    
+unix  3      [ ]         STREAM     CONNECTED     25399    /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM                    15617    
+unix  3      [ ]         STREAM     CONNECTED     1208952  
+unix  3      [ ]         STREAM     CONNECTED     1020357  
+unix  3      [ ]         STREAM     CONNECTED     515399   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     39841    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     36998    
+unix  2      [ ]         DGRAM                    25720    
+unix  3      [ ]         STREAM     CONNECTED     1182951  
+unix  2      [ ]         SEQPACKET  CONNECTED     1021163  
+unix  3      [ ]         STREAM     CONNECTED     987492   
+unix  3      [ ]         STREAM     CONNECTED     39048    /run/user/1000/bus
+unix  2      [ ]         DGRAM                    42440    
+unix  3      [ ]         STREAM     CONNECTED     37291    /run/dbus/system_bus_socket
+unix  3      [ ]         DGRAM                    36903    
+unix  3      [ ]         STREAM     CONNECTED     1033459  
+unix  3      [ ]         STREAM     CONNECTED     1020358  
+unix  3      [ ]         STREAM     CONNECTED     513864   
+unix  2      [ ]         DGRAM                    37875    
+unix  3      [ ]         STREAM     CONNECTED     36338    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1027945  
+unix  3      [ ]         STREAM     CONNECTED     36849    
+unix  2      [ ]         DGRAM                    36932    
+unix  3      [ ]         STREAM     CONNECTED     1312336  
+unix  3      [ ]         STREAM     CONNECTED     1170506  
+unix  3      [ ]         STREAM     CONNECTED     1026608  
+unix  2      [ ]         STREAM     CONNECTED     994334   
+unix  3      [ ]         STREAM     CONNECTED     38742    /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     36426    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     408980   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1244313  
+unix  3      [ ]         STREAM     CONNECTED     37290    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1208648  
+unix  3      [ ]         STREAM     CONNECTED     1170507  
+unix  3      [ ]         STREAM     CONNECTED     1024381  /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     1026610  
+unix  3      [ ]         STREAM     CONNECTED     37881    
+unix  3      [ ]         STREAM     CONNECTED     36985    
+unix  3      [ ]         SEQPACKET  CONNECTED     1182960  
+unix  3      [ ]         STREAM     CONNECTED     1027935  
+unix  3      [ ]         STREAM     CONNECTED     514770   
+unix  3      [ ]         STREAM     CONNECTED     36494    
+unix  3      [ ]         STREAM     CONNECTED     1242815  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23900    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1021408  
+unix  3      [ ]         STREAM     CONNECTED     1026651  
+unix  3      [ ]         STREAM     CONNECTED     994336   
+unix  3      [ ]         STREAM     CONNECTED     37771    
+unix  3      [ ]         STREAM     CONNECTED     37947    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     408984   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     37126    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     34576    @/tmp/dbus-ErJW7Qak
+unix  3      [ ]         STREAM     CONNECTED     34443    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1208649  
+unix  3      [ ]         STREAM     CONNECTED     1026618  
+unix  2      [ ]         STREAM     CONNECTED     994326   
+unix  3      [ ]         STREAM     CONNECTED     604214   
+unix  3      [ ]         STREAM     CONNECTED     37821    
+unix  3      [ ]         STREAM     CONNECTED     37087    
+unix  3      [ ]         STREAM     CONNECTED     1050420  
+unix  3      [ ]         STREAM     CONNECTED     1017282  
+unix  3      [ ]         STREAM     CONNECTED     41597    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     41486    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     39749    
+unix  3      [ ]         STREAM     CONNECTED     37470    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1048182  
+unix  3      [ ]         STREAM     CONNECTED     581161   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     42280    
+unix  3      [ ]         STREAM     CONNECTED     43423    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     41493    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     38726    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1050419  
+unix  3      [ ]         STREAM     CONNECTED     603426   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     42344    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     43182    
+unix  3      [ ]         STREAM     CONNECTED     39850    
+unix  2      [ ]         DGRAM                    25719    
+unix  3      [ ]         STREAM     CONNECTED     1048181  
+unix  2      [ ]         DGRAM                    42383    
+unix  3      [ ]         STREAM     CONNECTED     41514    
+unix  3      [ ]         STREAM     CONNECTED     43417    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38717    @/home/kira/.cache/ibus/dbus-uGjPXo3h
+unix  3      [ ]         STREAM     CONNECTED     24233    
+unix  3      [ ]         STREAM     CONNECTED     1083609  /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     1067767  @/tmp/dbus-rLp820FC
+unix  3      [ ]         STREAM     CONNECTED     604230   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     45641    
+unix  3      [ ]         STREAM     CONNECTED     43139    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     39801    
+unix  3      [ ]         STREAM     CONNECTED     34445    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1048179  
+unix  3      [ ]         SEQPACKET  CONNECTED     1012599  
+unix  3      [ ]         STREAM     CONNECTED     989312   
+unix  2      [ ]         DGRAM                    42285    
+unix  3      [ ]         STREAM     CONNECTED     42181    
+unix  3      [ ]         STREAM     CONNECTED     41484    
+unix  3      [ ]         STREAM     CONNECTED     27694    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     989326   
+unix  2      [ ]         DGRAM                    41666    
+unix  3      [ ]         STREAM     CONNECTED     40453    
+unix  3      [ ]         STREAM     CONNECTED     1068423  
+unix  3      [ ]         STREAM     CONNECTED     1015472  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     602095   @/tmp/.ICE-unix/1753
+unix  3      [ ]         STREAM     CONNECTED     46759    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     43355    
+unix  3      [ ]         STREAM     CONNECTED     43232    
+unix  3      [ ]         STREAM     CONNECTED     37769    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    31745    
+unix  3      [ ]         STREAM     CONNECTED     1048189  
+unix  3      [ ]         STREAM     CONNECTED     1012604  
+unix  3      [ ]         STREAM     CONNECTED     42321    /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     41503    
+unix  3      [ ]         STREAM     CONNECTED     41502    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     40456    
+unix  3      [ ]         STREAM     CONNECTED     1209579  
+unix  3      [ ]         STREAM     CONNECTED     1066703  /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1021410  
+unix  3      [ ]         STREAM     CONNECTED     1017286  
+unix  3      [ ]         STREAM     CONNECTED     602879   
+unix  3      [ ]         STREAM     CONNECTED     43729    
+unix  3      [ ]         STREAM     CONNECTED     38702    @/home/kira/.cache/ibus/dbus-uGjPXo3h
+unix  3      [ ]         STREAM     CONNECTED     29609    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     26305    
+unix  3      [ ]         SEQPACKET  CONNECTED     1012596  
+unix  3      [ ]         STREAM     CONNECTED     42331    
+unix  3      [ ]         STREAM     CONNECTED     41485    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40457    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     24015    
+unix  3      [ ]         STREAM     CONNECTED     1083608  
+unix  3      [ ]         STREAM     CONNECTED     1066702  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1021420  
+unix  3      [ ]         STREAM     CONNECTED     602870   
+unix  2      [ ]         DGRAM                    44061    
+unix  3      [ ]         STREAM     CONNECTED     43138    
+unix  3      [ ]         STREAM     CONNECTED     41021    
+unix  3      [ ]         STREAM     CONNECTED     1012603  
+unix  3      [ ]         STREAM     CONNECTED     42305    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     42214    
+unix  3      [ ]         STREAM     CONNECTED     41488    
+unix  3      [ ]         STREAM     CONNECTED     40525    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23938    
+unix  3      [ ]         STREAM     CONNECTED     1068420  
+unix  3      [ ]         SEQPACKET  CONNECTED     1021415  
+unix  3      [ ]         STREAM     CONNECTED     992853   @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     602913   
+unix  3      [ ]         STREAM     CONNECTED     43226    
+unix  3      [ ]         STREAM     CONNECTED     38532    @/tmp/.ICE-unix/1753
+unix  3      [ ]         STREAM     CONNECTED     1048178  
+unix  3      [ ]         STREAM     CONNECTED     1012601  
+unix  3      [ ]         STREAM     CONNECTED     42281    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     42178    
+unix  3      [ ]         STREAM     CONNECTED     41500    
+unix  2      [ ]         DGRAM                    27282    
+unix  3      [ ]         STREAM     CONNECTED     38712    @/tmp/.X11-unix/X0
+unix  2      [ ]         DGRAM                    15926    
+unix  3      [ ]         STREAM     CONNECTED     1051045  
+unix  3      [ ]         STREAM     CONNECTED     1015470  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     603494   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     43183    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     39802    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     36802    
+unix  3      [ ]         STREAM     CONNECTED     31258    
+unix  3      [ ]         STREAM     CONNECTED     1048180  
+unix  3      [ ]         STREAM     CONNECTED     1012605  
+unix  3      [ ]         STREAM     CONNECTED     42282    
+unix  3      [ ]         STREAM     CONNECTED     43380    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     41501    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     40458    
+unix  3      [ ]         STREAM     CONNECTED     1068422  
+unix  3      [ ]         STREAM     CONNECTED     1021417  
+unix  3      [ ]         STREAM     CONNECTED     1013630  
+unix  3      [ ]         STREAM     CONNECTED     602878   
+unix  3      [ ]         STREAM     CONNECTED     43728    
+unix  3      [ ]         STREAM     CONNECTED     40649    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40432    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1048183  
+unix  3      [ ]         STREAM     CONNECTED     42320    
+unix  3      [ ]         STREAM     CONNECTED     42213    
+unix  3      [ ]         STREAM     CONNECTED     40710    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     40529    
+unix  3      [ ]         STREAM     CONNECTED     23773    
+unix  3      [ ]         STREAM     CONNECTED     1313145  
+unix  3      [ ]         STREAM     CONNECTED     1017283  
+unix  3      [ ]         STREAM     CONNECTED     602093   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     46760    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     41517    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     43094    
+unix  3      [ ]         STREAM     CONNECTED     38688    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     26309    
+unix  3      [ ]         SEQPACKET  CONNECTED     1012595  
+unix  3      [ ]         STREAM     CONNECTED     41522    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     43388    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     41492    
+unix  3      [ ]         STREAM     CONNECTED     40480    
+unix  3      [ ]         STREAM     CONNECTED     1068421  
+unix  3      [ ]         STREAM     CONNECTED     992852   
+unix  3      [ ]         STREAM     CONNECTED     599034   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     45644    
+unix  3      [ ]         STREAM     CONNECTED     41512    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     43313    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     43234    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     39828    
+unix  3      [ ]         STREAM     CONNECTED     18380    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1052856  
+unix  3      [ ]         STREAM     CONNECTED     26306    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1012606  
+unix  3      [ ]         STREAM     CONNECTED     989313   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     42309    
+unix  3      [ ]         STREAM     CONNECTED     42209    
+unix  3      [ ]         STREAM     CONNECTED     40713    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     40451    
+unix  3      [ ]         STREAM     CONNECTED     25253    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1066701  /run/systemd/journal/stdout
+unix  3      [ ]         SEQPACKET  CONNECTED     1021416  
+unix  3      [ ]         STREAM     CONNECTED     1017302  
+unix  3      [ ]         STREAM     CONNECTED     75427    
+unix  3      [ ]         STREAM     CONNECTED     43312    
+unix  3      [ ]         STREAM     CONNECTED     43264    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     42029    
+unix  3      [ ]         STREAM     CONNECTED     1052855  
+unix  2      [ ]         STREAM     CONNECTED     42295    
+unix  3      [ ]         STREAM     CONNECTED     42188    
+unix  3      [ ]         STREAM     CONNECTED     41498    
+unix  3      [ ]         STREAM     CONNECTED     38709    @/home/kira/.cache/ibus/dbus-uGjPXo3h
+unix  3      [ ]         STREAM     CONNECTED     27683    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1312257  @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     1015463  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     602869   
+unix  3      [ ]         STREAM     CONNECTED     48230    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     43730    
+unix  3      [ ]         STREAM     CONNECTED     43265    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     41006    
+unix  2      [ ]         DGRAM                    40070    
+unix  3      [ ]         STREAM     CONNECTED     582192   
+unix  3      [ ]         STREAM     CONNECTED     41540    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     40753    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     43389    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40524    
+unix  3      [ ]         STREAM     CONNECTED     23783    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1021419  
+unix  3      [ ]         STREAM     CONNECTED     1013626  
+unix  3      [ ]         STREAM     CONNECTED     599035   /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     41598    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     43379    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     43235    
+unix  3      [ ]         STREAM     CONNECTED     40241    /run/user/1000/bus
+unix  2      [ ]         DGRAM                    1314717  
+unix  3      [ ]         STREAM     CONNECTED     26310    
+unix  2      [ ]         SEQPACKET  CONNECTED     1037029  
+unix  3      [ ]         STREAM     CONNECTED     1021019  
+unix  3      [ ]         STREAM     CONNECTED     42304    
+unix  3      [ ]         STREAM     CONNECTED     41489    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     38736    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     25172    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    1068426  
+unix  3      [ ]         STREAM     CONNECTED     1013632  
+unix  3      [ ]         STREAM     CONNECTED     602906   
+unix  3      [ ]         STREAM     CONNECTED     45642    
+unix  3      [ ]         STREAM     CONNECTED     43431    
+unix  3      [ ]         STREAM     CONNECTED     43268    
+unix  3      [ ]         STREAM     CONNECTED     43233    
+unix  3      [ ]         STREAM     CONNECTED     37888    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     32439    
+unix  3      [ ]         STREAM     CONNECTED     18379    
+unix  3      [ ]         STREAM     CONNECTED     1021023  @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     42283    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40748    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     42208    
+unix  3      [ ]         STREAM     CONNECTED     27297    
+unix  3      [ ]         STREAM     CONNECTED     40573    
+unix  3      [ ]         STREAM     CONNECTED     1021418  
+unix  3      [ ]         STREAM     CONNECTED     602827   
+unix  3      [ ]         STREAM     CONNECTED     76692    /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     43432    
+unix  3      [ ]         STREAM     CONNECTED     43356    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     43227    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     41020    
+unix  3      [ ]         STREAM     CONNECTED     1048188  
+unix  3      [ ]         STREAM     CONNECTED     1012600  
+unix  3      [ ]         STREAM     CONNECTED     41510    
+unix  3      [ ]         STREAM     CONNECTED     41504    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     986470   /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     38738    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1221113  
+unix  2      [ ]         STREAM     CONNECTED     1218395  
+unix  3      [ ]         STREAM     CONNECTED     41085    
+unix  3      [ ]         STREAM     CONNECTED     35569    
+unix  3      [ ]         STREAM     CONNECTED     1170496  
+unix  3      [ ]         STREAM     CONNECTED     42088    
+unix  3      [ ]         STREAM     CONNECTED     1178215  
+unix  2      [ ]         STREAM     CONNECTED     1112390  
+unix  3      [ ]         STREAM     CONNECTED     1017310  
+unix  3      [ ]         STREAM     CONNECTED     1015833  
+unix  3      [ ]         STREAM     CONNECTED     36413    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1310527  @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     1175947  
+unix  3      [ ]         STREAM     CONNECTED     1033454  
+unix  3      [ ]         STREAM     CONNECTED     40750    
+unix  3      [ ]         STREAM     CONNECTED     40711    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     38883    
+unix  3      [ ]         DGRAM                    15304    
+unix  3      [ ]         STREAM     CONNECTED     1195408  
+unix  3      [ ]         STREAM     CONNECTED     41086    /run/systemd/journal/stdout
+unix  2      [ ]         STREAM     CONNECTED     34175    @/tmp/dbus-Dpg6ufT0
+unix  3      [ ]         STREAM     CONNECTED     1182433  
+unix  3      [ ]         STREAM     CONNECTED     1170495  
+unix  3      [ ]         STREAM     CONNECTED     35819    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1209578  
+unix  3      [ ]         STREAM     CONNECTED     1209564  
+unix  3      [ ]         STREAM     CONNECTED     402117   
+unix  3      [ ]         STREAM     CONNECTED     36412    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313001  
+unix  3      [ ]         STREAM     CONNECTED     1190394  /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     42308    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38881    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     37127    /run/user/1000/bus
+unix  2      [ ]         SEQPACKET  CONNECTED     1065126  
+unix  3      [ ]         STREAM     CONNECTED     1047255  
+unix  3      [ ]         STREAM     CONNECTED     41031    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     1209576  
+unix  3      [ ]         STREAM     CONNECTED     1170498  
+unix  3      [ ]         STREAM     CONNECTED     38032    
+unix  3      [ ]         STREAM     CONNECTED     1169072  
+unix  3      [ ]         STREAM     CONNECTED     1014240  
+unix  3      [ ]         STREAM     CONNECTED     39001    
+unix  3      [ ]         STREAM     CONNECTED     34574    
+unix  3      [ ]         STREAM     CONNECTED     1033458  
+unix  3      [ ]         STREAM     CONNECTED     42348    
+unix  3      [ ]         STREAM     CONNECTED     40715    
+unix  3      [ ]         STREAM     CONNECTED     39407    
+unix  3      [ ]         STREAM     CONNECTED     1221082  
+unix  3      [ ]         STREAM     CONNECTED     1047254  
+unix  3      [ ]         STREAM     CONNECTED     38704    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     16830    
+unix  2      [ ]         STREAM     CONNECTED     1111911  
+unix  2      [ ]         DGRAM                    38026    
+unix  3      [ ]         STREAM     CONNECTED     27690    /run/dbus/system_bus_socket
+unix  3      [ ]         DGRAM                    26660    
+unix  2      [ ]         STREAM     CONNECTED     1168669  
+unix  3      [ ]         STREAM     CONNECTED     1025337  
+unix  3      [ ]         STREAM     CONNECTED     995367   
+unix  2      [ ]         DGRAM                    35741    
+unix  3      [ ]         STREAM     CONNECTED     1313140  
+unix  3      [ ]         STREAM     CONNECTED     1192854  
+unix  3      [ ]         STREAM     CONNECTED     40756    
+unix  3      [ ]         STREAM     CONNECTED     38857    
+unix  3      [ ]         STREAM     CONNECTED     37666    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     39053    
+unix  3      [ ]         STREAM     CONNECTED     38846    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1209567  
+unix  3      [ ]         SEQPACKET  CONNECTED     1170504  
+unix  3      [ ]         STREAM     CONNECTED     41495    @/tmp/.X11-unix/X0
+unix  2      [ ]         DGRAM                    25506    
+unix  3      [ ]         STREAM     CONNECTED     1315595  
+unix  3      [ ]         STREAM     CONNECTED     1209577  
+unix  3      [ ]         STREAM     CONNECTED     1014237  
+unix  3      [ ]         STREAM     CONNECTED     37033    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1311533  @/dbus-vfs-daemon/socket-OmgXsvDU
+unix  3      [ ]         STREAM     CONNECTED     41518    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     38878    
+unix  3      [ ]         STREAM     CONNECTED     39608    
+unix  3      [ ]         STREAM     CONNECTED     36831    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1312326  /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     40591    /run/user/1000/bus
+unix  2      [ ]         STREAM     CONNECTED     1182431  
+unix  3      [ ]         STREAM     CONNECTED     1132364  
+unix  3      [ ]         STREAM     CONNECTED     37726    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     26696    
+unix  2      [ ]         STREAM     CONNECTED     1209563  
+unix  3      [ ]         STREAM     CONNECTED     1178214  
+unix  3      [ ]         STREAM     CONNECTED     1015830  
+unix  3      [ ]         STREAM     CONNECTED     38988    
+unix  2      [ ]         DGRAM                    27905    
+unix  3      [ ]         STREAM     CONNECTED     1312999  
+unix  3      [ ]         STREAM     CONNECTED     40752    
+unix  3      [ ]         STREAM     CONNECTED     42089    
+unix  3      [ ]         STREAM     CONNECTED     41168    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313294  
+unix  3      [ ]         STREAM     CONNECTED     1221081  
+unix  3      [ ]         STREAM     CONNECTED     41036    
+unix  3      [ ]         STREAM     CONNECTED     33199    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1178212  
+unix  2      [ ]         DGRAM                    37942    
+unix  3      [ ]         STREAM     CONNECTED     1209565  
+unix  2      [ ]         STREAM     CONNECTED     1143685  
+unix  3      [ ]         STREAM     CONNECTED     1025340  
+unix  3      [ ]         STREAM     CONNECTED     1015831  
+unix  3      [ ]         STREAM     CONNECTED     36423    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     40716    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     43050    
+unix  3      [ ]         STREAM     CONNECTED     39066    
+unix  3      [ ]         STREAM     CONNECTED     1132365  
+unix  3      [ ]         STREAM     CONNECTED     610875   @/dbus-vfs-daemon/socket-Ja1XUyJZ
+unix  3      [ ]         STREAM     CONNECTED     37943    
+unix  2      [ ]         DGRAM                    25756    
+unix  3      [ ]         DGRAM                    26662    
+unix  3      [ ]         STREAM     CONNECTED     1169071  
+unix  3      [ ]         STREAM     CONNECTED     992855   @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     39045    
+unix  3      [ ]         STREAM     CONNECTED     1201400  /run/user/1000/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     42404    
+unix  3      [ ]         STREAM     CONNECTED     40757    
+unix  3      [ ]         STREAM     CONNECTED     42131    
+unix  3      [ ]         STREAM     CONNECTED     1314069  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313147  
+unix  3      [ ]         STREAM     CONNECTED     41156    
+unix  2      [ ]         STREAM     CONNECTED     1111913  
+unix  3      [ ]         STREAM     CONNECTED     611679   
+unix  3      [ ]         STREAM     CONNECTED     37931    
+unix  3      [ ]         STREAM     CONNECTED     1025339  
+unix  3      [ ]         STREAM     CONNECTED     410607   /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38987    
+unix  3      [ ]         STREAM     CONNECTED     1202732  
+unix  3      [ ]         STREAM     CONNECTED     40755    
+unix  3      [ ]         STREAM     CONNECTED     38880    
+unix  3      [ ]         STREAM     CONNECTED     38379    /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM                    15303    
+unix  3      [ ]         STREAM     CONNECTED     1192855  /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1170509  
+unix  3      [ ]         STREAM     CONNECTED     1053941  
+unix  3      [ ]         STREAM     CONNECTED     52113    /run/user/1000/pulse/native
+unix  3      [ ]         SEQPACKET  CONNECTED     1209574  
+unix  3      [ ]         STREAM     CONNECTED     1170494  
+unix  2      [ ]         DGRAM                    38039    
+unix  3      [ ]         STREAM     CONNECTED     1182961  
+unix  2      [ ]         SEQPACKET  CONNECTED     1169475  
+unix  3      [ ]         STREAM     CONNECTED     1026600  
+unix  3      [ ]         STREAM     CONNECTED     1014236  
+unix  3      [ ]         STREAM     CONNECTED     35647    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313002  
+unix  3      [ ]         STREAM     CONNECTED     1033453  
+unix  3      [ ]         STREAM     CONNECTED     43427    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     43237    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38888    /run/user/1000/bus
+unix  3      [ ]         SEQPACKET  CONNECTED     1221080  
+unix  3      [ ]         STREAM     CONNECTED     1053945  
+unix  3      [ ]         STREAM     CONNECTED     38703    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35566    
+unix  3      [ ]         SEQPACKET  CONNECTED     1209575  
+unix  3      [ ]         STREAM     CONNECTED     38031    
+unix  3      [ ]         STREAM     CONNECTED     25507    
+unix  3      [ ]         DGRAM                    26663    
+unix  3      [ ]         STREAM     CONNECTED     1209566  
+unix  3      [ ]         STREAM     CONNECTED     1178213  
+unix  3      [ ]         STREAM     CONNECTED     1025338  /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1015837  
+unix  3      [ ]         STREAM     CONNECTED     38931    
+unix  2      [ ]         STREAM     CONNECTED     1296442  
+unix  3      [ ]         STREAM     CONNECTED     43230    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     38887    
+unix  3      [ ]         STREAM     CONNECTED     37118    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1314068  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1221083  
+unix  3      [ ]         STREAM     CONNECTED     49381    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     41026    
+unix  3      [ ]         STREAM     CONNECTED     1754     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1182432  
+unix  3      [ ]         STREAM     CONNECTED     37123    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27681    /run/dbus/system_bus_socket
+unix  2      [ ]         SEQPACKET  CONNECTED     1177493  
+unix  3      [ ]         STREAM     CONNECTED     1025363  
+unix  3      [ ]         STREAM     CONNECTED     1015836  
+unix  3      [ ]         STREAM     CONNECTED     38015    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     35646    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313003  
+unix  3      [ ]         STREAM     CONNECTED     1175948  
+unix  3      [ ]         STREAM     CONNECTED     1033451  
+unix  3      [ ]         STREAM     CONNECTED     42352    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     40705    
+unix  3      [ ]         STREAM     CONNECTED     39659    
+unix  3      [ ]         STREAM     CONNECTED     1053944  
+unix  3      [ ]         STREAM     CONNECTED     41025    
+unix  3      [ ]         STREAM     CONNECTED     1209568  
+unix  3      [ ]         STREAM     CONNECTED     37122    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    26658    
+unix  3      [ ]         STREAM     CONNECTED     1017305  
+unix  3      [ ]         STREAM     CONNECTED     1015834  
+unix  3      [ ]         STREAM     CONNECTED     36396    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     43433    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38879    @/home/kira/.cache/ibus/dbus-uGjPXo3h
+unix  3      [ ]         STREAM     CONNECTED     37751    /run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    15301    
+unix  3      [ ]         STREAM     CONNECTED     1316504  
+unix  3      [ ]         STREAM     CONNECTED     1195394  
+unix  3      [ ]         STREAM     CONNECTED     1170508  
+unix  3      [ ]         STREAM     CONNECTED     46762    
+unix  3      [ ]         STREAM     CONNECTED     33200    /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1170497  
+unix  2      [ ]         SEQPACKET  CONNECTED     1037208  
+unix  3      [ ]         STREAM     CONNECTED     38457    
+unix  3      [ ]         STREAM     CONNECTED     1314721  /run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     1113551  
+unix  3      [ ]         STREAM     CONNECTED     1017306  
+unix  3      [ ]         STREAM     CONNECTED     1014239  
+unix  3      [ ]         STREAM     CONNECTED     38937    
+unix  3      [ ]         STREAM     CONNECTED     1310522  /run/user/1000/bus
+unix  2      [ ]         STREAM     CONNECTED     1175924  
+unix  3      [ ]         STREAM     CONNECTED     43229    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     38884    /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     39601    
+unix  3      [ ]         STREAM     CONNECTED     1315580  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1221084  
+unix  3      [ ]         STREAM     CONNECTED     1053940  
+unix  3      [ ]         STREAM     CONNECTED     52112    
+unix  3      [ ]         STREAM     CONNECTED     1170499  
+unix  3      [ ]         STREAM     CONNECTED     42045    
+unix  3      [ ]         STREAM     CONNECTED     1025362  
+unix  3      [ ]         SEQPACKET  CONNECTED     1026605  
+unix  3      [ ]         STREAM     CONNECTED     995361   
+unix  3      [ ]         STREAM     CONNECTED     1313932  /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     42360    
+unix  3      [ ]         STREAM     CONNECTED     40721    @/tmp/dbus-IBxRdJ42xx
+unix  3      [ ]         STREAM     CONNECTED     43231    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     1313299  
+unix  3      [ ]         STREAM     CONNECTED     1313937  /run/user/1000/bus
+unix  3      [ ]         STREAM     CONNECTED     1195407  
+unix  3      [ ]         STREAM     CONNECTED     41030    
+unix  3      [ ]         STREAM     CONNECTED     1209569  
+unix  3      [ ]         SEQPACKET  CONNECTED     1178211  
+unix  3      [ ]         STREAM     CONNECTED     37944    
+unix  3      [ ]         DGRAM                    26661    
+unix  3      [ ]         STREAM     CONNECTED     1017309  
+unix  3      [ ]         STREAM     CONNECTED     994331   /run/user/1000/bus
+unix  2      [ ]         DGRAM                    35735    
+unix  3      [ ]         STREAM     CONNECTED     34575    
+unix  3      [ ]         STREAM     CONNECTED     1311535  /run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     1033450  
+unix  3      [ ]         STREAM     CONNECTED     42361    @/home/kira/.cache/ibus/dbus-uGjPXo3h
+unix  3      [ ]         STREAM     CONNECTED     40720    
+unix  2      [ ]         DGRAM                    39603    
+kira@kira-Vostro-5568:~/Linux-basics-2020$ ping
+ping: usage error: Destination address required
+kira@kira-Vostro-5568:~/Linux-basics-2020$ man ping
+kira@kira-Vostro-5568:~/Linux-basics-2020$ ping google.com
+PING google.com (64.233.163.139) 56(84) bytes of data.
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=1 ttl=111 time=11.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=2 ttl=111 time=19.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=3 ttl=111 time=27.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=4 ttl=111 time=16.6 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=5 ttl=111 time=14.8 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=6 ttl=111 time=13.3 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=7 ttl=111 time=11.3 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=8 ttl=111 time=19.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=9 ttl=111 time=17.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=10 ttl=111 time=16.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=11 ttl=111 time=15.1 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=12 ttl=111 time=14.5 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=13 ttl=111 time=12.5 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=14 ttl=111 time=21.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=15 ttl=111 time=19.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=16 ttl=111 time=16.8 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=17 ttl=111 time=16.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=18 ttl=111 time=14.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=19 ttl=111 time=12.8 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=20 ttl=111 time=22.3 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=21 ttl=111 time=19.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=22 ttl=111 time=18.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=23 ttl=111 time=17.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=24 ttl=111 time=15.3 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=25 ttl=111 time=14.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=26 ttl=111 time=12.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=27 ttl=111 time=11.1 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=28 ttl=111 time=19.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=29 ttl=111 time=17.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=30 ttl=111 time=16.8 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=31 ttl=111 time=14.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=32 ttl=111 time=13.8 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=33 ttl=111 time=12.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=34 ttl=111 time=21.3 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=35 ttl=111 time=19.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=36 ttl=111 time=18.6 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=37 ttl=111 time=16.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=38 ttl=111 time=16.1 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=39 ttl=111 time=15.1 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=40 ttl=111 time=13.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=41 ttl=111 time=11.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=42 ttl=111 time=10.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=43 ttl=111 time=19.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=44 ttl=111 time=18.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=45 ttl=111 time=17.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=46 ttl=111 time=16.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=47 ttl=111 time=15.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=48 ttl=111 time=14.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=49 ttl=111 time=12.5 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=50 ttl=111 time=11.1 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=51 ttl=111 time=19.8 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=52 ttl=111 time=18.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=53 ttl=111 time=16.5 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=54 ttl=111 time=14.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=55 ttl=111 time=13.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=56 ttl=111 time=12.6 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=57 ttl=111 time=11.6 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=58 ttl=111 time=19.8 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=59 ttl=111 time=18.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=60 ttl=111 time=17.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=61 ttl=111 time=15.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=62 ttl=111 time=14.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=63 ttl=111 time=14.5 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=64 ttl=111 time=11.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=65 ttl=111 time=20.6 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=66 ttl=111 time=19.3 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=67 ttl=111 time=17.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=68 ttl=111 time=16.3 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=69 ttl=111 time=14.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=70 ttl=111 time=13.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=71 ttl=111 time=11.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=72 ttl=111 time=20.5 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=73 ttl=111 time=18.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=74 ttl=111 time=17.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=75 ttl=111 time=16.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=76 ttl=111 time=15.6 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=77 ttl=111 time=12.6 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=78 ttl=111 time=12.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=79 ttl=111 time=12.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=80 ttl=111 time=11.0 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=81 ttl=111 time=19.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=82 ttl=111 time=19.2 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=83 ttl=111 time=17.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=84 ttl=111 time=16.7 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=85 ttl=111 time=15.5 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=86 ttl=111 time=13.9 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=87 ttl=111 time=13.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=88 ttl=111 time=11.4 ms
+64 bytes from lj-in-f139.1e100.net (64.233.163.139): icmp_seq=89 ttl=111 time=19.6 ms
+^C
+--- google.com ping statistics ---
+89 packets transmitted, 89 received, 0% packet loss, time 88124ms
+rtt min/avg/max/mdev = 10.918/15.955/27.225/3.201 ms
+kira@kira-Vostro-5568:~/Linux-basics-2020$ traceroute
+
+Command 'traceroute' not found, but can be installed with:
+
+sudo apt install inetutils-traceroute  # version 2:1.9.4-11, or
+sudo apt install traceroute            # version 1:2.1.0-2
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo apt install traceroute
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  ant ant-optional antlr bnd groovy ivy java-wrappers javascript-common junit4
+  libantlr-java libaopalliance-java libapache-pom-java libasm-java
+  libatinject-jsr330-api-java libbcel-java libbcpg-java libbcprov-java
+  libbindex-java libbsf-java libbsh-java libcdi-api-java libcommons-cli-java
+  libcommons-codec-java libcommons-collections3-java libcommons-compress-java
+  libcommons-io-java libcommons-lang-java libcommons-lang3-java
+  libcommons-logging-java libcommons-parent-java libdd-plist-java
+  libdom4j-java libel-api-java libfelix-framework-java
+  libfelix-gogo-runtime-java libfelix-osgi-obr-java libfelix-resolver-java
+  libfindbugs-java libfprint-2-tod1 libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libgoogle-gson-java
+  libgpars-groovy-java libgradle-core-java libgradle-plugins-java
+  libguava-java libguice-java libhamcrest-java libhawtjni-runtime-java
+  libhttpclient-java libhttpcore-java libjansi-java libjansi-native-java
+  libjarjar-java libjatl-java libjavaewah-java libjaxen-java libjcifs-java
+  libjcip-annotations-java libjcommander-java libjcsp-java
+  libjformatstring-java libjgit-java libjline2-java libjna-java libjna-jni
+  libjs-jquery libjsch-java libjsoup-java libjsp-api-java libjsr166y-java
+  libjsr305-java libjzlib-java libkryo-java libkxml2-java liblogback-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libminlog-java libmultiverse-core-java
+  libnative-platform-java libnative-platform-jni libnekohtml-java
+  libobjenesis-java libosgi-annotation-java libosgi-compendium-java
+  libosgi-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-container-default-java
+  libplexus-container-default1.5-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libpolyglot-maven-java
+  libqdox-java libreflectasm-java librhino-java libservlet-api-java
+  libservlet3.1-java libsimple-http-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java libwagon-http-java
+  libwagon-provider-api-java libwebsocket-api-java libxbean-reflect-java
+  libxerces2-java libxml-commons-external-java libxml-commons-resolver1.1-java
+  libxpp3-java libxstream-java libxz-java libyaml-snake-java testng
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  traceroute
+0 upgraded, 1 newly installed, 0 to remove and 16 not upgraded.
+Need to get 45,4 kB of archives.
+After this operation, 152 kB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 traceroute amd64 1:2.1.0-2 [45,4 kB]
+Fetched 45,4 kB in 1s (59,2 kB/s)     
+Selecting previously unselected package traceroute.
+(Reading database ... 194188 files and directories currently installed.)
+Preparing to unpack .../traceroute_1%3a2.1.0-2_amd64.deb ...
+Unpacking traceroute (1:2.1.0-2) ...
+Setting up traceroute (1:2.1.0-2) ...
+update-alternatives: using /usr/bin/traceroute.db to provide /usr/bin/traceroute
+ (traceroute) in auto mode
+update-alternatives: using /usr/bin/lft.db to provide /usr/bin/lft (lft) in auto
+ mode
+update-alternatives: using /usr/bin/traceproto.db to provide /usr/bin/traceproto
+ (traceproto) in auto mode
+update-alternatives: using /usr/sbin/tcptraceroute.db to provide /usr/sbin/tcptr
+aceroute (tcptraceroute) in auto mode
+Processing triggers for man-db (2.9.1-1) ...
+kira@kira-Vostro-5568:~/Linux-basics-2020$ traceroute
+Usage:
+  traceroute [ -46dFITnreAUDV ] [ -f first_ttl ] [ -g gate,... ] [ -i device ] [ -m max_ttl ] [ -N squeries ] [ -p port ] [ -t tos ] [ -l flow_label ] [ -w MAX,HERE,NEAR ] [ -q nqueries ] [ -s src_addr ] [ -z sendwait ] [ --fwmark=num ] host [ packetlen ]
+Options:
+  -4                          Use IPv4
+  -6                          Use IPv6
+  -d  --debug                 Enable socket level debugging
+  -F  --dont-fragment         Do not fragment packets
+  -f first_ttl  --first=first_ttl
+                              Start from the first_ttl hop (instead from 1)
+  -g gate,...  --gateway=gate,...
+                              Route packets through the specified gateway
+                              (maximum 8 for IPv4 and 127 for IPv6)
+  -I  --icmp                  Use ICMP ECHO for tracerouting
+  -T  --tcp                   Use TCP SYN for tracerouting (default port is 80)
+  -i device  --interface=device
+                              Specify a network interface to operate with
+  -m max_ttl  --max-hops=max_ttl
+                              Set the max number of hops (max TTL to be
+                              reached). Default is 30
+  -N squeries  --sim-queries=squeries
+                              Set the number of probes to be tried
+                              simultaneously (default is 16)
+  -n                          Do not resolve IP addresses to their domain names
+  -p port  --port=port        Set the destination port to use. It is either
+                              initial udp port value for "default" method
+                              (incremented by each probe, default is 33434), or
+                              initial seq for "icmp" (incremented as well,
+                              default from 1), or some constant destination
+                              port for other methods (with default of 80 for
+                              "tcp", 53 for "udp", etc.)
+  -t tos  --tos=tos           Set the TOS (IPv4 type of service) or TC (IPv6
+                              traffic class) value for outgoing packets
+  -l flow_label  --flowlabel=flow_label
+                              Use specified flow_label for IPv6 packets
+  -w MAX,HERE,NEAR  --wait=MAX,HERE,NEAR
+                              Wait for a probe no more than HERE (default 3)
+                              times longer than a response from the same hop,
+                              or no more than NEAR (default 10) times than some
+                              next hop, or MAX (default 5.0) seconds (float
+                              point values allowed too)
+  -q nqueries  --queries=nqueries
+                              Set the number of probes per each hop. Default is
+                              3
+  -r                          Bypass the normal routing and send directly to a
+                              host on an attached network
+  -s src_addr  --source=src_addr
+                              Use source src_addr for outgoing packets
+  -z sendwait  --sendwait=sendwait
+                              Minimal time interval between probes (default 0).
+                              If the value is more than 10, then it specifies a
+                              number in milliseconds, else it is a number of
+                              seconds (float point values allowed too)
+  -e  --extensions            Show ICMP extensions (if present), including MPLS
+  -A  --as-path-lookups       Perform AS path lookups in routing registries and
+                              print results directly after the corresponding
+                              addresses
+  -M name  --module=name      Use specified module (either builtin or external)
+                              for traceroute operations. Most methods have
+                              their shortcuts (`-I' means `-M icmp' etc.)
+  -O OPTS,...  --options=OPTS,...
+                              Use module-specific option OPTS for the
+                              traceroute module. Several OPTS allowed,
+                              separated by comma. If OPTS is "help", print info
+                              about available options
+  --sport=num                 Use source port num for outgoing packets. Implies
+                              `-N 1'
+  --fwmark=num                Set firewall mark for outgoing packets
+  -U  --udp                   Use UDP to particular port for tracerouting
+                              (instead of increasing the port per each probe),
+                              default port is 53
+  -UL                         Use UDPLITE for tracerouting (default dest port
+                              is 53)
+  -D  --dccp                  Use DCCP Request for tracerouting (default port
+                              is 33434)
+  -P prot  --protocol=prot    Use raw packet of protocol prot for tracerouting
+  --mtu                       Discover MTU along the path being traced. Implies
+                              `-F -N 1'
+  --back                      Guess the number of hops in the backward path and
+                              print if it differs
+  -V  --version               Print version info and exit
+  --help                      Read this help and exit
+
+Arguments:
++     host          The host to traceroute to
+      packetlen     The full packet length (default is the length of an IP
+                    header plus 40). Can be ignored or increased to a minimal
+                    allowed value
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo traceroute 8.8.8.8
+traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  ip92-101-243-1.onego.ru (92.101.243.1)  5.626 ms  5.620 ms  5.918 ms
+ 3  ge12-0-1g.ERX1440-1-PSKV.nwtelecom.ru (212.48.194.242)  6.582 ms  6.494 ms  6.475 ms
+ 4  188.254.2.0 (188.254.2.0)  14.535 ms  6.776 ms  14.775 ms
+ 5  92.50.229.138 (92.50.229.138)  6.991 ms  7.235 ms  7.904 ms
+ 6  74.125.244.132 (74.125.244.132)  7.171 ms  15.024 ms 74.125.244.180 (74.125.244.180)  13.704 ms
+ 7  72.14.232.85 (72.14.232.85)  14.436 ms  14.445 ms 172.253.64.49 (172.253.64.49)  19.337 ms
+ 8  72.14.238.165 (72.14.238.165)  18.956 ms 172.253.70.47 (172.253.70.47)  21.669 ms 172.253.51.239 (172.253.51.239)  21.863 ms
+ 9  209.85.251.41 (209.85.251.41)  17.428 ms * 172.253.51.237 (172.253.51.237)  18.899 ms
+10  * * *
+11  * * *
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  dns.google (8.8.8.8)  13.755 ms * *
+kira@kira-Vostro-5568:~/Linux-basics-2020$ host
+Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
+            [-R number] [-m flag] hostname [server]
+       -a is equivalent to -v -t ANY
+       -A is like -a but omits RRSIG, NSEC, NSEC3
+       -c specifies query class for non-IN data
+       -C compares SOA records on authoritative nameservers
+       -d is equivalent to -v
+       -l lists all hosts in a domain, using AXFR
+       -m set memory debugging flag (trace|record|usage)
+       -N changes the number of dots allowed before root lookup is done
+       -r disables recursive processing
+       -R specifies number of retries for UDP packets
+       -s a SERVFAIL response should stop query
+       -t specifies the query type
+       -T enables TCP/IP mode
+       -U enables UDP mode
+       -v enables verbose output
+       -V print version number and exit
+       -w specifies to wait forever for a reply
+       -W specifies how long to wait for a reply
+       -4 use IPv4 query transport only
+       -6 use IPv6 query transport only
+kira@kira-Vostro-5568:~/Linux-basics-2020$ host linuxkiruha.ru
+Host linuxkiruha.ru not found: 3(NXDOMAIN)
+kira@kira-Vostro-5568:~/Linux-basics-2020$ host linuxkiruha.ru
+Host linuxkiruha.ru not found: 3(NXDOMAIN)
+kira@kira-Vostro-5568:~/Linux-basics-2020$ host linuxcenter.ru
+linuxcenter.ru has address 185.114.245.107
+linuxcenter.ru mail is handled by 10 mx.yandex.net.
+kira@kira-Vostro-5568:~/Linux-basics-2020$ dig
+
+; <<>> DiG 9.16.1-Ubuntu <<>>
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20673
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;.				IN	NS
+
+;; ANSWER SECTION:
+.			14400	IN	NS	d.root-servers.net.
+.			14400	IN	NS	c.root-servers.net.
+.			14400	IN	NS	e.root-servers.net.
+.			14400	IN	NS	m.root-servers.net.
+.			14400	IN	NS	i.root-servers.net.
+.			14400	IN	NS	f.root-servers.net.
+.			14400	IN	NS	h.root-servers.net.
+.			14400	IN	NS	b.root-servers.net.
+.			14400	IN	NS	a.root-servers.net.
+.			14400	IN	NS	j.root-servers.net.
+.			14400	IN	NS	l.root-servers.net.
+.			14400	IN	NS	g.root-servers.net.
+.			14400	IN	NS	k.root-servers.net.
+
+;; Query time: 15 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Вс окт 18 19:12:36 MSK 2020
+;; MSG SIZE  rcvd: 239
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ man dig
+kira@kira-Vostro-5568:~/Linux-basics-2020$ dig linux.org
+
+; <<>> DiG 9.16.1-Ubuntu <<>> linux.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30827
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;linux.org.			IN	A
+
+;; ANSWER SECTION:
+linux.org.		300	IN	A	172.67.153.210
+linux.org.		300	IN	A	104.27.167.219
+linux.org.		300	IN	A	104.27.166.219
+
+;; Query time: 31 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Вс окт 18 19:13:31 MSK 2020
+;; MSG SIZE  rcvd: 86
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ whois
+
+Command 'whois' not found, but can be installed with:
+
+sudo apt install whois
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo apt install whois
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  ant ant-optional antlr bnd groovy ivy java-wrappers javascript-common junit4
+  libantlr-java libaopalliance-java libapache-pom-java libasm-java
+  libatinject-jsr330-api-java libbcel-java libbcpg-java libbcprov-java
+  libbindex-java libbsf-java libbsh-java libcdi-api-java libcommons-cli-java
+  libcommons-codec-java libcommons-collections3-java libcommons-compress-java
+  libcommons-io-java libcommons-lang-java libcommons-lang3-java
+  libcommons-logging-java libcommons-parent-java libdd-plist-java
+  libdom4j-java libel-api-java libfelix-framework-java
+  libfelix-gogo-runtime-java libfelix-osgi-obr-java libfelix-resolver-java
+  libfindbugs-java libfprint-2-tod1 libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libgoogle-gson-java
+  libgpars-groovy-java libgradle-core-java libgradle-plugins-java
+  libguava-java libguice-java libhamcrest-java libhawtjni-runtime-java
+  libhttpclient-java libhttpcore-java libjansi-java libjansi-native-java
+  libjarjar-java libjatl-java libjavaewah-java libjaxen-java libjcifs-java
+  libjcip-annotations-java libjcommander-java libjcsp-java
+  libjformatstring-java libjgit-java libjline2-java libjna-java libjna-jni
+  libjs-jquery libjsch-java libjsoup-java libjsp-api-java libjsr166y-java
+  libjsr305-java libjzlib-java libkryo-java libkxml2-java liblogback-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libminlog-java libmultiverse-core-java
+  libnative-platform-java libnative-platform-jni libnekohtml-java
+  libobjenesis-java libosgi-annotation-java libosgi-compendium-java
+  libosgi-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-container-default-java
+  libplexus-container-default1.5-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libpolyglot-maven-java
+  libqdox-java libreflectasm-java librhino-java libservlet-api-java
+  libservlet3.1-java libsimple-http-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java libwagon-http-java
+  libwagon-provider-api-java libwebsocket-api-java libxbean-reflect-java
+  libxerces2-java libxml-commons-external-java libxml-commons-resolver1.1-java
+  libxpp3-java libxstream-java libxz-java libyaml-snake-java testng
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  whois
+0 upgraded, 1 newly installed, 0 to remove and 16 not upgraded.
+Need to get 44,7 kB of archives.
+After this operation, 279 kB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu focal/main amd64 whois amd64 5.5.6 [44,7 kB]
+Fetched 44,7 kB in 1s (43,7 kB/s)
+Selecting previously unselected package whois.
+(Reading database ... 194208 files and directories currently installed.)
+Preparing to unpack .../archives/whois_5.5.6_amd64.deb ...
+Unpacking whois (5.5.6) ...
+Setting up whois (5.5.6) ...
+Processing triggers for man-db (2.9.1-1) ...
+kira@kira-Vostro-5568:~/Linux-basics-2020$ man whois
+kira@kira-Vostro-5568:~/Linux-basics-2020$ whois 8.8.8.8
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2020, American Registry for Internet Numbers, Ltd.
+#
+
+
+
+# start
+
+NetRange:       8.0.0.0 - 8.127.255.255
+CIDR:           8.0.0.0/9
+NetName:        LVLT-ORG-8-8
+NetHandle:      NET-8-0-0-0-1
+Parent:         NET8 (NET-8-0-0-0-0)
+NetType:        Direct Allocation
+OriginAS:       
+Organization:   Level 3 Parent, LLC (LPL-141)
+RegDate:        1992-12-01
+Updated:        2018-04-23
+Ref:            https://rdap.arin.net/registry/ip/8.0.0.0
+
+
+
+OrgName:        Level 3 Parent, LLC
+OrgId:          LPL-141
+Address:        100 CenturyLink Drive
+City:           Monroe
+StateProv:      LA
+PostalCode:     71203
+Country:        US
+RegDate:        2018-02-06
+Updated:        2020-08-11
+Comment:        ADDRESSES WITHIN THIS BLOCK ARE NON-PORTABLE ANY ISP ANNOUNCING PORTIONS WITHIN OUR RANGES SHOULD NOT RELY ON PRESENTED LOA'S UNLESS THOSE RANGES ARE ALSO ANNOUNCED TO A CENTURYLINK ASN.
+Comment:        
+Comment:        All abuse reports MUST include: 
+Comment:        * src IP 
+Comment:        * dest IP (your IP) 
+Comment:        * dest port 
+Comment:        * Accurate date/timestamp and timezone of activity 
+Comment:        * Intensity/frequency (short log extracts) 
+Comment:        * Your contact details (phone and email) 
+Comment:        Without these we will be unable to identify the correct owner of the IP address at that point in time.
+Comment:        
+Comment:        For subpoena or court order please fax 844.254.5800 or refer to our Law Enforcement Support page http://www.centurylink.com/static/Pages/AboutUs/Legal/LawEnforcement/
+Ref:            https://rdap.arin.net/registry/entity/LPL-141
+
+
+OrgTechHandle: IPADD5-ARIN
+OrgTechName:   ipaddressing
+OrgTechPhone:  +1-877-453-8353 
+OrgTechEmail:  ipaddressing@level3.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/IPADD5-ARIN
+
+OrgAbuseHandle: IPADD5-ARIN
+OrgAbuseName:   ipaddressing
+OrgAbusePhone:  +1-877-453-8353 
+OrgAbuseEmail:  ipaddressing@level3.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/IPADD5-ARIN
+
+# end
+
+
+# start
+
+NetRange:       8.8.8.0 - 8.8.8.255
+CIDR:           8.8.8.0/24
+NetName:        LVLT-GOGL-8-8-8
+NetHandle:      NET-8-8-8-0-1
+Parent:         LVLT-ORG-8-8 (NET-8-0-0-0-1)
+NetType:        Reallocated
+OriginAS:       
+Organization:   Google LLC (GOGL)
+RegDate:        2014-03-14
+Updated:        2014-03-14
+Ref:            https://rdap.arin.net/registry/ip/8.8.8.0
+
+
+
+OrgName:        Google LLC
+OrgId:          GOGL
+Address:        1600 Amphitheatre Parkway
+City:           Mountain View
+StateProv:      CA
+PostalCode:     94043
+Country:        US
+RegDate:        2000-03-30
+Updated:        2019-10-31
+Comment:        Please note that the recommended way to file abuse complaints are located in the following links. 
+Comment:        
+Comment:        To report abuse and illegal activity: https://www.google.com/contact/
+Comment:        
+Comment:        For legal requests: http://support.google.com/legal 
+Comment:        
+Comment:        Regards, 
+Comment:        The Google Team
+Ref:            https://rdap.arin.net/registry/entity/GOGL
+
+
+OrgTechHandle: ZG39-ARIN
+OrgTechName:   Google LLC
+OrgTechPhone:  +1-650-253-0000 
+OrgTechEmail:  arin-contact@google.com
+OrgTechRef:    https://rdap.arin.net/registry/entity/ZG39-ARIN
+
+OrgAbuseHandle: ABUSE5250-ARIN
+OrgAbuseName:   Abuse
+OrgAbusePhone:  +1-650-253-0000 
+OrgAbuseEmail:  network-abuse@google.com
+OrgAbuseRef:    https://rdap.arin.net/registry/entity/ABUSE5250-ARIN
+
+# end
+
+
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/resources/registry/whois/tou/
+#
+# If you see inaccuracies in the results, please report at
+# https://www.arin.net/resources/registry/whois/inaccuracy_reporting/
+#
+# Copyright 1997-2020, American Registry for Internet Numbers, Ltd.
+#
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ nmap
+
+Command 'nmap' not found, but can be installed with:
+
+sudo snap install nmap  # version 7.90, or
+sudo apt  install nmap  # version 7.80+dfsg1-2build1
+
+See 'snap info nmap' for additional versions.
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo apt  install nmap
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  ant ant-optional antlr bnd groovy ivy java-wrappers javascript-common junit4
+  libantlr-java libaopalliance-java libapache-pom-java libasm-java
+  libatinject-jsr330-api-java libbcel-java libbcpg-java libbcprov-java
+  libbindex-java libbsf-java libbsh-java libcdi-api-java libcommons-cli-java
+  libcommons-codec-java libcommons-collections3-java libcommons-compress-java
+  libcommons-io-java libcommons-lang-java libcommons-lang3-java
+  libcommons-logging-java libcommons-parent-java libdd-plist-java
+  libdom4j-java libel-api-java libfelix-framework-java
+  libfelix-gogo-runtime-java libfelix-osgi-obr-java libfelix-resolver-java
+  libfindbugs-java libfprint-2-tod1 libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libgoogle-gson-java
+  libgpars-groovy-java libgradle-core-java libgradle-plugins-java
+  libguava-java libguice-java libhamcrest-java libhawtjni-runtime-java
+  libhttpclient-java libhttpcore-java libjansi-java libjansi-native-java
+  libjarjar-java libjatl-java libjavaewah-java libjaxen-java libjcifs-java
+  libjcip-annotations-java libjcommander-java libjcsp-java
+  libjformatstring-java libjgit-java libjline2-java libjna-java libjna-jni
+  libjs-jquery libjsch-java libjsoup-java libjsp-api-java libjsr166y-java
+  libjsr305-java libjzlib-java libkryo-java libkxml2-java liblogback-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libminlog-java libmultiverse-core-java
+  libnative-platform-java libnative-platform-jni libnekohtml-java
+  libobjenesis-java libosgi-annotation-java libosgi-compendium-java
+  libosgi-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-container-default-java
+  libplexus-container-default1.5-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libpolyglot-maven-java
+  libqdox-java libreflectasm-java librhino-java libservlet-api-java
+  libservlet3.1-java libsimple-http-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java libwagon-http-java
+  libwagon-provider-api-java libwebsocket-api-java libxbean-reflect-java
+  libxerces2-java libxml-commons-external-java libxml-commons-resolver1.1-java
+  libxpp3-java libxstream-java libxz-java libyaml-snake-java testng
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libblas3 liblinear4 lua-lpeg nmap-common
+Suggested packages:
+  liblinear-tools liblinear-dev ncat ndiff zenmap
+The following NEW packages will be installed:
+  libblas3 liblinear4 lua-lpeg nmap nmap-common
+0 upgraded, 5 newly installed, 0 to remove and 16 not upgraded.
+Need to get 5 553 kB of archives.
+After this operation, 26,3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ru.archive.ubuntu.com/ubuntu focal/main amd64 libblas3 amd64 3.9.0-1build1 [142 kB]
+Get:2 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 liblinear4 amd64 2.3.0+dfsg-3build1 [41,7 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 lua-lpeg amd64 1.0.2-1 [31,4 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 nmap-common all 7.80+dfsg1-2build1 [3 676 kB]
+Get:5 http://ru.archive.ubuntu.com/ubuntu focal/universe amd64 nmap amd64 7.80+dfsg1-2build1 [1 662 kB]
+Fetched 5 553 kB in 1s (4 081 kB/s)
+Selecting previously unselected package libblas3:amd64.
+(Reading database ... 194217 files and directories currently installed.)
+Preparing to unpack .../libblas3_3.9.0-1build1_amd64.deb ...
+Unpacking libblas3:amd64 (3.9.0-1build1) ...
+Selecting previously unselected package liblinear4:amd64.
+Preparing to unpack .../liblinear4_2.3.0+dfsg-3build1_amd64.deb ...
+Unpacking liblinear4:amd64 (2.3.0+dfsg-3build1) ...
+Selecting previously unselected package lua-lpeg:amd64.
+Preparing to unpack .../lua-lpeg_1.0.2-1_amd64.deb ...
+Unpacking lua-lpeg:amd64 (1.0.2-1) ...
+Selecting previously unselected package nmap-common.
+Preparing to unpack .../nmap-common_7.80+dfsg1-2build1_all.deb ...
+Unpacking nmap-common (7.80+dfsg1-2build1) ...
+Selecting previously unselected package nmap.
+Preparing to unpack .../nmap_7.80+dfsg1-2build1_amd64.deb ...
+Unpacking nmap (7.80+dfsg1-2build1) ...
+Setting up lua-lpeg:amd64 (1.0.2-1) ...
+Setting up libblas3:amd64 (3.9.0-1build1) ...
+update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provid
+e /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto
+ mode
+Setting up nmap-common (7.80+dfsg1-2build1) ...
+Setting up liblinear4:amd64 (2.3.0+dfsg-3build1) ...
+Setting up nmap (7.80+dfsg1-2build1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.1) ...
+kira@kira-Vostro-5568:~/Linux-basics-2020$ nmap google.com
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-10-18 19:18 MSK
+Nmap scan report for google.com (64.233.163.102)
+Host is up (0.013s latency).
+Other addresses for google.com (not scanned): 64.233.163.139 64.233.163.100 64.233.163.101 64.233.163.138 64.233.163.113 2a00:1450:4010:c06::66 2a00:1450:4010:c06::8a 2a00:1450:4010:c06::65 2a00:1450:4010:c06::8b
+rDNS record for 64.233.163.102: lj-in-f102.1e100.net
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 4.60 seconds
+kira@kira-Vostro-5568:~/Linux-basics-2020$ tcpdump
+tcpdump: wlp1s0: You don't have permission to capture on that device
+(socket: Operation not permitted)
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo tcpdump
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on wlp1s0, link-type EN10MB (Ethernet), capture size 262144 bytes
+19:19:23.829993 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [P.], seq 566984174:566984343, ack 1407214697, win 501, options [nop,nop,TS val 1536932568 ecr 2889896432], length 169
+19:19:23.831796 IP kira-vostro-5568.53568 > csp3.zte.com.cn.domain: 45858+ PTR? 155.222.194.173.in-addr.arpa. (46)
+19:19:23.837483 IP kira-vostro-5568.42616 > li-in-f94.1e100.net.http: Flags [.], ack 2343599606, win 501, options [nop,nop,TS val 3588959325 ecr 1886905687], length 0
+19:19:23.840113 IP csp3.zte.com.cn.domain > kira-vostro-5568.53568: 45858 1/0/0 PTR lo-in-f155.1e100.net. (80)
+19:19:23.841270 IP kira-vostro-5568.40917 > csp3.zte.com.cn.domain: 15173+ PTR? 11.0.168.192.in-addr.arpa. (43)
+19:19:23.847056 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [.], ack 169, win 498, options [nop,nop,TS val 2889926347 ecr 1536932568], length 0
+19:19:23.847847 IP csp3.zte.com.cn.domain > kira-vostro-5568.40917: 15173* 1/0/0 PTR kira-vostro-5568. (73)
+19:19:23.849196 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 1:69, ack 169, win 498, options [nop,nop,TS val 2889926349 ecr 1536932568], length 68
+19:19:23.849296 IP kira-vostro-5568.38246 > csp3.zte.com.cn.domain: 1534+ PTR? 1.0.168.192.in-addr.arpa. (42)
+19:19:23.849415 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 69:142, ack 169, win 498, options [nop,nop,TS val 2889926349 ecr 1536932568], length 73
+19:19:23.849433 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 142:173, ack 169, win 498, options [nop,nop,TS val 2889926349 ecr 1536932568], length 31
+19:19:23.849442 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 173:212, ack 169, win 498, options [nop,nop,TS val 2889926349 ecr 1536932568], length 39
+19:19:23.850130 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [.], ack 212, win 501, options [nop,nop,TS val 1536932588 ecr 2889926349], length 0
+19:19:23.850195 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [P.], seq 169:208, ack 212, win 501, options [nop,nop,TS val 1536932588 ecr 2889926349], length 39
+19:19:23.855842 IP li-in-f94.1e100.net.http > kira-vostro-5568.42616: Flags [.], ack 1, win 261, options [nop,nop,TS val 1886915927 ecr 3588908298], length 0
+19:19:23.857514 IP csp3.zte.com.cn.domain > kira-vostro-5568.38246: 1534* 3/0/0 PTR csp3.zte.com.cn., PTR csp2.zte.com.cn., PTR csp1.zte.com.cn. (129)
+19:19:23.859079 IP kira-vostro-5568.49032 > csp3.zte.com.cn.domain: 4968+ PTR? 94.162.233.64.in-addr.arpa. (44)
+19:19:23.866650 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [P.], seq 208:377, ack 212, win 501, options [nop,nop,TS val 1536932604 ecr 2889926349], length 169
+19:19:23.871122 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [P.], seq 377:546, ack 212, win 501, options [nop,nop,TS val 1536932609 ecr 2889926349], length 169
+19:19:23.871633 IP csp3.zte.com.cn.domain > kira-vostro-5568.49032: 4968 1/0/0 PTR li-in-f94.1e100.net. (77)
+19:19:23.871902 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [.], ack 208, win 498, options [nop,nop,TS val 2889926372 ecr 1536932588], length 0
+19:19:23.886543 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [.], ack 377, win 509, options [nop,nop,TS val 2889926387 ecr 1536932604], length 0
+19:19:23.886879 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [.], ack 546, win 520, options [nop,nop,TS val 2889926387 ecr 1536932609], length 0
+19:19:23.888689 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 212:280, ack 546, win 520, options [nop,nop,TS val 2889926389 ecr 1536932609], length 68
+19:19:23.888874 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 280:353, ack 546, win 520, options [nop,nop,TS val 2889926389 ecr 1536932609], length 73
+19:19:23.888890 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 353:384, ack 546, win 520, options [nop,nop,TS val 2889926389 ecr 1536932609], length 31
+19:19:23.888895 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 384:423, ack 546, win 520, options [nop,nop,TS val 2889926389 ecr 1536932609], length 39
+19:19:23.889034 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 423:491, ack 546, win 520, options [nop,nop,TS val 2889926389 ecr 1536932609], length 68
+19:19:23.889351 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [P.], seq 546:585, ack 491, win 501, options [nop,nop,TS val 1536932627 ecr 2889926389], length 39
+19:19:23.889366 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 491:564, ack 546, win 520, options [nop,nop,TS val 2889926389 ecr 1536932609], length 73
+19:19:23.889374 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 564:595, ack 546, win 520, options [nop,nop,TS val 2889926389 ecr 1536932609], length 31
+19:19:23.889581 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [.], ack 595, win 501, options [nop,nop,TS val 1536932627 ecr 2889926389], length 0
+19:19:23.912014 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [.], ack 585, win 520, options [nop,nop,TS val 2889926412 ecr 1536932627], length 0
+19:19:24.864473 IP kira-vostro-5568.52228 > lt-in-f94.1e100.net.https: Flags [P.], seq 2073432811:2073432850, ack 3896915494, win 2667, options [nop,nop,TS val 1818159362 ecr 2506696863], length 39
+19:19:24.864577 IP kira-vostro-5568.55294 > 104.26.2.23.https: Flags [P.], seq 1886751778:1886751817, ack 566717785, win 2254, length 39
+19:19:24.864634 IP kira-vostro-5568.44500 > lg-in-f95.1e100.net.https: Flags [P.], seq 2203695431:2203695470, ack 863280176, win 501, options [nop,nop,TS val 394163554 ecr 2077161756], length 39
+19:19:24.864683 IP kira-vostro-5568.49840 > lo-in-f102.1e100.net.https: Flags [P.], seq 2907429529:2907429568, ack 2728870083, win 1374, options [nop,nop,TS val 2124770228 ecr 1752210173], length 39
+19:19:24.864801 IP kira-vostro-5568.32986 > lh-in-f97.1e100.net.https: Flags [P.], seq 494768308:494768347, ack 348607452, win 612, options [nop,nop,TS val 1510635262 ecr 74198139], length 39
+19:19:24.865382 IP kira-vostro-5568.47551 > csp3.zte.com.cn.domain: 54555+ PTR? 94.14.177.108.in-addr.arpa. (44)
+19:19:24.871199 IP csp3.zte.com.cn.domain > kira-vostro-5568.47551: 54555 1/0/0 PTR lt-in-f94.1e100.net. (77)
+19:19:24.871465 IP 104.26.2.23.https > kira-vostro-5568.55294: Flags [P.], seq 1:40, ack 39, win 74, length 39
+19:19:24.872602 IP kira-vostro-5568.46825 > csp3.zte.com.cn.domain: 41120+ PTR? 23.2.26.104.in-addr.arpa. (42)
+19:19:24.874051 IP lg-in-f95.1e100.net.https > kira-vostro-5568.44500: Flags [.], ack 39, win 269, options [nop,nop,TS val 2077220566 ecr 394163554], length 0
+19:19:24.874077 IP lg-in-f95.1e100.net.https > kira-vostro-5568.44500: Flags [P.], seq 1:40, ack 39, win 269, options [nop,nop,TS val 2077220566 ecr 394163554], length 39
+19:19:24.874329 IP lt-in-f94.1e100.net.https > kira-vostro-5568.52228: Flags [.], ack 39, win 281, options [nop,nop,TS val 2506750962 ecr 1818159362], length 0
+19:19:24.874616 IP lt-in-f94.1e100.net.https > kira-vostro-5568.52228: Flags [P.], seq 1:40, ack 39, win 281, options [nop,nop,TS val 2506750962 ecr 1818159362], length 39
+19:19:24.875165 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [P.], seq 585:753, ack 595, win 501, options [nop,nop,TS val 1536933613 ecr 2889926412], length 168
+19:19:24.875213 IP lh-in-f97.1e100.net.https > kira-vostro-5568.32986: Flags [.], ack 39, win 272, options [nop,nop,TS val 74256894 ecr 1510635262], length 0
+19:19:24.875490 IP lh-in-f97.1e100.net.https > kira-vostro-5568.32986: Flags [P.], seq 1:40, ack 39, win 272, options [nop,nop,TS val 74256894 ecr 1510635262], length 39
+19:19:24.875755 IP lo-in-f102.1e100.net.https > kira-vostro-5568.49840: Flags [.], ack 39, win 347, options [nop,nop,TS val 1752268218 ecr 2124770228], length 0
+19:19:24.875771 IP lo-in-f102.1e100.net.https > kira-vostro-5568.49840: Flags [P.], seq 1:40, ack 39, win 347, options [nop,nop,TS val 1752268219 ecr 2124770228], length 39
+19:19:24.896528 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [.], ack 753, win 531, options [nop,nop,TS val 2889927397 ecr 1536933613], length 0
+19:19:24.898647 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 595:663, ack 753, win 531, options [nop,nop,TS val 2889927399 ecr 1536933613], length 68
+19:19:24.898948 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 663:736, ack 753, win 531, options [nop,nop,TS val 2889927399 ecr 1536933613], length 73
+19:19:24.898963 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 736:767, ack 753, win 531, options [nop,nop,TS val 2889927399 ecr 1536933613], length 31
+19:19:24.898973 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [P.], seq 767:806, ack 753, win 531, options [nop,nop,TS val 2889927399 ecr 1536933613], length 39
+19:19:24.899694 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [.], ack 806, win 501, options [nop,nop,TS val 1536933638 ecr 2889927399], length 0
+19:19:24.899796 IP kira-vostro-5568.52224 > lo-in-f155.1e100.net.https: Flags [P.], seq 753:792, ack 806, win 501, options [nop,nop,TS val 1536933638 ecr 2889927399], length 39
+19:19:24.917466 IP kira-vostro-5568.55294 > 104.26.2.23.https: Flags [.], ack 40, win 2254, length 0
+19:19:24.917509 IP kira-vostro-5568.49840 > lo-in-f102.1e100.net.https: Flags [.], ack 40, win 1374, options [nop,nop,TS val 2124770280 ecr 1752268219], length 0
+19:19:24.917518 IP kira-vostro-5568.32986 > lh-in-f97.1e100.net.https: Flags [.], ack 40, win 612, options [nop,nop,TS val 1510635314 ecr 74256894], length 0
+19:19:24.917526 IP kira-vostro-5568.52228 > lt-in-f94.1e100.net.https: Flags [.], ack 40, win 2667, options [nop,nop,TS val 1818159415 ecr 2506750962], length 0
+19:19:24.917534 IP kira-vostro-5568.44500 > lg-in-f95.1e100.net.https: Flags [.], ack 40, win 501, options [nop,nop,TS val 394163607 ecr 2077220566], length 0
+19:19:24.921901 IP lo-in-f155.1e100.net.https > kira-vostro-5568.52224: Flags [.], ack 792, win 531, options [nop,nop,TS val 2889927422 ecr 1536933638], length 0
+19:19:25.011256 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48948: Flags [P.], seq 1843634725:1843634749, ack 2973209600, win 272, options [nop,nop,TS val 3798053792 ecr 2644686283], length 24
+19:19:25.011285 IP kira-vostro-5568.48948 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], ack 24, win 501, options [nop,nop,TS val 2644706350 ecr 3798053792], length 0
+19:19:25.741101 IP kira-vostro-5568.56812 > csp3.zte.com.cn.domain: 63252+ PTR? 95.165.233.64.in-addr.arpa. (44)
+19:19:25.752678 IP kira-vostro-5568.53397 > csp3.zte.com.cn.domain: 40358+ PTR? 102.222.194.173.in-addr.arpa. (46)
+19:19:25.763144 IP kira-vostro-5568.52356 > csp3.zte.com.cn.domain: 45546+ PTR? 97.161.233.64.in-addr.arpa. (44)
+19:19:25.773493 IP kira-vostro-5568.36805 > csp3.zte.com.cn.domain: 60207+ PTR? 250.73.20.2.in-addr.arpa. (42)
+19:19:25.781546 IP csp3.zte.com.cn.domain > kira-vostro-5568.36805: 60207 1/0/0 PTR a2-20-73-250.deploy.static.akamaitechnologies.com. (105)
+19:19:25.865337 IP kira-vostro-5568.37562 > lg-in-f94.1e100.net.https: Flags [P.], seq 1903534103:1903534142, ack 1410730394, win 501, options [nop,nop,TS val 113147211 ecr 411707585], length 39
+19:19:25.866181 IP kira-vostro-5568.41911 > csp3.zte.com.cn.domain: 64918+ PTR? 94.165.233.64.in-addr.arpa. (44)
+19:19:25.875965 IP lg-in-f94.1e100.net.https > kira-vostro-5568.37562: Flags [.], ack 39, win 273, options [nop,nop,TS val 411766485 ecr 113147211], length 0
+19:19:25.881557 IP lg-in-f94.1e100.net.https > kira-vostro-5568.37562: Flags [P.], seq 1:40, ack 39, win 273, options [nop,nop,TS val 411766485 ecr 113147211], length 39
+19:19:25.881845 IP csp3.zte.com.cn.domain > kira-vostro-5568.41911: 64918 1/0/0 PTR lg-in-f94.1e100.net. (77)
+19:19:25.925446 IP kira-vostro-5568.37562 > lg-in-f94.1e100.net.https: Flags [.], ack 40, win 501, options [nop,nop,TS val 113147271 ecr 411766485], length 0
+19:19:26.865969 IP kira-vostro-5568.41340 > 104.26.8.50.https: Flags [P.], seq 3666132286:3666132325, ack 1028014864, win 501, length 39
+19:19:26.866691 IP kira-vostro-5568.57494 > csp3.zte.com.cn.domain: 4111+ PTR? 50.8.26.104.in-addr.arpa. (42)
+19:19:26.882851 IP 104.26.8.50.https > kira-vostro-5568.41340: Flags [.], ack 39, win 68, length 0
+19:19:26.890797 IP 104.26.8.50.https > kira-vostro-5568.41340: Flags [P.], seq 1:40, ack 39, win 68, length 39
+19:19:26.890816 IP kira-vostro-5568.41340 > 104.26.8.50.https: Flags [.], ack 40, win 501, length 0
+19:19:26.909471 IP kira-vostro-5568.50204 > mc.yandex.ru.https: Flags [.], ack 2236270718, win 501, options [nop,nop,TS val 4092881172 ecr 2243498707], length 0
+19:19:26.936181 IP mc.yandex.ru.https > kira-vostro-5568.50204: Flags [.], ack 1, win 166, options [nop,nop,TS val 2243508947 ecr 4092879662], length 0
+19:19:27.754273 IP csp3.zte.com.cn.domain > kira-vostro-5568.57494: 4111 NXDomain 0/1/0 (104)
+19:19:27.755281 IP kira-vostro-5568.52830 > csp3.zte.com.cn.domain: 43800+ PTR? 119.134.158.93.in-addr.arpa. (45)
+19:19:27.762617 IP csp3.zte.com.cn.domain > kira-vostro-5568.52830: 43800 1/0/0 PTR mc.yandex.ru. (71)
+19:19:27.866713 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [P.], seq 1837298361:1837298400, ack 22977846, win 3764, options [nop,nop,TS val 3039334065 ecr 1603026176], length 39
+19:19:27.866787 IP kira-vostro-5568.36928 > 104.26.0.139.https: Flags [P.], seq 1752654368:1752654407, ack 362790455, win 4584, length 39
+19:19:27.867452 IP kira-vostro-5568.36822 > csp3.zte.com.cn.domain: 749+ PTR? 186.129.240.87.in-addr.arpa. (45)
+19:19:27.880526 IP csp3.zte.com.cn.domain > kira-vostro-5568.36822: 749 1/0/0 PTR srv186-129-240-87.vk.com. (83)
+19:19:27.881794 IP kira-vostro-5568.52640 > csp3.zte.com.cn.domain: 43561+ PTR? 139.0.26.104.in-addr.arpa. (43)
+19:19:27.882307 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [P.], seq 1:40, ack 39, win 83, options [nop,nop,TS val 1603032066 ecr 3039334065], length 39
+19:19:27.882331 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [.], ack 40, win 3764, options [nop,nop,TS val 3039334080 ecr 1603032066], length 0
+19:19:27.882947 IP 104.26.0.139.https > kira-vostro-5568.36928: Flags [P.], seq 1:40, ack 39, win 68, length 39
+19:19:27.882966 IP kira-vostro-5568.36928 > 104.26.0.139.https: Flags [.], ack 40, win 4584, length 0
+19:19:27.937432 IP kira-vostro-5568.55054 > a2-20-74-17.deploy.static.akamaitechnologies.com.https: Flags [.], ack 628368534, win 501, options [nop,nop,TS val 277050283 ecr 219948554], length 0
+19:19:27.937475 IP kira-vostro-5568.33638 > 151.101.85.108.https: Flags [.], ack 2684863796, win 501, options [nop,nop,TS val 1993848054 ecr 1417473162], length 0
+19:19:27.937484 IP kira-vostro-5568.33636 > 151.101.85.108.https: Flags [.], ack 1693180518, win 501, options [nop,nop,TS val 1993848054 ecr 2852874517], length 0
+19:19:27.937492 IP kira-vostro-5568.47582 > a2-20-73-130.deploy.static.akamaitechnologies.com.https: Flags [.], ack 414462282, win 501, options [nop,nop,TS val 4272035497 ecr 3357502362], length 0
+19:19:27.937500 IP kira-vostro-5568.47584 > a2-20-73-130.deploy.static.akamaitechnologies.com.https: Flags [.], ack 405275762, win 501, options [nop,nop,TS val 4272035497 ecr 3357502361], length 0
+19:19:27.937508 IP kira-vostro-5568.48196 > a184-85-145-102.deploy.static.akamaitechnologies.com.https: Flags [.], ack 873997055, win 501, options [nop,nop,TS val 2774813984 ecr 498799648], length 0
+19:19:27.961102 IP a2-20-73-130.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.47584: Flags [.], ack 1, win 243, options [nop,nop,TS val 3357512611 ecr 4271984404], length 0
+19:19:27.961511 IP a184-85-145-102.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48196: Flags [.], ack 1, win 252, options [nop,nop,TS val 498809898 ecr 2774762924], length 0
+19:19:27.966751 IP a2-20-73-130.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.47582: Flags [.], ack 1, win 243, options [nop,nop,TS val 3357512611 ecr 4271984421], length 0
+19:19:27.969479 IP 151.101.85.108.https > kira-vostro-5568.33636: Flags [.], ack 1, win 60, options [nop,nop,TS val 2852884767 ecr 1993797007], length 0
+19:19:27.970199 IP 151.101.85.108.https > kira-vostro-5568.33638: Flags [.], ack 1, win 60, options [nop,nop,TS val 1417483412 ecr 1993797018], length 0
+19:19:27.987741 IP a2-20-74-17.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.55054: Flags [.], ack 1, win 243, options [nop,nop,TS val 219958804 ecr 276999275], length 0
+19:19:28.164217 IP localhost.50593 > 192.168.0.255.15600: UDP, length 35
+19:19:28.701489 IP kira-vostro-5568.37386 > top-fwz1.mail.ru.https: Flags [.], ack 4138956811, win 501, options [nop,nop,TS val 2259558571 ecr 1137681415], length 0
+19:19:28.713057 IP 58.36.226.35.bc.googleusercontent.com.https > kira-vostro-5568.37190: Flags [P.], seq 2249579502:2249579533, ack 2644180306, win 331, options [nop,nop,TS val 535896704 ecr 1869601769], length 31
+19:19:28.713079 IP kira-vostro-5568.37190 > 58.36.226.35.bc.googleusercontent.com.https: Flags [.], ack 31, win 501, options [nop,nop,TS val 1869631707 ecr 535896704], length 0
+19:19:28.713347 IP kira-vostro-5568.37190 > 58.36.226.35.bc.googleusercontent.com.https: Flags [P.], seq 1:32, ack 31, win 501, options [nop,nop,TS val 1869631707 ecr 535896704], length 31
+19:19:28.713369 IP 58.36.226.35.bc.googleusercontent.com.https > kira-vostro-5568.37190: Flags [F.], seq 31, ack 1, win 331, options [nop,nop,TS val 535896704 ecr 1869601769], length 0
+19:19:28.713377 IP kira-vostro-5568.37190 > 58.36.226.35.bc.googleusercontent.com.https: Flags [F.], seq 32, ack 31, win 501, options [nop,nop,TS val 1869631707 ecr 535896704], length 0
+19:19:28.713388 IP kira-vostro-5568.37190 > 58.36.226.35.bc.googleusercontent.com.https: Flags [.], ack 32, win 501, options [nop,nop,TS val 1869631707 ecr 535896704], length 0
+19:19:28.727111 IP top-fwz1.mail.ru.https > kira-vostro-5568.37386: Flags [.], ack 1, win 1, options [nop,nop,TS val 1137691655 ecr 2259507428], length 0
+19:19:28.744081 IP csp3.zte.com.cn.domain > kira-vostro-5568.52640: 43561 NXDomain 0/1/0 (105)
+19:19:28.745330 IP kira-vostro-5568.58652 > csp3.zte.com.cn.domain: 57628+ PTR? 17.74.20.2.in-addr.arpa. (41)
+19:19:28.751596 IP csp3.zte.com.cn.domain > kira-vostro-5568.58652: 57628 1/0/0 PTR a2-20-74-17.deploy.static.akamaitechnologies.com. (103)
+19:19:28.752412 IP kira-vostro-5568.50378 > csp3.zte.com.cn.domain: 22563+ PTR? 108.85.101.151.in-addr.arpa. (45)
+19:19:28.867288 IP kira-vostro-5568.59270 > lr-in-f157.1e100.net.https: Flags [P.], seq 2641903135:2641903174, ack 277719131, win 501, options [nop,nop,TS val 3494465380 ecr 1537001057], length 39
+19:19:28.867366 IP kira-vostro-5568.36516 > 104.26.8.27.https: Flags [P.], seq 3943214470:3943214509, ack 2576343511, win 3261, length 39
+19:19:28.867417 IP kira-vostro-5568.45532 > lf-in-f132.1e100.net.https: Flags [P.], seq 10477390:10477429, ack 342946982, win 1264, options [nop,nop,TS val 1292246672 ecr 3611558727], length 39
+19:19:28.867467 IP kira-vostro-5568.44588 > lg-in-f95.1e100.net.https: Flags [P.], seq 4164370861:4164370900, ack 3513554647, win 501, options [nop,nop,TS val 394167557 ecr 3600859536], length 39
+19:19:28.867516 IP kira-vostro-5568.42880 > lq-in-f95.1e100.net.https: Flags [P.], seq 716053736:716053775, ack 3698651899, win 501, options [nop,nop,TS val 1175892692 ecr 3365365373], length 39
+19:19:28.867548 IP kira-vostro-5568.36086 > server-52-85-241-235.arn1.r.cloudfront.net.https: Flags [P.], seq 2863827652:2863827691, ack 2092111908, win 501, options [nop,nop,TS val 3780796383 ecr 2518459899], length 39
+19:19:28.867595 IP kira-vostro-5568.47034 > 104.26.2.70.https: Flags [P.], seq 3051611495:3051611534, ack 2284687184, win 501, length 39
+19:19:28.868721 IP 58.36.226.35.bc.googleusercontent.com.https > kira-vostro-5568.37190: Flags [.], ack 1, win 331, options [nop,nop,TS val 535896852 ecr 1869601769,nop,nop,sack 1 {32:33}], length 0
+19:19:29.803418 IP kira-vostro-5568.44755 > csp3.zte.com.cn.domain: 63809+ PTR? 130.73.20.2.in-addr.arpa. (42)
+19:19:29.811078 IP csp3.zte.com.cn.domain > kira-vostro-5568.44755: 63809 1/0/0 PTR a2-20-73-130.deploy.static.akamaitechnologies.com. (105)
+19:19:29.812013 IP kira-vostro-5568.58890 > csp3.zte.com.cn.domain: 36578+ PTR? 102.145.85.184.in-addr.arpa. (45)
+19:19:29.821612 IP csp3.zte.com.cn.domain > kira-vostro-5568.58890: 36578 1/0/0 PTR a184-85-145-102.deploy.static.akamaitechnologies.com. (111)
+19:19:29.822936 IP kira-vostro-5568.57295 > csp3.zte.com.cn.domain: 2702+ PTR? 255.0.168.192.in-addr.arpa. (44)
+19:19:29.827341 IP csp3.zte.com.cn.domain > kira-vostro-5568.57295: 2702* 1/0/0 PTR 192.168.0.255. (71)
+19:19:29.828339 IP kira-vostro-5568.53711 > csp3.zte.com.cn.domain: 41369+ PTR? 2.0.168.192.in-addr.arpa. (42)
+19:19:29.837366 IP csp3.zte.com.cn.domain > kira-vostro-5568.53711: 41369* 1/0/0 PTR localhost. (65)
+19:19:29.838588 IP kira-vostro-5568.59942 > csp3.zte.com.cn.domain: 13263+ PTR? 145.133.69.217.in-addr.arpa. (45)
+19:19:29.851639 IP csp3.zte.com.cn.domain > kira-vostro-5568.59942: 13263 1/0/0 PTR top-fwz1.mail.ru. (75)
+19:19:29.852838 IP kira-vostro-5568.40917 > csp3.zte.com.cn.domain: 9000+ PTR? 58.36.226.35.in-addr.arpa. (43)
+19:19:29.866228 IP csp3.zte.com.cn.domain > kira-vostro-5568.40917: 9000 1/0/0 PTR 58.36.226.35.bc.googleusercontent.com. (94)
+19:19:29.867657 IP kira-vostro-5568.39992 > csp3.zte.com.cn.domain: 56855+ PTR? 157.233.85.209.in-addr.arpa. (45)
+19:19:29.868022 IP kira-vostro-5568.46088 > server-52-85-243-110.arn1.r.cloudfront.net.https: Flags [P.], seq 4280691491:4280691530, ack 3720396662, win 501, options [nop,nop,TS val 880051890 ecr 842498946], length 39
+19:19:29.868108 IP kira-vostro-5568.51564 > lf-in-f155.1e100.net.https: Flags [P.], seq 271089370:271089409, ack 3588674096, win 3825, options [nop,nop,TS val 3515596103 ecr 902340141], length 39
+19:19:29.868208 IP kira-vostro-5568.58744 > lh-in-f104.1e100.net.https: Flags [P.], seq 3163387068:3163387107, ack 3804632433, win 501, options [nop,nop,TS val 2478909780 ecr 3819128674], length 39
+19:19:29.868245 IP kira-vostro-5568.46048 > lr-in-f156.1e100.net.https: Flags [P.], seq 2191142272:2191142311, ack 3875694550, win 501, options [nop,nop,TS val 1268726928 ecr 939218391], length 39
+19:19:29.880588 IP csp3.zte.com.cn.domain > kira-vostro-5568.39992: 56855 1/0/0 PTR lr-in-f157.1e100.net. (79)
+19:19:29.881838 IP kira-vostro-5568.41501 > csp3.zte.com.cn.domain: 2006+ PTR? 27.8.26.104.in-addr.arpa. (42)
+19:19:29.885993 IP lf-in-f155.1e100.net.https > kira-vostro-5568.51564: Flags [.], ack 39, win 364, options [nop,nop,TS val 902398685 ecr 3515596103], length 0
+19:19:29.886014 IP lf-in-f155.1e100.net.https > kira-vostro-5568.51564: Flags [P.], seq 1:40, ack 39, win 364, options [nop,nop,TS val 902398686 ecr 3515596103], length 39
+19:19:29.886295 IP lr-in-f156.1e100.net.https > kira-vostro-5568.46048: Flags [.], ack 39, win 269, options [nop,nop,TS val 939276927 ecr 1268726928], length 0
+19:19:29.886321 IP lh-in-f104.1e100.net.https > kira-vostro-5568.58744: Flags [.], ack 39, win 289, options [nop,nop,TS val 3819186949 ecr 2478909780], length 0
+19:19:29.886561 IP lr-in-f156.1e100.net.https > kira-vostro-5568.46048: Flags [P.], seq 1:40, ack 39, win 269, options [nop,nop,TS val 939276927 ecr 1268726928], length 39
+19:19:29.886577 IP kira-vostro-5568.46048 > lr-in-f156.1e100.net.https: Flags [.], ack 40, win 501, options [nop,nop,TS val 1268726946 ecr 939276927], length 0
+19:19:30.828515 IP kira-vostro-5568.56050 > csp3.zte.com.cn.domain: 34212+ PTR? 132.164.233.64.in-addr.arpa. (45)
+19:19:30.842483 IP kira-vostro-5568.52313 > csp3.zte.com.cn.domain: 14271+ PTR? 95.73.194.173.in-addr.arpa. (44)
+19:19:30.851510 IP csp3.zte.com.cn.domain > kira-vostro-5568.52313: 14271 1/0/0 PTR lq-in-f95.1e100.net. (77)
+19:19:30.853614 IP kira-vostro-5568.44435 > csp3.zte.com.cn.domain: 42427+ PTR? 235.241.85.52.in-addr.arpa. (44)
+19:19:30.863480 IP kira-vostro-5568.37555 > csp3.zte.com.cn.domain: 3117+ PTR? 70.2.26.104.in-addr.arpa. (42)
+19:19:31.750330 IP kira-vostro-5568.43433 > csp3.zte.com.cn.domain: 908+ PTR? 110.243.85.52.in-addr.arpa. (44)
+19:19:31.761112 IP csp3.zte.com.cn.domain > kira-vostro-5568.43433: 908 1/0/0 PTR server-52-85-243-110.arn1.r.cloudfront.net. (100)
+19:19:31.762299 IP kira-vostro-5568.49523 > csp3.zte.com.cn.domain: 37059+ PTR? 155.164.233.64.in-addr.arpa. (45)
+19:19:31.771606 IP csp3.zte.com.cn.domain > kira-vostro-5568.49523: 37059 1/0/0 PTR lf-in-f155.1e100.net. (79)
+19:19:31.772722 IP kira-vostro-5568.52019 > csp3.zte.com.cn.domain: 64716+ PTR? 104.161.233.64.in-addr.arpa. (45)
+19:19:31.781484 IP csp3.zte.com.cn.domain > kira-vostro-5568.52019: 64716 1/0/0 PTR lh-in-f104.1e100.net. (79)
+19:19:31.782627 IP kira-vostro-5568.50262 > csp3.zte.com.cn.domain: 63767+ PTR? 156.233.85.209.in-addr.arpa. (45)
+19:19:31.791548 IP csp3.zte.com.cn.domain > kira-vostro-5568.50262: 63767 1/0/0 PTR lr-in-f156.1e100.net. (79)
+19:19:31.869608 IP kira-vostro-5568.60472 > 194.23.211.130.bc.googleusercontent.com.https: Flags [P.], seq 3706776328:3706776367, ack 3746074849, win 501, options [nop,nop,TS val 2151650037 ecr 1999473499], length 39
+19:19:31.869824 IP kira-vostro-5568.43166 > le-in-f149.1e100.net.https: Flags [P.], seq 2102784957:2102784996, ack 1214999182, win 7267, options [nop,nop,TS val 3439372962 ecr 4154841230], length 39
+19:19:31.870329 IP kira-vostro-5568.55777 > csp3.zte.com.cn.domain: 8242+ PTR? 194.23.211.130.in-addr.arpa. (45)
+19:19:31.881480 IP csp3.zte.com.cn.domain > kira-vostro-5568.55777: 8242 1/0/0 PTR 194.23.211.130.bc.googleusercontent.com. (98)
+19:19:31.882597 IP kira-vostro-5568.38873 > csp3.zte.com.cn.domain: 20322+ PTR? 149.205.125.74.in-addr.arpa. (45)
+19:19:31.886070 IP 194.23.211.130.bc.googleusercontent.com.https > kira-vostro-5568.60472: Flags [.], ack 39, win 269, options [nop,nop,TS val 1999532000 ecr 2151650037], length 0
+19:19:31.886094 IP 194.23.211.130.bc.googleusercontent.com.https > kira-vostro-5568.60472: Flags [P.], seq 1:40, ack 39, win 269, options [nop,nop,TS val 1999532000 ecr 2151650037], length 39
+19:19:31.886107 IP kira-vostro-5568.60472 > 194.23.211.130.bc.googleusercontent.com.https: Flags [.], ack 40, win 501, options [nop,nop,TS val 2151650054 ecr 1999532000], length 0
+19:19:31.886668 IP le-in-f149.1e100.net.https > kira-vostro-5568.43166: Flags [.], ack 39, win 290, options [nop,nop,TS val 4154899784 ecr 3439372962], length 0
+19:19:31.887083 IP le-in-f149.1e100.net.https > kira-vostro-5568.43166: Flags [P.], seq 1:40, ack 39, win 290, options [nop,nop,TS val 4154899784 ecr 3439372962], length 39
+19:19:31.893147 IP csp3.zte.com.cn.domain > kira-vostro-5568.38873: 20322 1/0/0 PTR le-in-f149.1e100.net. (79)
+19:19:31.929533 IP kira-vostro-5568.43166 > le-in-f149.1e100.net.https: Flags [.], ack 40, win 7267, options [nop,nop,TS val 3439373021 ecr 4154899784], length 0
+19:19:31.980061 IP kira-vostro-5568.57963 > csp3.zte.com.cn.domain: 20557+ AAAA? queuev4.vk.com. (32)
+19:19:31.981071 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [P.], seq 39:197, ack 451, win 3764, options [nop,nop,TS val 3039338179 ecr 1603033298], length 158
+19:19:31.981180 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [P.], seq 197:415, ack 451, win 3764, options [nop,nop,TS val 3039338179 ecr 1603033298], length 218
+19:19:31.991582 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [.], ack 415, win 83, options [nop,nop,TS val 1603036176 ecr 3039338179], length 0
+19:19:31.991776 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [P.], seq 451:486, ack 415, win 83, options [nop,nop,TS val 1603036176 ecr 3039338179], length 35
+19:19:31.991812 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [.], ack 486, win 3764, options [nop,nop,TS val 3039338190 ecr 1603036176], length 0
+19:19:31.992765 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [P.], seq 486:1306, ack 415, win 83, options [nop,nop,TS val 1603036177 ecr 3039338179], length 820
+19:19:31.992811 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [.], ack 1306, win 3786, options [nop,nop,TS val 3039338191 ecr 1603036177], length 0
+19:19:32.029484 IP kira-vostro-5568.42458 > 93.184.220.29.http: Flags [.], ack 3800816580, win 501, options [nop,nop,TS val 3172432529 ecr 616822213], length 0
+19:19:32.029518 IP kira-vostro-5568.35784 > 151.139.128.14.http: Flags [.], ack 1673059531, win 501, options [nop,nop,TS val 3744977980 ecr 2671873043], length 0
+19:19:32.029533 IP kira-vostro-5568.35782 > 151.139.128.14.http: Flags [.], ack 1181355703, win 501, options [nop,nop,TS val 3744977980 ecr 2665281712], length 0
+19:19:32.030047 IP kira-vostro-5568.55030 > csp3.zte.com.cn.domain: 19680+ PTR? 29.220.184.93.in-addr.arpa. (44)
+19:19:32.050676 IP 151.139.128.14.http > kira-vostro-5568.35782: Flags [.], ack 1, win 235, options [nop,nop,TS val 2665291952 ecr 3744916715], length 0
+19:19:32.052917 IP 151.139.128.14.http > kira-vostro-5568.35784: Flags [.], ack 1, win 235, options [nop,nop,TS val 2671883283 ecr 3744916718], length 0
+19:19:32.070875 IP 93.184.220.29.http > kira-vostro-5568.42458: Flags [.], ack 1, win 133, options [nop,nop,TS val 616832453 ecr 3172431368], length 0
+19:19:32.289414 IP kira-vostro-5568.53350 > 52.95.123.167.https: Flags [.], ack 817138999, win 501, length 0
+19:19:32.364390 IP 52.95.123.167.https > kira-vostro-5568.53350: Flags [.], ack 1, win 472, length 0
+19:19:32.436419 IP cloudproxy10041.sucuri.net.http > kira-vostro-5568.45730: Flags [F.], seq 1442830531, ack 3467588470, win 59, options [nop,nop,TS val 2099956385 ecr 2021870591], length 0
+19:19:32.436683 IP kira-vostro-5568.45730 > cloudproxy10041.sucuri.net.http: Flags [F.], seq 1, ack 1, win 501, options [nop,nop,TS val 2021935139 ecr 2099956385], length 0
+19:19:32.502874 IP cloudproxy10041.sucuri.net.http > kira-vostro-5568.45730: Flags [.], ack 2, win 59, options [nop,nop,TS val 2099956451 ecr 2021935139], length 0
+19:19:32.772304 IP csp3.zte.com.cn.domain > kira-vostro-5568.57963: 20557 0/1/0 (88)
+19:19:32.772348 IP csp3.zte.com.cn.domain > kira-vostro-5568.55030: 19680 NXDomain 0/1/0 (115)
+19:19:32.774051 IP kira-vostro-5568.47910 > csp3.zte.com.cn.domain: 1912+ PTR? 14.128.139.151.in-addr.arpa. (45)
+19:19:32.870271 IP kira-vostro-5568.59280 > lr-in-f157.1e100.net.https: Flags [P.], seq 573310769:573310808, ack 3281848164, win 501, options [nop,nop,TS val 3494469383 ecr 2469780783], length 39
+19:19:32.883175 IP lr-in-f157.1e100.net.https > kira-vostro-5568.59280: Flags [.], ack 39, win 376, options [nop,nop,TS val 2469838938 ecr 3494469383], length 0
+19:19:32.883695 IP lr-in-f157.1e100.net.https > kira-vostro-5568.59280: Flags [P.], seq 1:40, ack 39, win 376, options [nop,nop,TS val 2469838938 ecr 3494469383], length 39
+19:19:32.925474 IP kira-vostro-5568.59280 > lr-in-f157.1e100.net.https: Flags [.], ack 40, win 501, options [nop,nop,TS val 3494469438 ecr 2469838938], length 0
+19:19:33.309523 IP kira-vostro-5568.45154 > a23-46-116-25.deploy.static.akamaitechnologies.com.https: Flags [.], ack 699024885, win 501, options [nop,nop,TS val 2796778599 ecr 105816459], length 0
+19:19:33.330353 IP a23-46-116-25.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.45154: Flags [.], ack 1, win 262, options [nop,nop,TS val 105826699 ecr 2796717404], length 0
+19:19:33.796221 IP csp3.zte.com.cn.domain > kira-vostro-5568.47910: 1912 NXDomain 0/1/0 (97)
+19:19:33.797936 IP kira-vostro-5568.47972 > csp3.zte.com.cn.domain: 6231+ PTR? 167.123.95.52.in-addr.arpa. (44)
+19:19:34.077508 IP kira-vostro-5568.42616 > li-in-f94.1e100.net.http: Flags [.], ack 1, win 501, options [nop,nop,TS val 3588969565 ecr 1886915927], length 0
+19:19:34.095871 IP li-in-f94.1e100.net.http > kira-vostro-5568.42616: Flags [.], ack 1, win 261, options [nop,nop,TS val 1886926167 ecr 3588908298], length 0
+19:19:34.205932 IP localhost.57493 > 192.168.0.255.15600: UDP, length 35
+19:19:34.820254 IP csp3.zte.com.cn.domain > kira-vostro-5568.47972: 6231 NXDomain 0/1/0 (115)
+19:19:34.821831 IP kira-vostro-5568.49702 > csp3.zte.com.cn.domain: 33861+ PTR? 41.249.124.192.in-addr.arpa. (45)
+19:19:34.831249 IP csp3.zte.com.cn.domain > kira-vostro-5568.49702: 33861 1/0/0 PTR cloudproxy10041.sucuri.net. (85)
+19:19:34.832698 IP kira-vostro-5568.56294 > csp3.zte.com.cn.domain: 24162+ PTR? 25.116.46.23.in-addr.arpa. (43)
+19:19:34.842513 IP csp3.zte.com.cn.domain > kira-vostro-5568.56294: 24162 1/0/0 PTR a23-46-116-25.deploy.static.akamaitechnologies.com. (107)
+19:19:34.983362 IP kira-vostro-5568.43227 > csp3.zte.com.cn.domain: 14815+ AAAA? queuev4.vk.com. (32)
+19:19:34.983830 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [P.], seq 415:573, ack 1306, win 3786, options [nop,nop,TS val 3039341182 ecr 1603036177], length 158
+19:19:34.984065 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [P.], seq 573:791, ack 1306, win 3786, options [nop,nop,TS val 3039341182 ecr 1603036177], length 218
+19:19:34.991873 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [.], ack 791, win 83, options [nop,nop,TS val 1603039176 ecr 3039341182], length 0
+19:19:34.992932 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [P.], seq 1306:1341, ack 791, win 83, options [nop,nop,TS val 1603039176 ecr 3039341182], length 35
+19:19:34.992956 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [.], ack 1341, win 3786, options [nop,nop,TS val 3039341191 ecr 1603039176], length 0
+19:19:34.993016 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [P.], seq 1341:1754, ack 791, win 83, options [nop,nop,TS val 1603039177 ecr 3039341182], length 413
+19:19:34.993034 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [.], ack 1754, win 3786, options [nop,nop,TS val 3039341191 ecr 1603039177], length 0
+19:19:35.027218 IP kira-vostro-5568.43131 > csp3.zte.com.cn.domain: 23566+ A? www.yandex.ru. (31)
+19:19:35.028569 IP kira-vostro-5568.34134 > yandex.ru.https: Flags [P.], seq 3633365574:3633366545, ack 2913648607, win 2984, options [nop,nop,TS val 2754371932 ecr 2382853474], length 971
+19:19:35.028862 IP kira-vostro-5568.34134 > yandex.ru.https: Flags [P.], seq 971:1003, ack 1, win 2984, options [nop,nop,TS val 2754371933 ecr 2382853474], length 32
+19:19:35.029299 IP kira-vostro-5568.38058 > csp3.zte.com.cn.domain: 54366+ PTR? 80.255.255.5.in-addr.arpa. (43)
+19:19:35.039894 IP csp3.zte.com.cn.domain > kira-vostro-5568.43131: 23566 4/0/0 A 77.88.55.80, A 77.88.55.88, A 5.255.255.88, A 5.255.255.5 (95)
+19:19:35.040651 IP kira-vostro-5568.33266 > csp3.zte.com.cn.domain: 6282+ AAAA? www.yandex.ru. (31)
+19:19:35.040885 IP csp3.zte.com.cn.domain > kira-vostro-5568.38058: 54366 1/0/0 PTR yandex.ru. (66)
+19:19:35.051656 IP csp3.zte.com.cn.domain > kira-vostro-5568.33266: 6282 1/0/0 AAAA 2a02:6b8:a::a (59)
+19:19:35.058456 IP yandex.ru.https > kira-vostro-5568.34134: Flags [.], ack 1003, win 2340, options [nop,nop,TS val 2382865474 ecr 2754371932], length 0
+19:19:35.060222 IP yandex.ru.https > kira-vostro-5568.34134: Flags [P.], seq 1:36, ack 1003, win 2340, options [nop,nop,TS val 2382865474 ecr 2754371932], length 35
+19:19:35.060258 IP yandex.ru.https > kira-vostro-5568.34134: Flags [P.], seq 36:128, ack 1003, win 2340, options [nop,nop,TS val 2382865475 ecr 2754371932], length 92
+19:19:35.060508 IP kira-vostro-5568.34134 > yandex.ru.https: Flags [.], ack 128, win 2984, options [nop,nop,TS val 2754371964 ecr 2382865474], length 0
+19:19:35.157882 IP 151.139.128.14.http > kira-vostro-5568.35770: Flags [F.], seq 1490130650, ack 293295152, win 235, options [nop,nop,TS val 2704535028 ecr 3744916110], length 0
+19:19:35.158268 IP kira-vostro-5568.35770 > 151.139.128.14.http: Flags [F.], seq 1, ack 1, win 501, options [nop,nop,TS val 3744981109 ecr 2704535028], length 0
+19:19:35.196580 IP 151.139.128.14.http > kira-vostro-5568.35770: Flags [.], ack 2, win 235, options [nop,nop,TS val 2704535067 ecr 3744981109], length 0
+19:19:35.741685 IP csp3.zte.com.cn.domain > kira-vostro-5568.43227: 14815 0/1/0 (88)
+19:19:35.741902 ARP, Request who-has kira-vostro-5568 tell csp3.zte.com.cn, length 28
+19:19:35.741913 ARP, Reply kira-vostro-5568 is-at e4:70:b8:3a:58:8b (oui Unknown), length 28
+19:19:35.762276 IP 151.139.128.14.http > kira-vostro-5568.35782: Flags [F.], seq 1, ack 1, win 235, options [nop,nop,TS val 2665295663 ecr 3744916715], length 0
+19:19:35.762734 IP kira-vostro-5568.35782 > 151.139.128.14.http: Flags [F.], seq 1, ack 2, win 501, options [nop,nop,TS val 3744981714 ecr 2665295663], length 0
+19:19:35.772613 IP 151.139.128.14.http > kira-vostro-5568.35784: Flags [F.], seq 1, ack 1, win 235, options [nop,nop,TS val 2671887003 ecr 3744916718], length 0
+19:19:35.772878 IP kira-vostro-5568.35784 > 151.139.128.14.http: Flags [F.], seq 1, ack 2, win 501, options [nop,nop,TS val 3744981724 ecr 2671887003], length 0
+19:19:35.780791 IP 151.139.128.14.http > kira-vostro-5568.35782: Flags [.], ack 2, win 235, options [nop,nop,TS val 2665295682 ecr 3744981714], length 0
+19:19:35.793163 IP 151.139.128.14.http > kira-vostro-5568.35784: Flags [.], ack 2, win 235, options [nop,nop,TS val 2671887023 ecr 3744981724], length 0
+19:19:35.869447 IP kira-vostro-5568.47936 > csp-report.stable.qloud-b.yandex.net.https: Flags [.], ack 1179346003, win 501, options [nop,nop,TS val 4087514487 ecr 2426688731], length 0
+19:19:35.870250 IP kira-vostro-5568.55297 > csp3.zte.com.cn.domain: 17170+ PTR? 242.251.250.87.in-addr.arpa. (45)
+19:19:35.871574 IP kira-vostro-5568.54860 > ec2-35-156-245-144.eu-central-1.compute.amazonaws.com.https: Flags [P.], seq 563192588:563192634, ack 1971155773, win 501, options [nop,nop,TS val 3808979311 ecr 261487288], length 46
+19:19:35.871643 IP kira-vostro-5568.55016 > 218.64.98.34.bc.googleusercontent.com.https: Flags [P.], seq 1685619651:1685619690, ack 2568093103, win 501, options [nop,nop,TS val 1505013355 ecr 3831602697], length 39
+19:19:35.871756 IP kira-vostro-5568.44390 > ec2-52-57-0-221.eu-central-1.compute.amazonaws.com.https: Flags [P.], seq 1812879929:1812879975, ack 3612405415, win 501, options [nop,nop,TS val 4048794881 ecr 568798310], length 46
+19:19:35.883855 IP 218.64.98.34.bc.googleusercontent.com.https > kira-vostro-5568.55016: Flags [.], ack 39, win 282, options [nop,nop,TS val 3831661682 ecr 1505013355], length 0
+19:19:35.884256 IP 218.64.98.34.bc.googleusercontent.com.https > kira-vostro-5568.55016: Flags [P.], seq 1:40, ack 39, win 282, options [nop,nop,TS val 3831661682 ecr 1505013355], length 39
+19:19:35.891412 IP csp3.zte.com.cn.domain > kira-vostro-5568.55297: 17170 1/0/0 PTR csp-report.stable.qloud-b.yandex.net. (95)
+19:19:35.892850 IP kira-vostro-5568.55633 > csp3.zte.com.cn.domain: 19330+ PTR? 144.245.156.35.in-addr.arpa. (45)
+19:19:35.896691 IP csp-report.stable.qloud-b.yandex.net.https > kira-vostro-5568.47936: Flags [.], ack 1, win 166, options [nop,nop,TS val 2426698971 ecr 4087443025], length 0
+19:19:35.915416 IP csp3.zte.com.cn.domain > kira-vostro-5568.55633: 19330 1/0/0 PTR ec2-35-156-245-144.eu-central-1.compute.amazonaws.com. (112)
+19:19:35.916585 IP kira-vostro-5568.50301 > csp3.zte.com.cn.domain: 24859+ PTR? 218.64.98.34.in-addr.arpa. (43)
+19:19:35.925489 IP kira-vostro-5568.55016 > 218.64.98.34.bc.googleusercontent.com.https: Flags [.], ack 40, win 501, options [nop,nop,TS val 1505013409 ecr 3831661682], length 0
+19:19:35.933359 IP ec2-52-57-0-221.eu-central-1.compute.amazonaws.com.https > kira-vostro-5568.44390: Flags [P.], seq 1:47, ack 46, win 118, options [nop,nop,TS val 568813032 ecr 4048794881], length 46
+19:19:35.933387 IP kira-vostro-5568.44390 > ec2-52-57-0-221.eu-central-1.compute.amazonaws.com.https: Flags [.], ack 47, win 501, options [nop,nop,TS val 4048794942 ecr 568813032], length 0
+19:19:35.933800 IP ec2-35-156-245-144.eu-central-1.compute.amazonaws.com.https > kira-vostro-5568.54860: Flags [P.], seq 1:47, ack 46, win 122, options [nop,nop,TS val 261502007 ecr 3808979311], length 46
+19:19:35.933820 IP kira-vostro-5568.54860 > ec2-35-156-245-144.eu-central-1.compute.amazonaws.com.https: Flags [.], ack 47, win 501, options [nop,nop,TS val 3808979374 ecr 261502007], length 0
+19:19:35.939225 IP csp3.zte.com.cn.domain > kira-vostro-5568.50301: 24859 1/0/0 PTR 218.64.98.34.bc.googleusercontent.com. (94)
+19:19:35.940407 IP kira-vostro-5568.51469 > csp3.zte.com.cn.domain: 8498+ PTR? 221.0.57.52.in-addr.arpa. (42)
+19:19:35.965597 IP csp3.zte.com.cn.domain > kira-vostro-5568.51469: 8498 1/0/0 PTR ec2-52-57-0-221.eu-central-1.compute.amazonaws.com. (106)
+19:19:36.048982 IP 52.95.123.167.https > kira-vostro-5568.53350: Flags [P.], seq 1:32, ack 1, win 472, length 31
+19:19:36.049041 IP kira-vostro-5568.53350 > 52.95.123.167.https: Flags [.], ack 32, win 501, length 0
+19:19:36.049092 IP 52.95.123.167.https > kira-vostro-5568.53350: Flags [F.], seq 32, ack 1, win 472, length 0
+19:19:36.049534 IP kira-vostro-5568.53350 > 52.95.123.167.https: Flags [P.], seq 1:32, ack 33, win 501, length 31
+19:19:36.049598 IP kira-vostro-5568.53350 > 52.95.123.167.https: Flags [F.], seq 32, ack 33, win 501, length 0
+19:19:36.124728 IP 52.95.123.167.https > kira-vostro-5568.53350: Flags [R], seq 817139031, win 9700, length 0
+19:19:36.196697 IP kira-vostro-5568.38759 > csp3.zte.com.cn.domain: 16574+ AAAA? connectivity-check.ubuntu.com. (47)
+19:19:36.765709 IP csp3.zte.com.cn.domain > kira-vostro-5568.38759: 16574 0/1/0 (108)
+19:19:36.768368 IP kira-vostro-5568.50826 > csp3.zte.com.cn.domain: 2112+ AAAA? connectivity-check.ubuntu.com. (47)
+19:19:36.872254 IP kira-vostro-5568.60696 > ec2-52-58-102-227.eu-central-1.compute.amazonaws.com.https: Flags [P.], seq 3519417734:3519417780, ack 3686279255, win 501, options [nop,nop,TS val 945952791 ecr 1481114056], length 46
+19:19:36.872891 IP kira-vostro-5568.36894 > csp3.zte.com.cn.domain: 22301+ PTR? 227.102.58.52.in-addr.arpa. (44)
+19:19:36.895020 IP csp3.zte.com.cn.domain > kira-vostro-5568.36894: 22301 1/0/0 PTR ec2-52-58-102-227.eu-central-1.compute.amazonaws.com. (110)
+19:19:36.906242 IP kira-vostro-5568.54655 > csp3.zte.com.cn.domain: 37150+ A? px.moatads.com. (32)
+19:19:36.907209 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [S], seq 3425401039, win 64240, options [mss 1460,sackOK,TS val 2644718246 ecr 0,nop,wscale 7], length 0
+19:19:36.920464 IP csp3.zte.com.cn.domain > kira-vostro-5568.54655: 37150 3/0/0 CNAME wildcard.moatads.com.edgekey.net., CNAME e13136.g.akamaiedge.net., A 2.20.73.250 (128)
+19:19:36.922635 IP kira-vostro-5568.37766 > csp3.zte.com.cn.domain: 50324+ AAAA? e13136.g.akamaiedge.net. (41)
+19:19:36.933212 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [S.], seq 1841656008, ack 3425401040, win 28960, options [mss 1452,sackOK,TS val 3798065714 ecr 2644718246,nop,wscale 7], length 0
+19:19:36.933270 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], ack 1, win 502, options [nop,nop,TS val 2644718272 ecr 3798065714], length 0
+19:19:36.933657 IP ec2-52-58-102-227.eu-central-1.compute.amazonaws.com.https > kira-vostro-5568.60696: Flags [.], ack 46, win 118, options [nop,nop,TS val 1481128766 ecr 945952791], length 0
+19:19:36.933696 IP ec2-52-58-102-227.eu-central-1.compute.amazonaws.com.https > kira-vostro-5568.60696: Flags [P.], seq 1:47, ack 46, win 118, options [nop,nop,TS val 1481128766 ecr 945952791], length 46
+19:19:36.933708 IP kira-vostro-5568.60696 > ec2-52-58-102-227.eu-central-1.compute.amazonaws.com.https: Flags [.], ack 47, win 501, options [nop,nop,TS val 945952853 ecr 1481128766], length 0
+19:19:36.939497 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [P.], seq 1:518, ack 1, win 502, options [nop,nop,TS val 2644718278 ecr 3798065714], length 517
+19:19:36.963131 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [.], ack 518, win 235, options [nop,nop,TS val 3798065744 ecr 2644718278], length 0
+19:19:36.965621 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [.], seq 1:1441, ack 518, win 235, options [nop,nop,TS val 3798065746 ecr 2644718278], length 1440
+19:19:36.965657 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], ack 1441, win 493, options [nop,nop,TS val 2644718304 ecr 3798065746], length 0
+19:19:36.965882 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [P.], seq 1441:3873, ack 518, win 235, options [nop,nop,TS val 3798065746 ecr 2644718278], length 2432
+19:19:36.965908 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], ack 3873, win 474, options [nop,nop,TS val 2644718305 ecr 3798065746], length 0
+19:19:36.972388 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [P.], seq 518:598, ack 3873, win 501, options [nop,nop,TS val 2644718311 ecr 3798065746], length 80
+19:19:36.974049 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [P.], seq 598:768, ack 3873, win 501, options [nop,nop,TS val 2644718313 ecr 3798065746], length 170
+19:19:36.974121 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], seq 768:2208, ack 3873, win 501, options [nop,nop,TS val 2644718313 ecr 3798065746], length 1440
+19:19:36.974128 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [P.], seq 2208:2524, ack 3873, win 501, options [nop,nop,TS val 2644718313 ecr 3798065746], length 316
+19:19:36.992876 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [.], ack 2524, win 271, options [nop,nop,TS val 3798065774 ecr 2644718311], length 0
+19:19:36.993199 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [P.], seq 3873:4144, ack 2524, win 271, options [nop,nop,TS val 3798065774 ecr 2644718311], length 271
+19:19:36.993230 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], ack 4144, win 499, options [nop,nop,TS val 2644718332 ecr 3798065774], length 0
+19:19:36.993459 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [P.], seq 4144:4415, ack 2524, win 271, options [nop,nop,TS val 3798065774 ecr 2644718311], length 271
+19:19:36.993483 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], ack 4415, win 497, options [nop,nop,TS val 2644718332 ecr 3798065774], length 0
+19:19:36.994055 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [P.], seq 4415:4738, ack 2524, win 271, options [nop,nop,TS val 3798065775 ecr 2644718311], length 323
+19:19:36.994081 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [.], ack 4738, win 495, options [nop,nop,TS val 2644718333 ecr 3798065775], length 0
+19:19:36.994439 IP kira-vostro-5568.48950 > a2-20-73-250.deploy.static.akamaitechnologies.com.https: Flags [P.], seq 2524:2555, ack 4738, win 501, options [nop,nop,TS val 2644718333 ecr 3798065775], length 31
+19:19:37.053468 IP a2-20-73-250.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48950: Flags [.], ack 2555, win 271, options [nop,nop,TS val 3798065834 ecr 2644718333], length 0
+19:19:37.149510 IP kira-vostro-5568.50204 > mc.yandex.ru.https: Flags [.], ack 1, win 501, options [nop,nop,TS val 4092891412 ecr 2243508947], length 0
+19:19:37.175776 IP mc.yandex.ru.https > kira-vostro-5568.50204: Flags [.], ack 1, win 166, options [nop,nop,TS val 2243519187 ecr 4092879662], length 0
+19:19:37.585254 IP top-fwz1.mail.ru.https > kira-vostro-5568.37386: Flags [P.], seq 1:32, ack 1, win 1, options [nop,nop,TS val 1137700485 ecr 2259507428], length 31
+19:19:37.585295 IP kira-vostro-5568.37386 > top-fwz1.mail.ru.https: Flags [.], ack 32, win 501, options [nop,nop,TS val 2259567455 ecr 1137700485], length 0
+19:19:37.585325 IP top-fwz1.mail.ru.https > kira-vostro-5568.37386: Flags [F.], seq 32, ack 1, win 1, options [nop,nop,TS val 1137700485 ecr 2259507428], length 0
+19:19:37.585564 IP kira-vostro-5568.37386 > top-fwz1.mail.ru.https: Flags [P.], seq 1:32, ack 33, win 501, options [nop,nop,TS val 2259567455 ecr 1137700485], length 31
+19:19:37.585605 IP kira-vostro-5568.37386 > top-fwz1.mail.ru.https: Flags [F.], seq 32, ack 33, win 501, options [nop,nop,TS val 2259567455 ecr 1137700485], length 0
+19:19:37.587437 IP kira-vostro-5568.34850 > 149.154.167.50.https: Flags [P.], seq 489174378:489174467, ack 81004397, win 501, options [nop,nop,TS val 3678897729 ecr 333993982], length 89
+19:19:37.587871 IP kira-vostro-5568.37241 > csp3.zte.com.cn.domain: 46269+ PTR? 50.167.154.149.in-addr.arpa. (45)
+19:19:37.607909 IP top-fwz1.mail.ru.https > kira-vostro-5568.37386: Flags [R], seq 4138956843, win 0, length 0
+19:19:37.608242 IP top-fwz1.mail.ru.https > kira-vostro-5568.37386: Flags [R], seq 4138956842, win 0, length 0
+19:19:37.608261 IP top-fwz1.mail.ru.https > kira-vostro-5568.37386: Flags [R], seq 4138956843, win 0, length 0
+19:19:37.663706 IP 149.154.167.50.https > kira-vostro-5568.34850: Flags [.], ack 89, win 26654, options [nop,nop,TS val 334012252 ecr 3678897729], length 0
+19:19:37.664297 IP 149.154.167.50.https > kira-vostro-5568.34850: Flags [P.], seq 1:90, ack 89, win 26654, options [nop,nop,TS val 334012253 ecr 3678897729], length 89
+19:19:37.664326 IP kira-vostro-5568.34850 > 149.154.167.50.https: Flags [.], ack 90, win 501, options [nop,nop,TS val 3678897806 ecr 334012253], length 0
+19:19:37.720386 IP csp3.zte.com.cn.domain > kira-vostro-5568.50826: 2112 0/1/0 (108)
+19:19:37.720901 IP csp3.zte.com.cn.domain > kira-vostro-5568.37766: 50324 0/1/0 (102)
+19:19:37.721228 IP csp3.zte.com.cn.domain > kira-vostro-5568.37241: 46269 NXDomain 0/1/0 (111)
+19:19:37.872923 IP kira-vostro-5568.54158 > ec2-3-124-251-221.eu-central-1.compute.amazonaws.com.https: Flags [P.], seq 3337243077:3337243123, ack 3415683311, win 501, options [nop,nop,TS val 3192034364 ecr 1481106685], length 46
+19:19:37.874113 IP kira-vostro-5568.60714 > csp3.zte.com.cn.domain: 40817+ PTR? 221.251.124.3.in-addr.arpa. (44)
+19:19:37.895774 IP csp3.zte.com.cn.domain > kira-vostro-5568.60714: 40817 1/0/0 PTR ec2-3-124-251-221.eu-central-1.compute.amazonaws.com. (110)
+19:19:37.933069 IP ec2-3-124-251-221.eu-central-1.compute.amazonaws.com.https > kira-vostro-5568.54158: Flags [P.], seq 1:47, ack 46, win 118, options [nop,nop,TS val 1481121394 ecr 3192034364], length 46
+19:19:37.933121 IP kira-vostro-5568.54158 > ec2-3-124-251-221.eu-central-1.compute.amazonaws.com.https: Flags [.], ack 47, win 501, options [nop,nop,TS val 3192034424 ecr 1481121394], length 0
+19:19:37.984243 IP kira-vostro-5568.40855 > csp3.zte.com.cn.domain: 63600+ AAAA? queuev4.vk.com. (32)
+19:19:37.985204 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [P.], seq 791:949, ack 1754, win 3786, options [nop,nop,TS val 3039344183 ecr 1603039177], length 158
+19:19:37.985364 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [P.], seq 949:1167, ack 1754, win 3786, options [nop,nop,TS val 3039344183 ecr 1603039177], length 218
+19:19:37.991117 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [.], ack 1167, win 83, options [nop,nop,TS val 1603042176 ecr 3039344183], length 0
+19:19:37.991181 IP srv186-129-240-87.vk.com.https > kira-vostro-5568.55484: Flags [P.], seq 1754:1789, ack 1167, win 83, options [nop,nop,TS val 1603042176 ecr 3039344183], length 35
+19:19:37.991207 IP kira-vostro-5568.55484 > srv186-129-240-87.vk.com.https: Flags [.], ack 1789, win 3786, options [nop,nop,TS val 3039344189 ecr 1603042176], length 0
+19:19:37.999165 IP kira-vostro-5568.53449 > csp3.zte.com.cn.domain: 12763+ A? vk.com. (24)
+19:19:37.999578 IP kira-vostro-5568.42780 > csp3.zte.com.cn.domain: 7508+ AAAA? vk.com. (24)
+19:19:38.012070 IP csp3.zte.com.cn.domain > kira-vostro-5568.53449: 12763 6/0/0 A 87.240.190.78, A 93.186.225.208, A 87.240.139.194, A 87.240.137.158, A 87.240.190.67, A 87.240.190.72 (120)
+19:19:38.013242 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [S], seq 3325320361, win 64240, options [mss 1460,sackOK,TS val 1376485411 ecr 0,nop,wscale 7], length 0
+19:19:38.013878 IP kira-vostro-5568.48632 > csp3.zte.com.cn.domain: 28037+ PTR? 158.137.240.87.in-addr.arpa. (45)
+19:19:38.021282 IP csp3.zte.com.cn.domain > kira-vostro-5568.48632: 28037 1/0/0 PTR srv158-137-240-87.vk.com. (83)
+19:19:38.023205 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [S.], seq 1105387489, ack 3325320362, win 27960, options [mss 1410,sackOK,TS val 100293675 ecr 1376485411,nop,wscale 9], length 0
+19:19:38.023252 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [.], ack 1, win 502, options [nop,nop,TS val 1376485421 ecr 100293675], length 0
+19:19:38.030124 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [P.], seq 1:657, ack 1, win 502, options [nop,nop,TS val 1376485428 ecr 100293675], length 656
+19:19:38.043396 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [.], ack 657, win 58, options [nop,nop,TS val 100293680 ecr 1376485428], length 0
+19:19:38.043441 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [P.], seq 1:4082, ack 657, win 58, options [nop,nop,TS val 100293680 ecr 1376485428], length 4081
+19:19:38.043466 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [.], ack 4082, win 471, options [nop,nop,TS val 1376485441 ecr 100293680], length 0
+19:19:38.050968 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [P.], seq 657:737, ack 4082, win 501, options [nop,nop,TS val 1376485449 ecr 100293680], length 80
+19:19:38.052058 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [P.], seq 737:907, ack 4082, win 501, options [nop,nop,TS val 1376485450 ecr 100293680], length 170
+19:19:38.052215 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [P.], seq 907:1711, ack 4082, win 501, options [nop,nop,TS val 1376485450 ecr 100293680], length 804
+19:19:38.052301 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [P.], seq 1711:1883, ack 4082, win 501, options [nop,nop,TS val 1376485450 ecr 100293680], length 172
+19:19:38.062444 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [.], ack 1711, win 63, options [nop,nop,TS val 100293685 ecr 1376485449], length 0
+19:19:38.062819 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [P.], seq 4082:4369, ack 1883, win 67, options [nop,nop,TS val 100293685 ecr 1376485450], length 287
+19:19:38.062850 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [.], ack 4369, win 499, options [nop,nop,TS val 1376485461 ecr 100293685], length 0
+19:19:38.062967 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [P.], seq 4369:4740, ack 1883, win 67, options [nop,nop,TS val 100293685 ecr 1376485450], length 371
+19:19:38.062988 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [.], ack 4740, win 497, options [nop,nop,TS val 1376485461 ecr 100293685], length 0
+19:19:38.063284 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [P.], seq 1883:1914, ack 4740, win 501, options [nop,nop,TS val 1376485461 ecr 100293685], length 31
+19:19:38.119836 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [.], ack 1914, win 67, options [nop,nop,TS val 100293700 ecr 1376485461], length 0
+19:19:38.144684 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [.], seq 4740:6180, ack 1914, win 67, options [nop,nop,TS val 100293706 ecr 1376485461], length 1440
+19:19:38.144727 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [.], ack 6180, win 493, options [nop,nop,TS val 1376485543 ecr 100293706], length 0
+19:19:38.145077 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [.], seq 6180:13380, ack 1914, win 67, options [nop,nop,TS val 100293706 ecr 1376485461], length 7200
+19:19:38.145118 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [.], ack 13380, win 437, options [nop,nop,TS val 1376485543 ecr 100293706], length 0
+19:19:38.145442 IP srv158-137-240-87.vk.com.https > kira-vostro-5568.47928: Flags [P.], seq 13380:16010, ack 1914, win 67, options [nop,nop,TS val 100293706 ecr 1376485461], length 2630
+19:19:38.145514 IP kira-vostro-5568.47928 > srv158-137-240-87.vk.com.https: Flags [.], ack 16010, win 477, options [nop,nop,TS val 1376485543 ecr 100293706], length 0
+19:19:38.173504 IP kira-vostro-5568.55054 > a2-20-74-17.deploy.static.akamaitechnologies.com.https: Flags [.], ack 1, win 501, options [nop,nop,TS val 277060519 ecr 219958804], length 0
+19:19:38.173535 IP kira-vostro-5568.33638 > 151.101.85.108.https: Flags [.], ack 1, win 501, options [nop,nop,TS val 1993858290 ecr 1417483412], length 0
+19:19:38.173540 IP kira-vostro-5568.33636 > 151.101.85.108.https: Flags [.], ack 1, win 501, options [nop,nop,TS val 1993858290 ecr 2852884767], length 0
+19:19:38.173545 IP kira-vostro-5568.47582 > a2-20-73-130.deploy.static.akamaitechnologies.com.https: Flags [.], ack 1, win 501, options [nop,nop,TS val 4272045733 ecr 3357512611], length 0
+19:19:38.173549 IP kira-vostro-5568.47584 > a2-20-73-130.deploy.static.akamaitechnologies.com.https: Flags [.], ack 1, win 501, options [nop,nop,TS val 4272045733 ecr 3357512611], length 0
+19:19:38.173553 IP kira-vostro-5568.48196 > a184-85-145-102.deploy.static.akamaitechnologies.com.https: Flags [.], ack 1, win 501, options [nop,nop,TS val 2774824220 ecr 498809898], length 0
+19:19:38.191347 IP a2-20-73-130.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.47584: Flags [.], ack 1, win 243, options [nop,nop,TS val 3357522841 ecr 4271984404], length 0
+19:19:38.191724 IP a184-85-145-102.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.48196: Flags [.], ack 1, win 252, options [nop,nop,TS val 498820129 ecr 2774762924], length 0
+19:19:38.197048 IP a2-20-73-130.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.47582: Flags [.], ack 1, win 243, options [nop,nop,TS val 3357522842 ecr 4271984421], length 0
+19:19:38.199581 IP 151.101.85.108.https > kira-vostro-5568.33636: Flags [.], ack 1, win 60, options [nop,nop,TS val 2852894997 ecr 1993797007], length 0
+19:19:38.200242 IP 151.101.85.108.https > kira-vostro-5568.33638: Flags [.], ack 1, win 60, options [nop,nop,TS val 1417493642 ecr 1993797018], length 0
+19:19:38.218056 IP a2-20-74-17.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.55054: Flags [.], ack 1, win 243, options [nop,nop,TS val 219969034 ecr 276999275], length 0
+19:19:38.813818 IP csp3.zte.com.cn.domain > kira-vostro-5568.40855: 63600 0/1/0 (88)
+19:19:38.813888 IP csp3.zte.com.cn.domain > kira-vostro-5568.42780: 7508 0/1/0 (80)
+19:19:39.011264 IP kira-vostro-5568.49509 > csp3.zte.com.cn.domain: 61361+ A? r.mail.ru. (27)
+19:19:39.011885 IP kira-vostro-5568.38796 > csp3.zte.com.cn.domain: 39799+ AAAA? r.mail.ru. (27)
+19:19:39.021551 IP csp3.zte.com.cn.domain > kira-vostro-5568.49509: 61361 1/0/0 A 94.100.180.197 (43)
+19:19:39.022091 IP csp3.zte.com.cn.domain > kira-vostro-5568.38796: 39799 1/0/0 AAAA 2a00:1148:db00::17 (55)
+19:19:39.023463 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [S], seq 2929491098, win 64240, options [mss 1460,sackOK,TS val 4032004123 ecr 0,nop,wscale 7], length 0
+19:19:39.024315 IP kira-vostro-5568.36951 > csp3.zte.com.cn.domain: 27616+ PTR? 197.180.100.94.in-addr.arpa. (45)
+19:19:39.031141 IP csp3.zte.com.cn.domain > kira-vostro-5568.36951: 27616 1/0/0 PTR r.mail.ru. (68)
+19:19:39.043210 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [S.], seq 3866224028, ack 2929491099, win 43338, options [mss 1410,sackOK,TS val 1246789783 ecr 4032004123,nop,wscale 14], length 0
+19:19:39.043277 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [.], ack 1, win 502, options [nop,nop,TS val 4032004143 ecr 1246789783], length 0
+19:19:39.051688 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [P.], seq 1:518, ack 1, win 502, options [nop,nop,TS val 4032004152 ecr 1246789783], length 517
+19:19:39.073099 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [.], ack 518, win 3, options [nop,nop,TS val 1246789873 ecr 4032004152], length 0
+19:19:39.074177 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [P.], seq 1:2852, ack 518, win 3, options [nop,nop,TS val 1246789874 ecr 4032004152], length 2851
+19:19:39.074227 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [.], ack 2852, win 480, options [nop,nop,TS val 4032004174 ecr 1246789874], length 0
+19:19:39.090655 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [P.], seq 518:644, ack 2852, win 501, options [nop,nop,TS val 4032004190 ecr 1246789874], length 126
+19:19:39.092095 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [P.], seq 644:1071, ack 2852, win 501, options [nop,nop,TS val 4032004192 ecr 1246789874], length 427
+19:19:39.112972 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [.], ack 1071, win 3, options [nop,nop,TS val 1246789913 ecr 4032004190], length 0
+19:19:39.113255 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [P.], seq 2852:2903, ack 1071, win 3, options [nop,nop,TS val 1246789914 ecr 4032004190], length 51
+19:19:39.113271 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [.], ack 2903, win 501, options [nop,nop,TS val 4032004213 ecr 1246789914], length 0
+19:19:39.201537 IP kira-vostro-5568.55076 > a2-20-74-17.deploy.static.akamaitechnologies.com.https: Flags [.], ack 633694320, win 501, options [nop,nop,TS val 277061547 ecr 219959824], length 0
+19:19:39.201615 IP kira-vostro-5568.35768 > 151.139.128.14.http: Flags [.], ack 1752462886, win 501, options [nop,nop,TS val 3744985152 ecr 2536457152], length 0
+19:19:39.206558 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [P.], seq 2903:3376, ack 1071, win 3, options [nop,nop,TS val 1246790007 ecr 4032004213], length 473
+19:19:39.206620 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [.], ack 3376, win 498, options [nop,nop,TS val 4032004306 ecr 1246790007], length 0
+19:19:39.220612 IP 151.139.128.14.http > kira-vostro-5568.35768: Flags [.], ack 1, win 243, options [nop,nop,TS val 2536467392 ecr 3744923894], length 0
+19:19:39.229217 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [P.], seq 1071:1512, ack 3376, win 501, options [nop,nop,TS val 4032004329 ecr 1246790007], length 441
+19:19:39.247446 IP a2-20-74-17.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.55076: Flags [.], ack 1, win 252, options [nop,nop,TS val 219970064 ecr 277000479], length 0
+19:19:39.292201 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [.], ack 1512, win 3, options [nop,nop,TS val 1246790093 ecr 4032004329], length 0
+19:19:39.341363 IP r.mail.ru.https > kira-vostro-5568.35976: Flags [P.], seq 3376:3849, ack 1512, win 3, options [nop,nop,TS val 1246790141 ecr 4032004329], length 473
+19:19:39.341426 IP kira-vostro-5568.35976 > r.mail.ru.https: Flags [.], ack 3849, win 498, options [nop,nop,TS val 4032004441 ecr 1246790141], length 0
+19:19:39.453455 IP kira-vostro-5568.55056 > a2-20-74-17.deploy.static.akamaitechnologies.com.https: Flags [.], ack 616176671, win 501, options [nop,nop,TS val 277061799 ecr 219960074], length 0
+19:19:39.453537 IP kira-vostro-5568.55074 > a2-20-74-17.deploy.static.akamaitechnologies.com.https: Flags [.], ack 620574139, win 501, options [nop,nop,TS val 277061799 ecr 219960074], length 0
+19:19:39.497462 IP a2-20-74-17.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.55074: Flags [.], ack 1, win 252, options [nop,nop,TS val 219970314 ecr 277000554], length 0
+19:19:39.497911 IP a2-20-74-17.deploy.static.akamaitechnologies.com.https > kira-vostro-5568.55056: Flags [.], ack 1, win 252, options [nop,nop,TS val 219970314 ecr 277000565], length 0
+^C
+414 packets captured
+521 packets received by filter
+107 packets dropped by kernel
+kira@kira-Vostro-5568:~/Linux-basics-2020$ iptables
+iptables v1.8.4 (legacy): no command specified
+Try `iptables -h' or 'iptables --help' for more information.
+kira@kira-Vostro-5568:~/Linux-basics-2020$ iptables google.com
+Bad argument `google.com'
+Try `iptables -h' or 'iptables --help' for more information.
+kira@kira-Vostro-5568:~/Linux-basics-2020$ iptables 8.8.8.8
+Bad argument `8.8.8.8'
+Try `iptables -h' or 'iptables --help' for more information.
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo iptables-save -c -t filter
+# Generated by iptables-save v1.8.4 on Sun Oct 18 19:20:56 2020
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+COMMIT
+# Completed on Sun Oct 18 19:20:56 2020
+kira@kira-Vostro-5568:~/Linux-basics-2020$ wget -O wget.zip http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+--2020-10-18 19:22:05--  http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+Resolving ftp.gnu.org (ftp.gnu.org)... 209.51.188.20, 2001:470:142:3::b
+Connecting to ftp.gnu.org (ftp.gnu.org)|209.51.188.20|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 446966 (436K) [application/x-gzip]
+Saving to: ‘wget.zip’
+
+wget.zip            100%[===================>] 436,49K   426KB/s    in 1,0s    
+
+2020-10-18 19:22:07 (426 KB/s) - ‘wget.zip’ saved [446966/446966]
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ curl
+
+Command 'curl' not found, but can be installed with:
+
+sudo apt install curl
+
+kira@kira-Vostro-5568:~/Linux-basics-2020$ ^C
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo apt install curl
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  ant ant-optional antlr bnd groovy ivy java-wrappers javascript-common junit4
+  libantlr-java libaopalliance-java libapache-pom-java libasm-java
+  libatinject-jsr330-api-java libbcel-java libbcpg-java libbcprov-java
+  libbindex-java libbsf-java libbsh-java libcdi-api-java libcommons-cli-java
+  libcommons-codec-java libcommons-collections3-java libcommons-compress-java
+  libcommons-io-java libcommons-lang-java libcommons-lang3-java
+  libcommons-logging-java libcommons-parent-java libdd-plist-java
+  libdom4j-java libel-api-java libfelix-framework-java
+  libfelix-gogo-runtime-java libfelix-osgi-obr-java libfelix-resolver-java
+  libfindbugs-java libfprint-2-tod1 libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libgoogle-gson-java
+  libgpars-groovy-java libgradle-core-java libgradle-plugins-java
+  libguava-java libguice-java libhamcrest-java libhawtjni-runtime-java
+  libhttpclient-java libhttpcore-java libjansi-java libjansi-native-java
+  libjarjar-java libjatl-java libjavaewah-java libjaxen-java libjcifs-java
+  libjcip-annotations-java libjcommander-java libjcsp-java
+  libjformatstring-java libjgit-java libjline2-java libjna-java libjna-jni
+  libjs-jquery libjsch-java libjsoup-java libjsp-api-java libjsr166y-java
+  libjsr305-java libjzlib-java libkryo-java libkxml2-java liblogback-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libminlog-java libmultiverse-core-java
+  libnative-platform-java libnative-platform-jni libnekohtml-java
+  libobjenesis-java libosgi-annotation-java libosgi-compendium-java
+  libosgi-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-container-default-java
+  libplexus-container-default1.5-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libpolyglot-maven-java
+  libqdox-java libreflectasm-java librhino-java libservlet-api-java
+  libservlet3.1-java libsimple-http-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java libwagon-http-java
+  libwagon-provider-api-java libwebsocket-api-java libxbean-reflect-java
+  libxerces2-java libxml-commons-external-java libxml-commons-resolver1.1-java
+  libxpp3-java libxstream-java libxz-java libyaml-snake-java testng
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  curl
+0 upgraded, 1 newly installed, 0 to remove and 16 not upgraded.
+Need to get 161 kB of archives.
+After this operation, 411 kB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.2 [161 kB]
+Fetched 161 kB in 1s (166 kB/s)
+Selecting previously unselected package curl.
+(Reading database ... 195098 files and directories currently installed.)
+Preparing to unpack .../curl_7.68.0-1ubuntu2.2_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.2) ...
+Setting up curl (7.68.0-1ubuntu2.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+kira@kira-Vostro-5568:~/Linux-basics-2020$ curl example.com
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    </style>    
+</head>
+
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo apt install openssh-server
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  ant ant-optional antlr bnd groovy ivy java-wrappers javascript-common junit4
+  libantlr-java libaopalliance-java libapache-pom-java libasm-java
+  libatinject-jsr330-api-java libbcel-java libbcpg-java libbcprov-java
+  libbindex-java libbsf-java libbsh-java libcdi-api-java libcommons-cli-java
+  libcommons-codec-java libcommons-collections3-java libcommons-compress-java
+  libcommons-io-java libcommons-lang-java libcommons-lang3-java
+  libcommons-logging-java libcommons-parent-java libdd-plist-java
+  libdom4j-java libel-api-java libfelix-framework-java
+  libfelix-gogo-runtime-java libfelix-osgi-obr-java libfelix-resolver-java
+  libfindbugs-java libfprint-2-tod1 libgeronimo-annotation-1.3-spec-java
+  libgeronimo-interceptor-3.0-spec-java libgoogle-gson-java
+  libgpars-groovy-java libgradle-core-java libgradle-plugins-java
+  libguava-java libguice-java libhamcrest-java libhawtjni-runtime-java
+  libhttpclient-java libhttpcore-java libjansi-java libjansi-native-java
+  libjarjar-java libjatl-java libjavaewah-java libjaxen-java libjcifs-java
+  libjcip-annotations-java libjcommander-java libjcsp-java
+  libjformatstring-java libjgit-java libjline2-java libjna-java libjna-jni
+  libjs-jquery libjsch-java libjsoup-java libjsp-api-java libjsr166y-java
+  libjsr305-java libjzlib-java libkryo-java libkxml2-java liblogback-java
+  libmaven-parent-java libmaven-resolver-java libmaven-shared-utils-java
+  libmaven3-core-java libminlog-java libmultiverse-core-java
+  libnative-platform-java libnative-platform-jni libnekohtml-java
+  libobjenesis-java libosgi-annotation-java libosgi-compendium-java
+  libosgi-core-java libplexus-cipher-java libplexus-classworlds-java
+  libplexus-component-annotations-java libplexus-container-default-java
+  libplexus-container-default1.5-java libplexus-interpolation-java
+  libplexus-sec-dispatcher-java libplexus-utils2-java libpolyglot-maven-java
+  libqdox-java libreflectasm-java librhino-java libservlet-api-java
+  libservlet3.1-java libsimple-http-java libsisu-inject-java
+  libsisu-plexus-java libslf4j-java libwagon-file-java libwagon-http-java
+  libwagon-provider-api-java libwebsocket-api-java libxbean-reflect-java
+  libxerces2-java libxml-commons-external-java libxml-commons-resolver1.1-java
+  libxpp3-java libxstream-java libxz-java libyaml-snake-java testng
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  ncurses-term openssh-sftp-server ssh-import-id
+Suggested packages:
+  molly-guard monkeysphere ssh-askpass
+The following NEW packages will be installed:
+  ncurses-term openssh-server openssh-sftp-server ssh-import-id
+0 upgraded, 4 newly installed, 0 to remove and 16 not upgraded.
+Need to get 688 kB of archives.
+After this operation, 6 010 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ru.archive.ubuntu.com/ubuntu focal/main amd64 ncurses-term all 6.2-0ubuntu2 [249 kB]
+Get:2 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-sftp-server amd64 1:8.2p1-4ubuntu0.1 [51,5 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-server amd64 1:8.2p1-4ubuntu0.1 [377 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu focal/main amd64 ssh-import-id all 5.10-0ubuntu1 [10,0 kB]
+Fetched 688 kB in 1s (588 kB/s)         
+Preconfiguring packages ...
+Selecting previously unselected package ncurses-term.
+(Reading database ... 195105 files and directories currently installed.)
+Preparing to unpack .../ncurses-term_6.2-0ubuntu2_all.deb ...
+Unpacking ncurses-term (6.2-0ubuntu2) ...
+Selecting previously unselected package openssh-sftp-server.
+Preparing to unpack .../openssh-sftp-server_1%3a8.2p1-4ubuntu0.1_amd64.deb ...
+Unpacking openssh-sftp-server (1:8.2p1-4ubuntu0.1) ...
+Selecting previously unselected package openssh-server.
+Preparing to unpack .../openssh-server_1%3a8.2p1-4ubuntu0.1_amd64.deb ...
+Unpacking openssh-server (1:8.2p1-4ubuntu0.1) ...
+Selecting previously unselected package ssh-import-id.
+Preparing to unpack .../ssh-import-id_5.10-0ubuntu1_all.deb ...
+Unpacking ssh-import-id (5.10-0ubuntu1) ...
+Setting up openssh-sftp-server (1:8.2p1-4ubuntu0.1) ...
+Setting up openssh-server (1:8.2p1-4ubuntu0.1) ...
+
+Creating config file /etc/ssh/sshd_config with new version
+Creating SSH2 RSA key; this may take some time ...
+3072 SHA256:nZgE1eHbUhAkbRtwFw56GV0N+Ec5GiNVawlOmKPnXB8 root@kira-Vostro-5568 (R
+SA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:INIlN/cYOPxOSfdqkU4UlW35GZD16yjv4axuAmDGtGQ root@kira-Vostro-5568 (EC
+DSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:zQGHWsx/GCsYGbBLTLweUCvPdhSZECIAtcKbL7ec0MU root@kira-Vostro-5568 (ED
+25519)
+Created symlink /etc/systemd/system/sshd.service → /lib/systemd/system/ssh.servi
+ce.
+Created symlink /etc/systemd/system/multi-user.target.wants/ssh.service → /lib/s
+ystemd/system/ssh.service.
+rescue-ssh.target is a disabled or a static unit, not starting it.
+Setting up ssh-import-id (5.10-0ubuntu1) ...
+Attempting to convert /etc/ssh/ssh_import_id
+Setting up ncurses-term (6.2-0ubuntu2) ...
+Processing triggers for systemd (245.4-4ubuntu3.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for ufw (0.36-6) ...
+kira@kira-Vostro-5568:~/Linux-basics-2020$  sudo systemctl enable sshd
+Failed to enable unit: Refusing to operate on alias name or linked unit file: sshd.service
+kira@kira-Vostro-5568:~/Linux-basics-2020$ ssh localhost
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is SHA256:INIlN/cYOPxOSfdqkU4UlW35GZD16yjv4axuAmDGtGQ.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'localhost' (ECDSA) to the list of known hosts.
+kira@localhost's password: 
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+14 updates can be installed immediately.
+11 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+kira@kira-Vostro-5568:~$ ssh 0.0.0.0
+The authenticity of host '0.0.0.0 (0.0.0.0)' can't be established.
+ECDSA key fingerprint is SHA256:INIlN/cYOPxOSfdqkU4UlW35GZD16yjv4axuAmDGtGQ.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '0.0.0.0' (ECDSA) to the list of known hosts.
+kira@0.0.0.0's password: 
+Welcome to Ubuntu 20.04.1 LTS (GNU/Linux 5.4.0-48-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+14 updates can be installed immediately.
+11 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
+Last login: Sun Oct 18 19:24:59 2020 from 127.0.0.1
+kira@kira-Vostro-5568:~$ 
+
