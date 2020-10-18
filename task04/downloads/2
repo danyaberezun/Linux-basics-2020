@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head><title>curl vs Wget</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="STYLESHEET" type="text/css" href="/daniel.css"> <link href="//fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head>
+
+<body bgcolor="#ffffff" text="#000040">
+<div class="topmenu">
+<a href="/">front</a> |
+<a href="/blog/">blog</a> |
+<a href="/talks.html">talks</a> |
+<a href="/videos/">videos</a> |
+<a href="/docs/">docs</a> |
+<a href="/photos.html">photos</a> |
+<a href="/podcasts.html">podcasts</a> |
+<a href="/address.html">contact</a> |
+<a href="/about.html">about me</a>
+</div>
+<div class="main">
+Related: <a href="ftp-vs-http.html">FTP vs HTTP</a>, <a
+href="bittorrent-vs-http.html">bittorrent vs HTTP</a>, <a href="curl-vs-libcurl.html">curl vs libcurl</a> and <a href="curl-vs-httpie.html">curl vs HTTPie</a>.
+<p>
+<div class="box">
+<h1>curl vs Wget</h1>
+<p>The main differences as I (Daniel Stenberg) see them. Please consider my bias
+towards <a href="http://curl.haxx.se">curl</a> since after all, curl is my baby - but I
+
+contribute to <a href="http://www.gnu.org/software/wget/">Wget</a> as well.</p>
+
+<p>Please let me know if you have other thoughts or comments on this document.</p>
+<p><a href="https://github.com/bagder/docs">File issues or pull-requests</a> if you find
+
+problems or have improvements.</p>
+<h2>What both commands do</h2>
+<ul>
+<li>both are command line tools that can download contents from FTP, HTTP and
+HTTPS</li>
+<li>both can send HTTP POST requests</li>
+<li>both support HTTP cookies</li>
+<li>both are designed to work without user interaction, like from within scripts</li>
+<li>both are fully open source and free software</li>
+<li>both projects were started in the 90s</li>
+<li>both support <em>metalink</em></li>
+</ul>
+<h2>How they differ</h2>
+<h3>curl</h3>
+<ul>
+<li><p><em>library</em>. curl is powered by <em>libcurl</em> - a cross-platform library with a
+stable API that can be used by each and everyone. This difference is major
+since it creates a completely different attitude on how to do things
+internally. It is also slightly harder to make a library than a "mere"
+command line tool.</p></li>
+<li><p><em>pipes</em>. curl works more like the traditional unix cat command, it sends
+more stuff to stdout, and reads more from stdin in a "everything is a pipe"
+manner. Wget is more like cp, using the same analogue.</p></li>
+<li><p><em>Single shot</em>. curl is basically made to do single-shot transfers of
+data. It transfers just the URLs that the user specifies, and does not
+contain any recursive downloading logic nor any sort of HTML parser.</p></li>
+<li><p><em>More protocols</em>. curl supports FTP(S), Gopher, HTTP(S), SCP, SFTP, TFTP,
+TELNET, DICT, LDAP(S), MQTT, FILE, POP3(S), IMAP(S), SMB/CIFS, SMTP(S), RTMP
+and RTSP. Wget supports HTTP(S) and FTP.</p></li>
+<li><p><em>More portable</em>. curl builds and runs on lots of more platforms than
+wget. For example: OS/400, TPF and other more "exotic" platforms that aren't
+straight-forward unix clones.</p></li>
+<li><p><em>More SSL libraries</em> and SSL support. curl can be built with one out of
+thirteen (13!) different SSL/TLS libraries, and it offers more control and
+wider support for protocol details.</p></li>
+<li><p><em>HTTP auth</em>. curl supports more HTTP authentication methods,
+especially over HTTP proxies: Basic, Digest, NTLM and Negotiate</p></li>
+<li><p><em>SOCKS</em>. curl supports SOCKS4 and SOCKS5 for proxy access. With local or
+proxy based name resolving.</p></li>
+<li><p><em>Bidirectional</em>. curl offers upload and sending capabilities. Wget
+only offers plain HTTP POST support.</p></li>
+<li><p><em>HTTP multipart/form-data</em> sending, which allows users to do HTTP
+"upload" and in general emulate browsers and do HTTP automation to a wider
+extent</p></li>
+<li><p>curl supports gzip, brotli, zstd and deflate Content-Encoding and does
+<em>automatic decompression</em></p></li>
+<li><p>curl offers and performs decompression of <em>Transfer-Encoded HTTP</em>, wget
+doesn't</p></li>
+<li><p>curl supports <em>HTTP/2</em>, <em>HTTP/3</em>, <em>alt-svc</em> and it does dual-stack connects
+using <em>Happy Eyeballs</em></p></li>
+<li><p>curl can do many transfers in parallel (<code>-Z</code>)</p></li>
+<li><p><em>Much more developer activity</em>. While this can be debated, I consider three
+metrics here: mailing list activity, source code commit frequency and
+release frequency. Anyone following these two projects can see that the curl
+project has a lot higher pace in all these areas, and it has been so for 15+
+years. <a href="https://www.openhub.net/p/_compare?project_0=cURL&amp;project_1=Wget">Compare on
+
+openhub</a></p></li>
+<li><p>curl comes pre-installed on macOS and Windows 10. Wget does not.</p></li>
+</ul>
+<h3>Wget</h3>
+<ul>
+<li><p>Wget is <em>command line only</em>. There's no library.</p></li>
+<li><p><em>Recursive!</em> Wget's major strong side compared to curl is its ability to
+download recursively, or even just download everything that is referred to
+from a remote resource, be it a HTML page or a FTP directory listing.</p></li>
+<li><p><em>Older</em>. Wget has traces back to
+<a href="http://en.wikipedia.org/wiki/Wget#History">1995</a>, while curl can be
+
+tracked back no earlier than the end of
+<a href="http://curl.haxx.se/docs/history.html">1996</a>.</p></li>
+
+<li><p><em>GPL</em>. Wget is <em>GPL v3</em>. curl is <em>MIT licensed</em>.</p></li>
+<li><p><em>GNU</em>. Wget is part of the <em>GNU</em> project and all copyrights are assigned to
+<em>FSF</em>. The curl project is entirely stand-alone and independent with no
+organization parenting at all with almost all copyrights owned by
+<em>Daniel</em>.</p></li>
+<li><p>Wget requires <em>no extra options</em> to simply download a remote URL to a local
+file, while curl requires -o or -O.</p></li>
+<li><p>Wget supports only <em>GnuTLS or OpenSSL</em> for SSL/TLS support</p></li>
+<li><p>Wget supports only <em>Basic</em> auth as the only auth type over HTTP proxy</p></li>
+<li><p>Wget has no SOCKS support</p></li>
+<li><p>Its ability to recover from a prematurely broken transfer and <em>continue
+downloading</em> has no counterpart in curl.</p></li>
+<li><p>Wget enables more features by default: cookies, redirect-following, time
+stamping from the remote resource etc. With curl most of those features need
+to be explicitly enabled.</p></li>
+<li><p>There's a 'wget' in busybox, there's no curl there (within quotes since it is
+not the actual wget, just a stripped down clone)</p></li>
+<li><p>Wget can be typed in using only the left hand on a qwerty keyboard!</p></li>
+</ul>
+<h2>Additional Stuff</h2>
+<p>In recent years, <strong>wget2</strong> is worked on to become the replacement for wget.
+This comparison will eventually get wget2 details as well.</p>
+<p>Some have argued that I should compare uploading capabilities with
+<a href="http://wput.sourceforge.net">wput</a>, but that's a separate tool/project and I
+
+don't include that in this comparison.</p>
+<p>Two other capable tools with similar feature set include
+<a href="http://aria2.sourceforge.net/">aria2</a> and
+
+<a href="http://axel.alioth.debian.org">axel</a> (dead project?) - try them out!</p>
+
+<p>For a stricter feature by feature comparison (that also compares other similar
+tools), see the <a href="http://curl.haxx.se/docs/comparison-table.html">curl comparison
+
+table</a></p>
+<h2>Thanks</h2>
+<p>Feedback and improvements by: Micah Cowan, Olemis Lang</p>
+</div>
+<p>
+Updated: __TODAY__ __NOW__ (Central European, Stockholm Sweden)
+</div>
+</body></html>

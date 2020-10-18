@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>tcpdump — Википедия</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"efb28078-5a75-4077-ba96-08ee2df2d21b","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Tcpdump","wgTitle":"Tcpdump","wgCurRevisionId":105508360,"wgRevisionId":105508360,"wgArticleId":534824,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","Википедия:Статьи с источниками из Викиданных",
+"Википедия:Статьи с изображениями: заполнить свойство P373 в Викиданных","ПРО:ИТ:Статьи по алфавиту","ПРО:ИТ:Последняя правка: в текущем году","Незавершённые статьи о программном обеспечении","Программное обеспечение по алфавиту","Утилиты Unix","Анализаторы трафика"],"wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Tcpdump","wgRelevantArticleId":534824,"wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":3,"quality":2,"pristine":4}}},"wgStableRevisionId":105508360,"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsReferencePreviews":!1,"wgPopupsConflictsWithNavPopupGadget":!1,"wgVisualEditor":{
+"pageLanguageCode":"ru","pageLanguageDir":"ltr","pageVariantFallbacks":"ru"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"русский","wgNoticeProject":"wikipedia","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage","wgGENewcomerTasksGuidanceEnabled":!0,"wgWikibaseItemId":"Q306039"};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.flaggedRevs.icons":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready","oojs-ui-core.icons":"ready","ext.cite.styles":"ready","ext.pygments":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready","ext.flaggedRevs.basic":"ready",
+"ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","ext.scribunto.logs","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.flaggedRevs.advanced","ext.gadget.collapserefs","ext.gadget.directLinkToCommons","ext.gadget.referenceTooltips","ext.gadget.logo","ext.gadget.edittop","ext.gadget.blpEditNotice","ext.gadget.wikibugs","ext.gadget.sidebarRelated","ext.gadget.navboxNavigation","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.growthExperiments.SuggestedEditSession"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"ru"});
+});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=ru&amp;modules=ext.cite.styles%7Cext.flaggedRevs.basic%2Cicons%7Cext.pygments%2CwikimediaBadges%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.toc.styles%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.styles.legacy%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<noscript><link rel="stylesheet" href="/w/load.php?lang=ru&amp;modules=noscript&amp;only=styles&amp;skin=vector"/></noscript>
+<meta name="generator" content="MediaWiki 1.36.0-wmf.13"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/ef/Tcpdump_4.9.3_screenshot.png"/>
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//ru.m.wikipedia.org/wiki/Tcpdump"/>
+<link rel="alternate" type="application/x-wiki" title="Править" href="/w/index.php?title=Tcpdump&amp;action=edit"/>
+<link rel="edit" title="Править" href="/w/index.php?title=Tcpdump&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Википедия (ru)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//ru.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://ru.wikipedia.org/wiki/Tcpdump"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Tcpdump rootpage-Tcpdump skin-vector action-view skin-vector-legacy"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><!-- CentralNotice --></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="ru">tcpdump</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">Материал из Википедии — свободной энциклопедии</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" lang="ru" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><p class="mw-empty-elt">
+</p>
+<table class="infobox" style="" data-name="Программа"><tbody><tr><th colspan="2" class="infobox-above" style="background:#cfe3ff;">Tcpdump</th></tr><tr><td colspan="2" class="infobox-image" style=""> <span class="wikidata-claim" data-wikidata-property-id="P154" data-wikidata-claim-id="Q306039$609E1323-AC8D-4368-A79B-1B3DD3E4EB5D"><span class="wikidata-snak wikidata-main-snak"><a href="/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Tcpdump%26libpcap.svg" class="image"><img alt="Tcpdump&amp;libpcap.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/39/Tcpdump%26libpcap.svg/220px-Tcpdump%26libpcap.svg.png" decoding="async" width="220" height="31" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/39/Tcpdump%26libpcap.svg/330px-Tcpdump%26libpcap.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/39/Tcpdump%26libpcap.svg/440px-Tcpdump%26libpcap.svg.png 2x" data-file-width="622" data-file-height="87" /></a></span></span> </td></tr><tr><td colspan="2" class="infobox-image" style=""> <span class="wikidata-claim" data-wikidata-property-id="P18" data-wikidata-claim-id="Q306039$60A860AE-2714-4A30-BA34-D574B4426328"><span class="wikidata-snak wikidata-main-snak"><a href="/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Tcpdump_4.9.3_screenshot.png" class="image"><img alt="Tcpdump 4.9.3 screenshot.png" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Tcpdump_4.9.3_screenshot.png/274px-Tcpdump_4.9.3_screenshot.png" decoding="async" width="274" height="167" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Tcpdump_4.9.3_screenshot.png/411px-Tcpdump_4.9.3_screenshot.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Tcpdump_4.9.3_screenshot.png/548px-Tcpdump_4.9.3_screenshot.png 2x" data-file-width="1193" data-file-height="727" /></a><br /><span class="media-caption" data-wikidata-qualifier-id="P2096" style="display:block;">Вывод tcpdump на консоль</span></span></span> </td></tr>
+<tr>
+<th class="plainlist">Тип</th>
+<td class="plainlist">
+<span class="wikidata-claim" data-wikidata-property-id="P31&#91;!Q341&#93;&#91;!Q7397&#93;&#91;!Q166142&#93;" data-wikidata-claim-id="Q306039$c5cc5094-4cc8-25bc-22e7-f231d53579f7"><span class="wikidata-snak wikidata-main-snak"><a href="/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80_%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0" title="Анализатор трафика">анализатор трафика</a></span></span></td>
+</tr>
+<tr>
+<th class="plainlist"><a href="/wiki/%D0%AF%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="Язык программирования">Написана на</a></th>
+<td class="plainlist">
+<span class="wikidata-claim" data-wikidata-property-id="P277" data-wikidata-claim-id="Q306039$C7785A39-3FDA-4D93-BD68-238700787D99"><span class="wikidata-snak wikidata-main-snak"><a href="/wiki/%D0%A1%D0%B8_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)" title="Си (язык программирования)">Си</a></span><sup id="cite_ref-_dfdb53d065c9a398_1-0" class="reference"><a href="#cite_note-_dfdb53d065c9a398-1">&#91;1&#93;</a></sup></span></td>
+</tr>
+<tr>
+<th class="plainlist"><a href="/wiki/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0" title="Операционная система">Операционная система</a></th>
+<td class="plainlist">
+<span class="wikidata-claim" data-wikidata-property-id="P306" data-wikidata-claim-id="Q306039$6C8BCE6B-FCBA-4374-B479-210F6235E8BC"><span class="wikidata-snak wikidata-main-snak"><a href="/wiki/Linux" title="Linux">Linux</a></span></span>&#32;и&#32;<span class="wikidata-claim" data-wikidata-property-id="P306" data-wikidata-claim-id="Q306039$7c5905a5-4582-0457-b63b-ee3253b3dbac"><span class="wikidata-snak wikidata-main-snak"><a href="/wiki/Windows" title="Windows">Microsoft Windows</a></span></span></td>
+</tr>
+<tr>
+<th class="plainlist">Последняя версия</th>
+<td class="plainlist">
+<ul><li><span class="wikidata-claim" data-wikidata-property-id="P348" data-wikidata-claim-id="Q306039$dbd6aa4f-ff55-4378-97e8-ff458d614dd6"><span class="wikidata-snak wikidata-main-snak">4.9.3</span> (<span class="wikidata-snak" data-wikidata-hash="7d5d34ce7d16c699354f9cb0ad1c9edb3e7be4f0"><span class="nowrap"><a href="/wiki/1_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F" title="1 октября">1 октября</a> <a href="/wiki/2019_%D0%B3%D0%BE%D0%B4" title="2019 год">2019</a></span></span>)<sup id="cite_ref-_72055d8ee17ef1a8_2-0" class="reference"><a href="#cite_note-_72055d8ee17ef1a8-2">&#91;2&#93;</a></sup></span></li></ul></td>
+</tr>
+<tr>
+<th class="plainlist">Читаемые форматы файлов</th>
+<td class="plainlist">
+<span class="wikidata-claim" data-wikidata-property-id="P1072" data-wikidata-claim-id="Q306039$68efe7f5-4142-3845-6e42-6a842ab89d9d"><span class="wikidata-snak wikidata-main-snak"><span class="plainlinks"><a class="external text" href="https://ru.wikipedia.org/w/index.php?title=PCAP&amp;action=edit&amp;editintro=T:Нет_статьи/editintro&amp;preload=T:Нет_статьи/preload&amp;preloadparams%5B%5D=Q28009435&amp;preloadparams%5B%5D=PCAP&amp;preloadparams%5B%5D=Универсальная_карточка"><span style="color: #ba0000; text-decoration: inherit; -moz-text-decoration-color: #ba0000; text-decoration-color: #ba0000;">PCAP</span></a></span><sup><a href="https://www.wikidata.org/wiki/Q28009435" class="extiw" title="d:Q28009435">[d]</a></sup></span></span></td>
+</tr>
+<tr>
+<th class="plainlist"><a href="/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_%D0%BD%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5" title="Лицензия на программное обеспечение">Лицензия</a></th>
+<td class="plainlist">
+<span class="wikidata-claim" data-wikidata-property-id="P275" data-wikidata-claim-id="Q306039$e2843857-47a1-a13c-9a08-4252b951c18e"><span class="wikidata-snak wikidata-main-snak"><span class="plainlinks"><a class="external text" href="https://ru.wikipedia.org/w/index.php?title=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D1%86%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F+%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F+BSD&amp;action=edit&amp;editintro=T:Нет_статьи/editintro&amp;preload=T:Нет_статьи/preload&amp;preloadparams%5B%5D=Q18491847&amp;preloadparams%5B%5D=%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D1%86%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F+%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F+BSD&amp;preloadparams%5B%5D=Универсальная_карточка"><span style="color: #ba0000; text-decoration: inherit; -moz-text-decoration-color: #ba0000; text-decoration-color: #ba0000;">модифицированная лицензия BSD</span></a></span><sup><a href="https://www.wikidata.org/wiki/Q18491847" class="extiw" title="d:Q18491847">[d]</a></sup></span><sup id="cite_ref-_733689a72b5838b7_3-0" class="reference"><a href="#cite_note-_733689a72b5838b7-3">&#91;3&#93;</a></sup></span></td>
+</tr>
+<tr>
+<th class="plainlist">Сайт</th>
+<td class="plainlist">
+<span class="wikidata-claim" data-wikidata-property-id="P856" data-wikidata-claim-id="Q306039$C0B9756B-1A58-48E2-B957-FF9965A2B9D6"><span class="wikidata-snak wikidata-main-snak"><a rel="nofollow" class="external text" href="https://www.tcpdump.org/">tcpdump.org</a></span></span></td>
+</tr>
+</tbody></table>
+<p><b>tcpdump</b> (от <i><a href="/wiki/TCP" class="mw-redirect" title="TCP">TCP</a></i> и <a href="/wiki/%D0%90%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Английский язык">англ.</a>&#160;<span lang="en" style="font-style:italic;">dump</span>&#160;— свалка, сбрасывать)&#160;— утилита <a href="/wiki/UNIX" class="mw-redirect" title="UNIX">UNIX</a> (есть <a rel="nofollow" class="external text" href="https://web.archive.org/web/20111008015701/http://www.winpcap.org/">клон</a> для <a href="/wiki/Windows" title="Windows">Windows</a>), позволяющая перехватывать и <a href="/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80_%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0" title="Анализатор трафика">анализировать сетевой трафик</a>, проходящий через компьютер, на котором запущена данная программа.
+</p><p>Для выполнения программы требуется наличие прав <a href="/wiki/%D0%A1%D1%83%D0%BF%D0%B5%D1%80%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C" class="mw-redirect" title="Суперпользователь">суперпользователя</a> и прямой доступ к устройству (так, например, запуск из <a href="/wiki/FreeBSD_Jail" title="FreeBSD Jail">Jail</a> во FreeBSD невозможен).
+</p><p>Основные назначения tcpdump:
+</p>
+<ul><li>Отладка сетевых приложений.</li>
+<li>Отладка сети и сетевой конфигурации в целом.</li></ul>
+<p>Описание:
+</p>
+<table class="standard">
+<tbody><tr>
+<th>SYN
+</th>
+<td>S</td>
+<td>Флаг, который используется при запросе на соединение.
+</td></tr>
+<tr>
+<th>ACK
+</th>
+<td>.</td>
+<td>Используется при подтверждении пришедшего пакета.
+</td></tr>
+<tr>
+<th>FIN
+</th>
+<td>F</td>
+<td>Флаг устанавливается при нормальном закрытии соединения.
+</td></tr>
+<tr>
+<th>URGENT
+</th>
+<td>U</td>
+<td>Этот флаг нужен при передаче экстренных данных&#160;— например, при посылке <kbd style="border:1px solid #aaa; border-radius: 0.2em; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; box-shadow: 0.1em 0.2em 0.2em #ddd; -moz-box-shadow: 0.1em 0.2em 0.2em #ddd; -webkit-box-shadow: 0.1em 0.2em 0.2em #ddd; background-color:#f9f9f9; font-family:inherit; font-size:0.85em; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -ms-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding:0.1em 0.3em; white-space:nowrap">Ctrl</kbd>+<kbd style="border:1px solid #aaa; border-radius: 0.2em; -moz-border-radius: 0.2em; -webkit-border-radius: 0.2em; box-shadow: 0.1em 0.2em 0.2em #ddd; -moz-box-shadow: 0.1em 0.2em 0.2em #ddd; -webkit-box-shadow: 0.1em 0.2em 0.2em #ddd; background-color:#f9f9f9; font-family:inherit; font-size:0.85em; background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -ms-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee); background-image: linear-gradient(top, #eee, #f9f9f9, #eee); padding:0.1em 0.3em; white-space:nowrap">C</kbd> в telnet-соединении.
+</td></tr>
+<tr>
+<th>PUSH
+</th>
+<td>P</td>
+<td>Как правило, данный флаг устанавливается при передаче пользовательских данных.
+</td></tr>
+<tr>
+<th>RESET
+</th>
+<td>R</td>
+<td>Немедленный разрыв соединения.
+</td></tr>
+<tr>
+<th>Заполнитель
+</th>
+<td>none</td>
+<td>В случае, если в пакете отсутствует какой-либо флаг используется данный заполнитель.
+</td></tr></tbody></table>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="ru" dir="ltr"><h2 id="mw-toc-heading">Содержание</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Ключи"><span class="tocnumber">1</span> <span class="toctext">Ключи</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Примеры"><span class="tocnumber">2</span> <span class="toctext">Примеры</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Программная_реализация"><span class="tocnumber">3</span> <span class="toctext">Программная реализация</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Кроссплатформенность"><span class="tocnumber">4</span> <span class="toctext">Кроссплатформенность</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#См._также"><span class="tocnumber">5</span> <span class="toctext">См. также</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Примечания"><span class="tocnumber">6</span> <span class="toctext">Примечания</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Ссылки"><span class="tocnumber">7</span> <span class="toctext">Ссылки</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".D0.9A.D0.BB.D1.8E.D1.87.D0.B8"></span><span class="mw-headline" id="Ключи">Ключи</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tcpdump&amp;veaction=edit&amp;section=1" class="mw-editsection-visualeditor" title="Редактировать раздел «Ключи»">править</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tcpdump&amp;action=edit&amp;section=1" title="Редактировать раздел «Ключи»">править код</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="standard">
+<tbody><tr>
+<th>ключ</th>
+<th>описание
+</th></tr>
+<tr>
+<td>-a</td>
+<td>Преобразовывает сетевые и широковещательные адреса в доменные имена.
+</td></tr>
+<tr>
+<td>-e</td>
+<td>Отображает данные канального уровня (<a href="/wiki/MAC-%D0%B0%D0%B4%D1%80%D0%B5%D1%81" title="MAC-адрес">MAC-адрес</a>, протокол, длина пакета). Помимо <a href="/wiki/IP-%D0%B0%D0%B4%D1%80%D0%B5%D1%81" title="IP-адрес">IP-адресов</a> будут отображаться MAC-адреса компьютеров.
+</td></tr>
+<tr>
+<td>-F файл</td>
+<td>Использовать фильтр, находящийся в файле. Если вы используете этот параметр, фильтр из командной строки будет игнорироваться.
+</td></tr>
+<tr>
+<td>-i</td>
+<td>Указывает на то, какой сетевой интерфейс будет использоваться для захвата пакетов. По умолчанию&#160;— eth0, для выбора всех интерфейсов&#160;— any. Если отсутствует локальная сеть, то можно воспользоваться интерфейсом обратной связи lo.
+</td></tr>
+<tr>
+<td>-l</td>
+<td>Использовать стандартный потоковый вывод tcpdump (stdout), например для записи в файл:
+<pre>shell# tcpdump -l | tee out.log //отобразит работу tcpdump и сохранит результат в файле out.log
+</pre>
+</td></tr>
+<tr>
+<td>-N</td>
+<td>Не добавляет доменное расширение к именам узлов. Например tcpdump отобразит 'net' вместо 'net.library.org'
+</td></tr>
+<tr>
+<td>-n</td>
+<td>Отображает <a href="/wiki/IP-%D0%B0%D0%B4%D1%80%D0%B5%D1%81" title="IP-адрес">IP-адрес</a> вместо имени хоста.
+</td></tr>
+<tr>
+<td>-nn</td>
+<td>Отображает номер порта вместо используемого им протокола.
+</td></tr>
+<tr>
+<td>-p</td>
+<td>Не переводит интерфейс в режим приема всех пакетов (promiscuous mode).
+</td></tr>
+<tr>
+<td>-q</td>
+<td>Выводит минимум информации. Обычно это имя протокола, откуда и куда шел пакет, порты и количество переданных данных.
+</td></tr>
+<tr>
+<td>-r</td>
+<td>Этот параметр позволяет tcpdump прочесть трафик из файла, если он был предварительно сохранен параметром -w.
+</td></tr>
+<tr>
+<td>-S</td>
+<td>Позволяет не обрабатывать абсолютные порядковые номера (initial sequence number&#160;— ISN) в относительные.
+</td></tr>
+<tr>
+<td>-s число</td>
+<td>Количество байтов пакета, которые будет обрабатывать tcpdump. При установке большого числа отображаемых байтов информация может не уместиться на экране и её будет трудно изучать. В зависимости от того, какие цели вы преследуете, и следует выбирать значение этого параметра. По умолчанию tcpdump захватывает первые 68 байт (для SunOS минимум 96 байт), однако если вы хотите увидеть содержимое всего пакета, используйте значение в 1514 байт (максимально допустимый размер кадра в сети Ethernet).
+</td></tr>
+<tr>
+<td>-t</td>
+<td>Не отображает метку времени в каждой строке.
+</td></tr>
+<tr>
+<td>-T тип</td>
+<td>Интерпретация пакетов заданного типа. Поддерживаются типы <a href="/wiki/Aodv" class="mw-redirect" title="Aodv">aodv</a>, <a href="/w/index.php?title=Cnfp&amp;action=edit&amp;redlink=1" class="new" title="Cnfp (страница отсутствует)">cnfp</a>, <a href="/wiki/Rpc" class="mw-redirect" title="Rpc">rpc</a>, <a href="/wiki/Real-time_Transport_Protocol" title="Real-time Transport Protocol">rtp</a>, <a href="/wiki/Rtcp" class="mw-redirect" title="Rtcp">rtcp</a>, <a href="/wiki/Snmp" class="mw-redirect" title="Snmp">snmp</a>, <a href="/wiki/Tftp" class="mw-redirect" title="Tftp">tftp</a>, <a href="/w/index.php?title=Vat&amp;action=edit&amp;redlink=1" class="new" title="Vat (страница отсутствует)">vat</a>, <a href="/w/index.php?title=Wb&amp;action=edit&amp;redlink=1" class="new" title="Wb (страница отсутствует)">wb</a>.
+</td></tr>
+<tr>
+<td>-tt</td>
+<td>Отображает неформатированную метку времени в каждой строке.
+</td></tr>
+<tr>
+<td>-tttt</td>
+<td>Показывает время вместе с датой.
+</td></tr>
+<tr>
+<td>-v</td>
+<td>Вывод подробной информации (TTL; ID; общая длина заголовка, а также его параметры; производит проверку контрольных сумм <a href="/wiki/IP" title="IP">IP</a> и <a href="/wiki/ICMP" title="ICMP">ICMP</a>-заголовков)
+</td></tr>
+<tr>
+<td>-vv</td>
+<td>Вывод ещё более полной информации, в основном касается NFS и SMB.
+</td></tr>
+<tr>
+<td>-vvv</td>
+<td>Вывод максимально подробной информации.
+</td></tr>
+<tr>
+<td>-w файл</td>
+<td>Сохраняет данные tcpdump в двоичном формате. Преимущества использования данного способа по сравнению с обычным перенаправлением в файл является высокая скорость записи и возможность чтения подобных данных другими программами, например snort, но этот файл нельзя прочитать человеку. Возможен вывод двоичных данных на консоль, для этого необходимо использовать -w -
+</td></tr>
+<tr>
+<td>-x</td>
+<td>Делает распечатку пакета в шестнадцатеричной системе, полезно для более детального анализа пакета. Количество отображаемых данных зависит от параметра -s
+</td></tr>
+<tr>
+<td>-xx</td>
+<td>То же, что и предыдущий параметр <b>-x</b>, но включает в себя заголовок канального уровня
+</td></tr>
+<tr>
+<td>-X</td>
+<td>Выводит пакет в ASCII- и hex-формате. Полезно в случае анализа инцидента связанного со взломом, так как позволяет просмотреть какая текстовая информация передавалась во время соединения.
+</td></tr>
+<tr>
+<td>-XX</td>
+<td>То же, что и предыдущий параметр <b>-X</b>, но включает заголовок канального уровня.
+</td></tr>
+<tr>
+<td>-с число</td>
+<td>tcpdump завершит работу после получения указанного числа пакетов.
+</td></tr>
+<tr>
+<td>-U
+</td>
+<td>Собранные пакеты будут сразу складываться в файл, а иначе копиться в памяти до тех пор, пока она не закончится
+</td></tr></tbody></table>
+<h2><span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B"></span><span class="mw-headline" id="Примеры">Примеры</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tcpdump&amp;veaction=edit&amp;section=2" class="mw-editsection-visualeditor" title="Редактировать раздел «Примеры»">править</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tcpdump&amp;action=edit&amp;section=2" title="Редактировать раздел «Примеры»">править код</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Если tcpdump запустить без параметров, он будет выводить информацию обо всех сетевых пакетах. С помощью параметра <code>-i</code> можно указать сетевой интерфейс, с которого следует принимать данные:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump -i eth2</span>
+</pre></div>
+<p>Чтобы узнать получаемые или отправляемые пакеты от определенного хоста, необходимо его имя или IP-адрес указать после ключевого слова <code>host</code>:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump host nameofserver</span>
+</pre></div>
+<p>Следующим образом можно узнать о пакетах которыми обмениваются nameofserverA и nameofserverB:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump host nameofserverA and nameofserverB</span>
+</pre></div>
+<p>Для отслеживания только исходящих пакетов от какого-либо узла нужно указать следующее:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump src host nameofserver</span>
+</pre></div>
+<p>Только входящие пакеты:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump dst host nameofserver</span>
+</pre></div>
+<p>Порт отправителя и порт получателя соответственно:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump dst port 80</span>
+</pre></div>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump src port 22</span>
+</pre></div>
+<p>Чтобы отслеживать один из протоколов <a href="/wiki/TCP" class="mw-redirect" title="TCP">TCP</a>, <a href="/wiki/UDP" title="UDP">UDP</a>, <a href="/wiki/ICMP" title="ICMP">ICMP</a>, его название следует указать в команде.
+Использование операторов <code>and</code> (<code>&amp;&amp;</code>), <code>or</code> (<code>||</code>) и <code>not</code> (<code>!</code>) позволяет задавать фильтры любой сложности. Приоритет операторв: инверсия, затем <code>and</code>, после — <code>or</code>.
+</p><p>Пример фильтра, отслеживающего только UDP-пакеты, приходящие из внешней сети:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span><span class="c1"># tcpdump udp and not src net localnet</span>
+</pre></div>
+<h2><span id=".D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.BD.D0.B0.D1.8F_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F"></span><span class="mw-headline" id="Программная_реализация">Программная реализация</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tcpdump&amp;veaction=edit&amp;section=3" class="mw-editsection-visualeditor" title="Редактировать раздел «Программная реализация»">править</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tcpdump&amp;action=edit&amp;section=3" title="Редактировать раздел «Программная реализация»">править код</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Программа состоит из двух основных частей: части захвата пакетов (обращение к библиотеке, <a href="/w/index.php?title=Libpcap&amp;action=edit&amp;redlink=1" class="new" title="Libpcap (страница отсутствует)">libpcap</a> (Unix) или <a href="/wiki/Pcap" title="Pcap">pcap</a> (Windows)) и части отображения захваченных пакетов (которая на уровне исходного кода является модульной и для поддержки нового протокола достаточно добавить новый модуль).
+</p><p>Часть захвата пакетов (при запуске) передаёт «выражение выбора пакетов» (идущее после всех параметров командной строки) напрямую библиотеке захвата пакетов, которая проверяет выражение на синтаксис, компилирует его (во внутренний формат данных), а затем копирует во внутренний буфер программы сетевые пакеты, проходящие через выбранный интерфейс и удовлетворяющие условиям в выражении.
+</p><p>Часть отображения пакетов выбирает захваченные пакеты по одному из буфера, заполняемого библиотекой, и выводит их (в воспринимаемом человеком виде) на стандартный вывод построчно, в соответствии с заданным (в командной строке) уровнем детальности.
+</p><p>Если задан подробный вывод пакетов, программа проверяет для каждого сетевого пакета, имеется ли у неё модуль расшифровки данных, и, в случае наличия, соответствующей подпрограммой извлекает (и отображает) тип пакета в протоколе или передаваемые в пакете параметры.
+</p>
+<h2><span id=".D0.9A.D1.80.D0.BE.D1.81.D1.81.D0.BF.D0.BB.D0.B0.D1.82.D1.84.D0.BE.D1.80.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D1.8C"></span><span class="mw-headline" id="Кроссплатформенность">Кроссплатформенность</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tcpdump&amp;veaction=edit&amp;section=4" class="mw-editsection-visualeditor" title="Редактировать раздел «Кроссплатформенность»">править</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tcpdump&amp;action=edit&amp;section=4" title="Редактировать раздел «Кроссплатформенность»">править код</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Изначально программа tcpdump была разработана для UNIX-подобных систем, позже&#160;— портирована на другие системы.
+</p><p>Для Windows в настоящее время известны:
+</p>
+<ul><li>tcpdump для Windows&#160;— коммерческая реализация, в виде одного файла tcpdump.exe</li>
+<li><a href="/w/index.php?title=WinDump&amp;action=edit&amp;redlink=1" class="new" title="WinDump (страница отсутствует)">WinDump</a>&#160;— реализация с открытым кодом, требующая установки библиотеки <a href="/wiki/WinPcap" class="mw-redirect" title="WinPcap">WinPcap</a> (свободное ПО).</li></ul>
+<h2><span id=".D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5"></span><span class="mw-headline" id="См._также">См. также</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tcpdump&amp;veaction=edit&amp;section=5" class="mw-editsection-visualeditor" title="Редактировать раздел «См. также»">править</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tcpdump&amp;action=edit&amp;section=5" title="Редактировать раздел «См. также»">править код</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a href="/wiki/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80_%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0" title="Анализатор трафика">Анализатор трафика</a></li>
+<li><a href="/wiki/Wireshark" title="Wireshark">Wireshark</a>, <a href="/w/index.php?title=Tshark&amp;action=edit&amp;redlink=1" class="new" title="Tshark (страница отсутствует)">Tshark</a></li></ul>
+<h2><span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.87.D0.B0.D0.BD.D0.B8.D1.8F"></span><span class="mw-headline" id="Примечания">Примечания</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tcpdump&amp;veaction=edit&amp;section=6" class="mw-editsection-visualeditor" title="Редактировать раздел «Примечания»">править</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tcpdump&amp;action=edit&amp;section=6" title="Редактировать раздел «Примечания»">править код</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns" style="list-style-type: decimal;">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-_dfdb53d065c9a398-1"><span class="mw-cite-backlink"><a href="#cite_ref-_dfdb53d065c9a398_1-0">↑</a></span> <span class="reference-text"><span class="wikidata_cite citetype_Q35127 citetype_Q2352616" data-entity-id="Q124688"><a rel="nofollow" class="external text" href="https://www.openhub.net/p/tcpdump/analyses/latest/languages_summary">The tcpdump Open Source Project on Open Hub: Languages Page</a><span class="wef_low_priority_links"> — 2006.</span></span></span>
+</li>
+<li id="cite_note-_72055d8ee17ef1a8-2"><span class="mw-cite-backlink"><a href="#cite_ref-_72055d8ee17ef1a8_2-0">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/the-tcpdump-group/tcpdump/releases/tag/tcpdump-4.9.3">Release 4.9.3</a><span class="wef_low_priority_links"> — 2019.</span></span>
+</li>
+<li id="cite_note-_733689a72b5838b7-3"><span class="mw-cite-backlink"><a href="#cite_ref-_733689a72b5838b7_3-0">↑</a></span> <span class="reference-text"><a rel="nofollow" class="external text" href="https://github.com/the-tcpdump-group/tcpdump/blob/master/LICENSE">https://github.com/the-tcpdump-group/tcpdump/blob/master/LICENSE</a><span class="wef_low_priority_links"></span></span>
+</li>
+</ol></div></div>
+<h2><span id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8"></span><span class="mw-headline" id="Ссылки">Ссылки</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tcpdump&amp;veaction=edit&amp;section=7" class="mw-editsection-visualeditor" title="Редактировать раздел «Ссылки»">править</a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tcpdump&amp;action=edit&amp;section=7" title="Редактировать раздел «Ссылки»">править код</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a rel="nofollow" class="external text" href="http://www.tcpdump.org/">Сайт программы</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.linuxshare.ru/docs/net/tcpdump.html">Одно из русскоязычных практических руководств</a></li></ul>
+<table class="plainlinks metadata ambox ambox-style" role="presentation" style="border:0; background:none; margin:0; font-style:italic;"><tbody><tr><td class="mbox-image"><div style="width:52px"><a href="/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:System-installer.svg" class="image" title="ПО"><img alt="ПО" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/db/System-installer.svg/30px-System-installer.svg.png" decoding="async" width="30" height="30" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/db/System-installer.svg/45px-System-installer.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/db/System-installer.svg/60px-System-installer.svg.png 2x" data-file-width="48" data-file-height="48" /></a></div></td><td class="mbox-text"><div class="mbox-text-div">Это <a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%97%D0%B0%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Википедия:Заготовка статьи">заготовка статьи</a>&#32;о <a href="/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5" title="Программное обеспечение">программном обеспечении</a>. Вы можете помочь проекту, дополнив её.</div><div class="mbox-textsmall-div hide-when-compact" style="font-size:85%"></div></td></tr></tbody></table>
+<div role="navigation" class="navbox" aria-labelledby="Команды_Unix" data-name="Команды Unix" style="padding:3px"><table class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th scope="col" class="navbox-title" colspan="2"><span class="navbox-gear" style="float:left;text-align:left;width:5em;margin-right:0.5em"><a href="/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_Unix" title="Просмотр этого шаблона"><img alt="⛭" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/14px-Wikipedia_interwiki_section_gear_icon.svg.png" decoding="async" width="14" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/21px-Wikipedia_interwiki_section_gear_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/28px-Wikipedia_interwiki_section_gear_icon.svg.png 2x" data-file-width="14" data-file-height="14" /></a></span><div id="Команды_Unix" style="font-size:114%;margin:0 5em">Команды Unix</div></th></tr><tr><td class="navbox-list navbox-odd" style="width:100%;padding:0px"><div style="padding:0em 0.25em"></div><table class="nowraplinks collapsible uncollapsed navbox-subgroup" style="border-spacing:0"><tbody><tr><th scope="col" class="navbox-title" colspan="2"><span class="navbox-gear" style="float:left;text-align:left;width:5em;margin-right:0.5em"><a href="/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:POSIX.1-2008" title="Просмотр этого шаблона"><img alt="⛭" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/14px-Wikipedia_interwiki_section_gear_icon.svg.png" decoding="async" width="14" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/21px-Wikipedia_interwiki_section_gear_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/28px-Wikipedia_interwiki_section_gear_icon.svg.png 2x" data-file-width="14" data-file-height="14" /></a></span><div id="Утилиты_POSIX.1-2008" style="font-size:114%;margin:0 5em">Утилиты <a href="/wiki/POSIX" title="POSIX">POSIX.1-2008</a></div></th></tr><tr><td class="navbox-list navbox-odd hlist" style="width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/w/index.php?title=Admin&amp;action=edit&amp;redlink=1" class="new" title="Admin (страница отсутствует)">admin</a></li>
+<li><a href="/wiki/Alias_(bash)" title="Alias (bash)">alias</a></li>
+<li><a href="/wiki/Ar_(Unix)" title="Ar (Unix)">ar</a></li>
+<li><a href="/w/index.php?title=Asa&amp;action=edit&amp;redlink=1" class="new" title="Asa (страница отсутствует)">asa</a></li>
+<li><a href="/wiki/At" title="At">at</a></li>
+<li><a href="/wiki/Awk" class="mw-redirect" title="Awk">awk</a></li>
+<li><a href="/wiki/Basename" title="Basename">basename</a></li>
+<li><a href="/w/index.php?title=Batch&amp;action=edit&amp;redlink=1" class="new" title="Batch (страница отсутствует)">batch</a></li>
+<li><a href="/wiki/Bc" title="Bc">bc</a></li>
+<li><a href="/wiki/Bg" class="mw-redirect" title="Bg">bg</a></li>
+<li><a href="/w/index.php?title=C99_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)&amp;action=edit&amp;redlink=1" class="new" title="C99 (команда) (страница отсутствует)">c99</a></li>
+<li><a href="/w/index.php?title=Cal&amp;action=edit&amp;redlink=1" class="new" title="Cal (страница отсутствует)">cal</a></li>
+<li><a href="/wiki/Cat" title="Cat">cat</a></li>
+<li><a href="/wiki/Cd_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)" title="Cd (команда)">cd</a></li>
+<li><a href="/w/index.php?title=Cflow&amp;action=edit&amp;redlink=1" class="new" title="Cflow (страница отсутствует)">cflow</a></li>
+<li><a href="/wiki/Chgrp" title="Chgrp">chgrp</a></li>
+<li><a href="/wiki/Chmod" title="Chmod">chmod</a></li>
+<li><a href="/wiki/Chown" title="Chown">chown</a></li>
+<li><a href="/wiki/Cksum" title="Cksum">cksum</a></li>
+<li><a href="/wiki/Cmp" title="Cmp">cmp</a></li>
+<li><a href="/wiki/Comm" title="Comm">comm</a></li>
+<li><a href="/w/index.php?title=Command_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Command (Unix) (страница отсутствует)">command</a></li>
+<li><a href="/w/index.php?title=Compress&amp;action=edit&amp;redlink=1" class="new" title="Compress (страница отсутствует)">compress</a></li>
+<li><a href="/wiki/Cp" title="Cp">cp</a></li>
+<li><a href="/wiki/Crontab" class="mw-redirect" title="Crontab">crontab</a></li>
+<li><a href="/wiki/Csplit" title="Csplit">csplit</a></li>
+<li><a href="/wiki/Ctags" title="Ctags">ctags</a></li>
+<li><a href="/wiki/Cut" title="Cut">cut</a></li>
+<li><a href="/w/index.php?title=Cxref&amp;action=edit&amp;redlink=1" class="new" title="Cxref (страница отсутствует)">cxref</a></li>
+<li><a href="/wiki/Date" title="Date">date</a></li>
+<li><a href="/wiki/Dd" title="Dd">dd</a></li>
+<li><a href="/w/index.php?title=Delta_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Delta (Unix) (страница отсутствует)">delta</a></li>
+<li><a href="/wiki/Df" title="Df">df</a></li>
+<li><a href="/wiki/Diff" title="Diff">diff</a></li>
+<li><a href="/wiki/Dirname" title="Dirname">dirname</a></li>
+<li><a href="/wiki/Du" title="Du">du</a></li>
+<li><a href="/wiki/Echo" title="Echo">echo</a></li>
+<li><a href="/wiki/Ed" title="Ed">ed</a></li>
+<li><a href="/wiki/Env" title="Env">env</a></li>
+<li><a href="/wiki/Ex_(Unix)" title="Ex (Unix)">ex</a></li>
+<li><a href="/wiki/Expand" title="Expand">expand</a></li>
+<li><a href="/wiki/Expr" title="Expr">expr</a></li>
+<li><a href="/wiki/False" title="False">false</a></li>
+<li><a href="/wiki/Fc_(Unix)" title="Fc (Unix)">fc</a></li>
+<li><a href="/wiki/Fg" title="Fg">fg</a></li>
+<li><a href="/wiki/File_(Unix)" title="File (Unix)">file</a></li>
+<li><a href="/wiki/Find" title="Find">find</a></li>
+<li><a href="/w/index.php?title=Fold&amp;action=edit&amp;redlink=1" class="new" title="Fold (страница отсутствует)">fold</a></li>
+<li><a href="/w/index.php?title=Fort77&amp;action=edit&amp;redlink=1" class="new" title="Fort77 (страница отсутствует)">fort77</a></li>
+<li><a href="/wiki/Fuser" title="Fuser">fuser</a></li>
+<li><a href="/w/index.php?title=Gencat&amp;action=edit&amp;redlink=1" class="new" title="Gencat (страница отсутствует)">gencat</a></li>
+<li><a href="/w/index.php?title=Get&amp;action=edit&amp;redlink=1" class="new" title="Get (страница отсутствует)">get</a></li>
+<li><a href="/w/index.php?title=Getconf&amp;action=edit&amp;redlink=1" class="new" title="Getconf (страница отсутствует)">getconf</a></li>
+<li><a href="/w/index.php?title=Getopts&amp;action=edit&amp;redlink=1" class="new" title="Getopts (страница отсутствует)">getopts</a></li>
+<li><a href="/wiki/Grep" title="Grep">grep</a></li>
+<li><a href="/wiki/Hash" class="mw-redirect" title="Hash">hash</a></li>
+<li><a href="/wiki/Head_(Unix)" title="Head (Unix)">head</a></li>
+<li><a href="/wiki/Iconv" title="Iconv">iconv</a></li>
+<li><a href="/wiki/Id" title="Id">id</a></li>
+<li><a href="/w/index.php?title=Ipcrm&amp;action=edit&amp;redlink=1" class="new" title="Ipcrm (страница отсутствует)">ipcrm</a></li>
+<li><a href="/w/index.php?title=Ipcs&amp;action=edit&amp;redlink=1" class="new" title="Ipcs (страница отсутствует)">ipcs</a></li>
+<li><a href="/w/index.php?title=Jobs&amp;action=edit&amp;redlink=1" class="new" title="Jobs (страница отсутствует)">jobs</a></li>
+<li><a href="/wiki/Join_(Unix)" title="Join (Unix)">join</a></li>
+<li><a href="/wiki/Kill" title="Kill">kill</a></li>
+<li><a href="/wiki/Lex" title="Lex">lex</a></li>
+<li><a href="/w/index.php?title=Link_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Link (Unix) (страница отсутствует)">link</a></li>
+<li><a href="/wiki/Ln_(UNIX)" class="mw-redirect" title="Ln (UNIX)">ln</a></li>
+<li><a href="/wiki/Locale" title="Locale">locale</a></li>
+<li><a href="/w/index.php?title=Localedef&amp;action=edit&amp;redlink=1" class="new" title="Localedef (страница отсутствует)">localedef</a></li>
+<li><a href="/wiki/Logger" title="Logger">logger</a></li>
+<li><a href="/wiki/Logname" title="Logname">logname</a></li>
+<li><a href="/wiki/Lp" title="Lp">lp</a></li>
+<li><a href="/wiki/Ls" title="Ls">ls</a></li>
+<li><a href="/wiki/%D0%9C%D0%B0%D0%BA%D1%80%D0%BE%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80_m4" class="mw-redirect" title="Макропроцессор m4">m4</a></li>
+<li><a href="/w/index.php?title=Mailx&amp;action=edit&amp;redlink=1" class="new" title="Mailx (страница отсутствует)">mailx</a></li>
+<li><a href="/wiki/Make" title="Make">make</a></li>
+<li><a href="/wiki/Man" title="Man">man</a></li>
+<li><a href="/wiki/Mesg" title="Mesg">mesg</a></li>
+<li><a href="/wiki/Mkdir" title="Mkdir">mkdir</a></li>
+<li><a href="/wiki/Mkfifo" class="mw-redirect" title="Mkfifo">mkfifo</a></li>
+<li><a href="/wiki/More" title="More">more</a></li>
+<li><a href="/wiki/Mv" title="Mv">mv</a></li>
+<li><a href="/w/index.php?title=Newgrp&amp;action=edit&amp;redlink=1" class="new" title="Newgrp (страница отсутствует)">newgrp</a></li>
+<li><a href="/wiki/Nice" title="Nice">nice</a></li>
+<li><a href="/wiki/Nl" title="Nl">nl</a></li>
+<li><a href="/wiki/Nm" title="Nm">nm</a></li>
+<li><a href="/wiki/Nohup" title="Nohup">nohup</a></li>
+<li><a href="/wiki/Od" title="Od">od</a></li>
+<li><a href="/wiki/Paste" title="Paste">paste</a></li>
+<li><a href="/wiki/Patch_(UNIX)" class="mw-redirect" title="Patch (UNIX)">patch</a></li>
+<li><a href="/w/index.php?title=Pathchk&amp;action=edit&amp;redlink=1" class="new" title="Pathchk (страница отсутствует)">pathchk</a></li>
+<li><a href="/wiki/Pax_(Unix)" title="Pax (Unix)">pax</a></li>
+<li><a href="/w/index.php?title=Pr_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Pr (Unix) (страница отсутствует)">pr</a></li>
+<li><a href="/wiki/Printf" title="Printf">printf</a></li>
+<li><a href="/w/index.php?title=Prs&amp;action=edit&amp;redlink=1" class="new" title="Prs (страница отсутствует)">prs</a></li>
+<li><a href="/wiki/Ps" title="Ps">ps</a></li>
+<li><a href="/wiki/Pwd" title="Pwd">pwd</a></li>
+<li><a href="/w/index.php?title=Qalter&amp;action=edit&amp;redlink=1" class="new" title="Qalter (страница отсутствует)">qalter</a></li>
+<li><a href="/w/index.php?title=Qdel&amp;action=edit&amp;redlink=1" class="new" title="Qdel (страница отсутствует)">qdel</a></li>
+<li><a href="/w/index.php?title=Qhold&amp;action=edit&amp;redlink=1" class="new" title="Qhold (страница отсутствует)">qhold</a></li>
+<li><a href="/w/index.php?title=Qmove&amp;action=edit&amp;redlink=1" class="new" title="Qmove (страница отсутствует)">qmove</a></li>
+<li><a href="/w/index.php?title=Qmsg&amp;action=edit&amp;redlink=1" class="new" title="Qmsg (страница отсутствует)">qmsg</a></li>
+<li><a href="/w/index.php?title=Qrerun&amp;action=edit&amp;redlink=1" class="new" title="Qrerun (страница отсутствует)">qrerun</a></li>
+<li><a href="/w/index.php?title=Qrls&amp;action=edit&amp;redlink=1" class="new" title="Qrls (страница отсутствует)">qrls</a></li>
+<li><a href="/w/index.php?title=Qselect&amp;action=edit&amp;redlink=1" class="new" title="Qselect (страница отсутствует)">qselect</a></li>
+<li><a href="/w/index.php?title=Qsig&amp;action=edit&amp;redlink=1" class="new" title="Qsig (страница отсутствует)">qsig</a></li>
+<li><a href="/w/index.php?title=Qstat&amp;action=edit&amp;redlink=1" class="new" title="Qstat (страница отсутствует)">qstat</a></li>
+<li><a href="/w/index.php?title=Qsub&amp;action=edit&amp;redlink=1" class="new" title="Qsub (страница отсутствует)">qsub</a></li>
+<li><a href="/w/index.php?title=Read_(UNIX)&amp;action=edit&amp;redlink=1" class="new" title="Read (UNIX) (страница отсутствует)">read</a></li>
+<li><a href="/wiki/Renice" title="Renice">renice</a></li>
+<li><a href="/wiki/Rm" title="Rm">rm</a></li>
+<li><a href="/w/index.php?title=Rmdel&amp;action=edit&amp;redlink=1" class="new" title="Rmdel (страница отсутствует)">rmdel</a></li>
+<li><a href="/wiki/Rmdir" title="Rmdir">rmdir</a></li>
+<li><a href="/w/index.php?title=Sact&amp;action=edit&amp;redlink=1" class="new" title="Sact (страница отсутствует)">sact</a></li>
+<li><a href="/wiki/Source_Code_Control_System" title="Source Code Control System">sccs</a></li>
+<li><a href="/wiki/Sed" title="Sed">sed</a></li>
+<li><a href="/wiki/Bash" title="Bash">sh</a></li>
+<li><a href="/wiki/Sleep" title="Sleep">sleep</a></li>
+<li><a href="/wiki/Sort" title="Sort">sort</a></li>
+<li><a href="/wiki/Split" title="Split">split</a></li>
+<li><a href="/wiki/Strings" title="Strings">strings</a></li>
+<li><a href="/w/index.php?title=Strip_(UNIX)&amp;action=edit&amp;redlink=1" class="new" title="Strip (UNIX) (страница отсутствует)">strip</a></li>
+<li><a href="/w/index.php?title=Stty&amp;action=edit&amp;redlink=1" class="new" title="Stty (страница отсутствует)">stty</a></li>
+<li><a href="/w/index.php?title=Tabs&amp;action=edit&amp;redlink=1" class="new" title="Tabs (страница отсутствует)">tabs</a></li>
+<li><a href="/wiki/Tail" title="Tail">tail</a></li>
+<li><a href="/w/index.php?title=Talk_(UNIX)&amp;action=edit&amp;redlink=1" class="new" title="Talk (UNIX) (страница отсутствует)">talk</a></li>
+<li><a href="/wiki/Tee" title="Tee">tee</a></li>
+<li><a href="/wiki/Test" title="Test">test</a></li>
+<li><a href="/wiki/Time_(Unix)" title="Time (Unix)">time</a></li>
+<li><a href="/wiki/Touch" title="Touch">touch</a></li>
+<li><a href="/w/index.php?title=Tput&amp;action=edit&amp;redlink=1" class="new" title="Tput (страница отсутствует)">tput</a></li>
+<li><a href="/wiki/Tr" title="Tr">tr</a></li>
+<li><a href="/wiki/True" title="True">true</a></li>
+<li><a href="/w/index.php?title=Tsort&amp;action=edit&amp;redlink=1" class="new" title="Tsort (страница отсутствует)">tsort</a></li>
+<li><a href="/wiki/Tty_(UNIX)" class="mw-redirect" title="Tty (UNIX)">tty</a></li>
+<li><a href="/wiki/Type" title="Type">type</a></li>
+<li><a href="/w/index.php?title=Ulimit&amp;action=edit&amp;redlink=1" class="new" title="Ulimit (страница отсутствует)">ulimit</a></li>
+<li><a href="/wiki/Umask" title="Umask">umask</a></li>
+<li><a href="/w/index.php?title=Unalias&amp;action=edit&amp;redlink=1" class="new" title="Unalias (страница отсутствует)">unalias</a></li>
+<li><a href="/wiki/Uname" title="Uname">uname</a></li>
+<li><a href="/w/index.php?title=Uncompress&amp;action=edit&amp;redlink=1" class="new" title="Uncompress (страница отсутствует)">uncompress</a></li>
+<li><a href="/wiki/Unexpand" title="Unexpand">unexpand</a></li>
+<li><a href="/w/index.php?title=Unget&amp;action=edit&amp;redlink=1" class="new" title="Unget (страница отсутствует)">unget</a></li>
+<li><a href="/wiki/Uniq" title="Uniq">uniq</a></li>
+<li><a href="/wiki/Unlink" title="Unlink">unlink</a></li>
+<li><a href="/wiki/Uucp" title="Uucp">uucp</a></li>
+<li><a href="/wiki/Uudecode" class="mw-redirect" title="Uudecode">uudecode</a></li>
+<li><a href="/wiki/Uuencode" class="mw-redirect" title="Uuencode">uuencode</a></li>
+<li><a href="/w/index.php?title=Uustat&amp;action=edit&amp;redlink=1" class="new" title="Uustat (страница отсутствует)">uustat</a></li>
+<li><a href="/w/index.php?title=Uux&amp;action=edit&amp;redlink=1" class="new" title="Uux (страница отсутствует)">uux</a></li>
+<li><a href="/w/index.php?title=Val&amp;action=edit&amp;redlink=1" class="new" title="Val (страница отсутствует)">val</a></li>
+<li><a href="/wiki/Vi" title="Vi">vi</a></li>
+<li><a href="/wiki/Wait_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)" title="Wait (команда)">wait</a></li>
+<li><a href="/wiki/Wc" title="Wc">wc</a></li>
+<li><a href="/w/index.php?title=What&amp;action=edit&amp;redlink=1" class="new" title="What (страница отсутствует)">what</a></li>
+<li><a href="/wiki/Who" title="Who">who</a></li>
+<li><a href="/wiki/Write" title="Write">write</a></li>
+<li><a href="/wiki/Xargs" title="Xargs">xargs</a></li>
+<li><a href="/wiki/Yacc" title="Yacc">yacc</a></li>
+<li><a href="/w/index.php?title=Zcat&amp;action=edit&amp;redlink=1" class="new" title="Zcat (страница отсутствует)">zcat</a></li></ul>
+</div></td></tr></tbody></table><div></div></td></tr><tr><td class="navbox-list navbox-odd" style="width:100%;padding:0px"><div style="padding:0em 0.25em"></div><table class="nowraplinks collapsible uncollapsed navbox-subgroup" style="border-spacing:0"><tbody><tr><th scope="col" class="navbox-title" colspan="2"><span class="navbox-gear" style="float:left;text-align:left;width:5em;margin-right:0.5em"><a href="/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:GNU_Coreutils" title="Просмотр этого шаблона"><img alt="⛭" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/14px-Wikipedia_interwiki_section_gear_icon.svg.png" decoding="async" width="14" height="14" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/21px-Wikipedia_interwiki_section_gear_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/28px-Wikipedia_interwiki_section_gear_icon.svg.png 2x" data-file-width="14" data-file-height="14" /></a></span><div id="GNU_Coreutils" style="font-size:114%;margin:0 5em"><a href="/wiki/GNU_Coreutils" title="GNU Coreutils">GNU Coreutils</a></div></th></tr><tr><th scope="row" class="navbox-group" style="width:1px">Файловые утилиты</th><td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/wiki/Chgrp" title="Chgrp">chgrp</a></li>
+<li><a href="/wiki/Chown" title="Chown">chown</a></li>
+<li><a href="/wiki/Chmod" title="Chmod">chmod</a></li>
+<li><a href="/wiki/Cp" title="Cp">cp</a></li>
+<li><a href="/wiki/Dd" title="Dd">dd</a></li>
+<li><a href="/wiki/Df" title="Df">df</a></li>
+<li><a href="/wiki/Ls" title="Ls">dir</a></li>
+<li><a href="/w/index.php?title=Dircolors&amp;action=edit&amp;redlink=1" class="new" title="Dircolors (страница отсутствует)">dircolors</a></li>
+<li><a href="/w/index.php?title=Install&amp;action=edit&amp;redlink=1" class="new" title="Install (страница отсутствует)">install</a></li>
+<li><a href="/wiki/Ln_(UNIX)" class="mw-redirect" title="Ln (UNIX)">ln</a></li>
+<li><a href="/wiki/Ls" title="Ls">ls</a></li>
+<li><a href="/wiki/Mkdir" title="Mkdir">mkdir</a></li>
+<li><a href="/wiki/Mkfifo" class="mw-redirect" title="Mkfifo">mkfifo</a></li>
+<li><a href="/w/index.php?title=Mknod&amp;action=edit&amp;redlink=1" class="new" title="Mknod (страница отсутствует)">mknod</a></li>
+<li><a href="/wiki/Mv" title="Mv">mv</a></li>
+<li><a href="/wiki/Rm" title="Rm">rm</a></li>
+<li><a href="/wiki/Rmdir" title="Rmdir">rmdir</a></li>
+<li><a href="/wiki/Shred" title="Shred">shred</a></li>
+<li><a href="/wiki/Sync" title="Sync">sync</a></li>
+<li><a href="/wiki/Touch" title="Touch">touch</a></li>
+<li><a href="/wiki/Vdir" title="Vdir">vdir</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1px">Текстовые утилиты</th><td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/wiki/Cat" title="Cat">cat</a></li>
+<li><a href="/wiki/Cksum" title="Cksum">cksum</a></li>
+<li><a href="/wiki/Comm" title="Comm">comm</a></li>
+<li><a href="/wiki/Csplit" title="Csplit">csplit</a></li>
+<li><a href="/wiki/Cut" title="Cut">cut</a></li>
+<li><a href="/wiki/Expand" title="Expand">expand</a></li>
+<li><a href="/wiki/Fmt" title="Fmt">fmt</a></li>
+<li><a href="/w/index.php?title=Fold&amp;action=edit&amp;redlink=1" class="new" title="Fold (страница отсутствует)">fold</a></li>
+<li><a href="/w/index.php?title=Head_(UNIX)&amp;action=edit&amp;redlink=1" class="new" title="Head (UNIX) (страница отсутствует)">head</a></li>
+<li><a href="/wiki/Join_(UNIX)" class="mw-redirect" title="Join (UNIX)">join</a></li>
+<li><a href="/wiki/Md5sum" title="Md5sum">md5sum</a></li>
+<li><a href="/wiki/Nl" title="Nl">nl</a></li>
+<li><a href="/wiki/Od" title="Od">od</a></li>
+<li><a href="/wiki/Paste" title="Paste">paste</a></li>
+<li><a href="/w/index.php?title=Ptx&amp;action=edit&amp;redlink=1" class="new" title="Ptx (страница отсутствует)">ptx</a></li>
+<li><a href="/w/index.php?title=Pr_(UNIX)&amp;action=edit&amp;redlink=1" class="new" title="Pr (UNIX) (страница отсутствует)">pr</a></li>
+<li><a href="/wiki/Sha1sum" title="Sha1sum">sha1sum</a></li>
+<li><a href="/wiki/Sort" title="Sort">sort</a></li>
+<li><a href="/wiki/Split" title="Split">split</a></li>
+<li><a href="/w/index.php?title=Sum_(UNIX)&amp;action=edit&amp;redlink=1" class="new" title="Sum (UNIX) (страница отсутствует)">sum</a></li>
+<li><a href="/w/index.php?title=Tac&amp;action=edit&amp;redlink=1" class="new" title="Tac (страница отсутствует)">tac</a></li>
+<li><a href="/wiki/Tail" title="Tail">tail</a></li>
+<li><a href="/wiki/Tr" title="Tr">tr</a></li>
+<li><a href="/w/index.php?title=Tsort&amp;action=edit&amp;redlink=1" class="new" title="Tsort (страница отсутствует)">tsort</a></li>
+<li><a href="/wiki/Unexpand" title="Unexpand">unexpand</a></li>
+<li><a href="/wiki/Uniq" title="Uniq">uniq</a></li>
+<li><a href="/wiki/Wc" title="Wc">wc</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1px">Shell-утилиты</th><td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/wiki/Basename" title="Basename">basename</a></li>
+<li><a href="/wiki/Chroot" title="Chroot">chroot</a></li>
+<li><a href="/wiki/Date" title="Date">date</a></li>
+<li><a href="/wiki/Dirname" title="Dirname">dirname</a></li>
+<li><a href="/wiki/Du" title="Du">du</a></li>
+<li><a href="/wiki/Echo" title="Echo">echo</a></li>
+<li><a href="/wiki/Env" title="Env">env</a></li>
+<li><a href="/wiki/Expr" title="Expr">expr</a></li>
+<li><a href="/w/index.php?title=Factor_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Factor (Unix) (страница отсутствует)">factor</a></li>
+<li><a href="/wiki/False" title="False">false</a></li>
+<li><a href="/w/index.php?title=Groups&amp;action=edit&amp;redlink=1" class="new" title="Groups (страница отсутствует)">groups</a></li>
+<li><a href="/w/index.php?title=Hostid&amp;action=edit&amp;redlink=1" class="new" title="Hostid (страница отсутствует)">hostid</a></li>
+<li><a href="/wiki/Id" title="Id">id</a></li>
+<li><a href="/w/index.php?title=Link_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Link (Unix) (страница отсутствует)">link</a></li>
+<li><a href="/wiki/Logname" title="Logname">logname</a></li>
+<li><a href="/wiki/Nice" title="Nice">nice</a></li>
+<li><a href="/wiki/Nohup" title="Nohup">nohup</a></li>
+<li><a href="/w/index.php?title=Pathchk&amp;action=edit&amp;redlink=1" class="new" title="Pathchk (страница отсутствует)">pathchk</a></li>
+<li><a href="/w/index.php?title=Pinky&amp;action=edit&amp;redlink=1" class="new" title="Pinky (страница отсутствует)">pinky</a></li>
+<li><a href="/w/index.php?title=Printenv&amp;action=edit&amp;redlink=1" class="new" title="Printenv (страница отсутствует)">printenv</a></li>
+<li><a href="/wiki/Printf" title="Printf">printf</a></li>
+<li><a href="/wiki/Pwd" title="Pwd">pwd</a></li>
+<li><a href="/w/index.php?title=Readlink&amp;action=edit&amp;redlink=1" class="new" title="Readlink (страница отсутствует)">readlink</a></li>
+<li><a href="/w/index.php?title=Seq&amp;action=edit&amp;redlink=1" class="new" title="Seq (страница отсутствует)">seq</a></li>
+<li><a href="/wiki/Sleep" title="Sleep">sleep</a></li>
+<li><a href="/w/index.php?title=Stat&amp;action=edit&amp;redlink=1" class="new" title="Stat (страница отсутствует)">stat</a></li>
+<li><a href="/w/index.php?title=Stty&amp;action=edit&amp;redlink=1" class="new" title="Stty (страница отсутствует)">stty</a></li>
+<li><a href="/wiki/Tee" title="Tee">tee</a></li>
+<li><a href="/wiki/Test" title="Test">test</a></li>
+<li><a href="/wiki/True" title="True">true</a></li>
+<li><a href="/wiki/Tty_(UNIX)" class="mw-redirect" title="Tty (UNIX)">tty</a></li>
+<li><a href="/wiki/Uname" title="Uname">uname</a></li>
+<li><a href="/wiki/Unlink" title="Unlink">unlink</a></li>
+<li><a href="/wiki/Users" title="Users">users</a></li>
+<li><a href="/wiki/Who" title="Who">who</a></li>
+<li><a href="/wiki/Whoami" title="Whoami">whoami</a></li>
+<li><a href="/wiki/Yes_(Unix)" title="Yes (Unix)">yes</a></li></ul>
+</div></td></tr></tbody></table><div></div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw2257
+Cached time: 20201017123247
+Cache expiry: 86400
+Dynamic content: true
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.644 seconds
+Real time usage: 0.855 seconds
+Preprocessor visited node count: 1934/1000000
+Post‐expand include size: 70004/2097152 bytes
+Template argument size: 3413/2097152 bytes
+Highest expansion depth: 16/40
+Expensive parser function count: 18/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 3387/5000000 bytes
+Lua time usage: 0.462/10.000 seconds
+Lua memory usage: 8.11 MB/50 MB
+Number of Wikibase entities loaded: 23/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  778.485      1 -total
+ 79.04%  615.284      1 Шаблон:Карточка_программы
+ 72.93%  567.766      1 Шаблон:Карточка
+ 28.85%  224.584     15 Шаблон:Wikidata
+  5.78%   44.976      1 Шаблон:Compu-soft-stub
+  5.40%   42.050      1 Шаблон:Stub-meta
+  4.86%   37.858      1 Шаблон:Ambox
+  4.54%   35.368      3 Шаблон:Навигационная_таблица
+  3.82%   29.725      1 Шаблон:Key
+  3.76%   29.245      1 Шаблон:Lowercase
+-->
+
+<!-- Saved in parser cache with key ruwiki:pcache:idhash:534824-0!canonical and timestamp 20201017123246 and revision id 105508360
+ -->
+</div><noscript><img src="//ru.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript>
+<div class="printfooter">Источник — <a dir="ltr" href="https://ru.wikipedia.org/w/index.php?title=Tcpdump&amp;oldid=105508360">https://ru.wikipedia.org/w/index.php?title=Tcpdump&amp;oldid=105508360</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82%D1%83" title="Категория:Программное обеспечение по алфавиту">Программное обеспечение по алфавиту</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A3%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D1%8B_Unix" title="Категория:Утилиты Unix">Утилиты Unix</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%D1%8B_%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0" title="Категория:Анализаторы трафика">Анализаторы трафика</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Скрытые категории: <ul><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source" title="Категория:Страницы, использующие устаревший тег source">Страницы, использующие устаревший тег source</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D1%81_%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8_%D0%B8%D0%B7_%D0%92%D0%B8%D0%BA%D0%B8%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85" title="Категория:Википедия:Статьи с источниками из Викиданных">Википедия:Статьи с источниками из Викиданных</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D1%81_%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8:_%D0%B7%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D1%8C_%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE_P373_%D0%B2_%D0%92%D0%B8%D0%BA%D0%B8%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85" title="Категория:Википедия:Статьи с изображениями: заполнить свойство P373 в Викиданных">Википедия:Статьи с изображениями: заполнить свойство P373 в Викиданных</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D0%A0%D0%9E:%D0%98%D0%A2:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D0%BF%D0%BE_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82%D1%83" title="Категория:ПРО:ИТ:Статьи по алфавиту">ПРО:ИТ:Статьи по алфавиту</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D0%A0%D0%9E:%D0%98%D0%A2:%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:_%D0%B2_%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B5%D0%BC_%D0%B3%D0%BE%D0%B4%D1%83" title="Категория:ПРО:ИТ:Последняя правка: в текущем году">ПРО:ИТ:Последняя правка: в текущем году</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9D%D0%B5%D0%B7%D0%B0%D0%B2%D0%B5%D1%80%D1%88%D1%91%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%BC_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B8" title="Категория:Незавершённые статьи о программном обеспечении">Незавершённые статьи о программном обеспечении</a></li></ul></div></div>
+	</div>
+</div>
+<div id='mw-data-after-content'>
+	<div class="read-more-container"></div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="pt-anonuserpage">Вы не представились системе</li><li id="pt-anontalk"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D1%91_%D0%BE%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Страница обсуждений для моего IP [n]" accesskey="n">Обсуждение</a></li><li id="pt-anoncontribs"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D0%B9_%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4" title="Список правок, сделанных с этого IP-адреса [y]" accesskey="y">Вклад</a></li><li id="pt-createaccount"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=Tcpdump" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно.">Создать учётную запись</a></li><li id="pt-login"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=Tcpdump" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o">Войти</a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected"><a href="/wiki/Tcpdump" title="Просмотр основной страницы [c]" accesskey="c">Статья</a></li><li id="ca-talk" class="new"><a href="/w/index.php?title=%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:Tcpdump&amp;action=edit&amp;redlink=1" rel="discussion" title="Обсуждение основной страницы (страница отсутствует) [t]" accesskey="t">Обсуждение</a></li></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Варианты</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected"><a href="/wiki/Tcpdump">Читать</a></li><li id="ca-ve-edit"><a href="/w/index.php?title=Tcpdump&amp;veaction=edit" title="Редактировать данную страницу [v]" accesskey="v">Править</a></li><li id="ca-edit" class="collapsible"><a href="/w/index.php?title=Tcpdump&amp;action=edit" title="Эту статью можно изменять. Перед сохранением изменений, пожалуйста, нажмите кнопку предварительного просмотра для визуальной проверки результата [e]" accesskey="e">Править код</a></li><li id="ca-history"><a href="/w/index.php?title=Tcpdump&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h">История</a></li></ul>
+		
+	</div>
+</nav>
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>Ещё</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Поиск</label>
+	</h3>
+	<form action="/w/index.php" id="searchform">
+		<div id="simpleSearch" data-search-loc="header-navigation">
+			<input type="search" name="search" placeholder="Искать в Википедии" title="Искать в Википедии [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input type="submit" name="fulltext" value="Найти" title="Найти страницы, содержащие указанный текст" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Перейти" title="Перейти к странице, имеющей в точности такое название" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Перейти на заглавную страницу" class="mw-wiki-logo" href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description"><a href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу [z]" accesskey="z">Заглавная страница</a></li><li id="n-browse"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_%D0%BF%D0%BE_%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F%D0%BC" title="Поиск по категориям">Рубрикация</a></li><li id="n-index"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%90%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82%D0%BD%D1%8B%D0%B9_%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C" title="Поиск по двум первым буквам">Указатель А — Я</a></li><li id="n-featured"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Статьи, считающиеся лучшими статьями проекта">Избранные статьи</a></li><li id="n-randompage"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x">Случайная статья</a></li><li id="n-currentevents"><a href="/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%A2%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" title="Статьи о текущих событиях в мире">Текущие события</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-participation" class="mw-portlet mw-portlet-participation vector-menu vector-menu-portal portal" aria-labelledby="p-participation-label" role="navigation" 
+	 >
+	<h3 id="p-participation-label">
+		<span>Участие</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="n-bug_in_article"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85" title="Сообщить об ошибке в этой статье">Сообщить об ошибке</a></li><li id="n-portal"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE" title="О проекте, о том, чем здесь можно заниматься, а также — где что находится">Сообщество</a></li><li id="n-forum"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A4%D0%BE%D1%80%D1%83%D0%BC" title="Форум участников Википедии">Форум</a></li><li id="n-recentchanges"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r">Свежие правки</a></li><li id="n-newpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список недавно созданных страниц">Новые страницы</a></li><li id="n-help"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0" title="Место, где можно получить справку">Справка</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ru.wikipedia.org&amp;uselang=ru" title="Поддержите нас">Пожертвовать</a></li></ul>
+		
+	</div>
+</nav>
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/Tcpdump" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j">Ссылки сюда</a></li><li id="t-recentchangeslinked"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/Tcpdump" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k">Связанные правки</a></li><li id="t-specialpages"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q">Служебные страницы</a></li><li id="t-permalink"><a href="/w/index.php?title=Tcpdump&amp;oldid=105508360" title="Постоянная ссылка на эту версию страницы">Постоянная ссылка</a></li><li id="t-info"><a href="/w/index.php?title=Tcpdump&amp;action=info" title="Подробнее об этой странице">Сведения о странице</a></li><li id="t-cite"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A6%D0%B8%D1%82%D0%B0%D1%82%D0%B0&amp;page=Tcpdump&amp;id=105508360&amp;wpFormIdentifier=titleform" title="Информация о том, как цитировать эту страницу">Цитировать страницу</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q306039" title="Ссылка на связанный элемент репозитория данных [g]" accesskey="g">Элемент Викиданных</a></li></ul>
+		
+	</div>
+</nav>
+<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-coll-print_export" class="mw-portlet mw-portlet-coll-print_export vector-menu vector-menu-portal portal" aria-labelledby="p-coll-print_export-label" role="navigation" 
+	 >
+	<h3 id="p-coll-print_export-label">
+		<span>Печать/экспорт</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li id="coll-create_a_book"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F_%D0%BA%D0%BD%D0%B8%D0%B3&amp;bookcmd=book_creator&amp;referer=Tcpdump">Создать книгу</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:DownloadAsPdf&amp;page=Tcpdump&amp;action=show-download-screen">Скачать как PDF</a></li><li id="t-print"><a href="/w/index.php?title=Tcpdump&amp;printable=yes" title="Версия этой страницы для печати [p]" accesskey="p">Версия для печати</a></li></ul>
+		
+	</div>
+</nav>
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation" 
+	 >
+	<h3 id="p-lang-label">
+		<span>На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-ckb"><a href="https://ckb.wikipedia.org/wiki/Tcpdump" title="Tcpdump — сорани" lang="ckb" hreflang="ckb" class="interlanguage-link-target">کوردی</a></li><li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/Tcpdump" title="Tcpdump — чешский" lang="cs" hreflang="cs" class="interlanguage-link-target">Čeština</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Tcpdump" title="Tcpdump — немецкий" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-en"><a href="https://en.wikipedia.org/wiki/Tcpdump" title="Tcpdump — английский" lang="en" hreflang="en" class="interlanguage-link-target">English</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/Tcpdump" title="Tcpdump — испанский" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/Tcpdump" title="Tcpdump — персидский" lang="fa" hreflang="fa" class="interlanguage-link-target">فارسی</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Tcpdump" title="Tcpdump — французский" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-he"><a href="https://he.wikipedia.org/wiki/Tcpdump" title="Tcpdump — иврит" lang="he" hreflang="he" class="interlanguage-link-target">עברית</a></li><li class="interlanguage-link interwiki-it"><a href="https://it.wikipedia.org/wiki/Tcpdump" title="Tcpdump — итальянский" lang="it" hreflang="it" class="interlanguage-link-target">Italiano</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/Tcpdump" title="Tcpdump — японский" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-ka"><a href="https://ka.wikipedia.org/wiki/Tcpdump" title="Tcpdump — грузинский" lang="ka" hreflang="ka" class="interlanguage-link-target">ქართული</a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/Tcpdump" title="Tcpdump — корейский" lang="ko" hreflang="ko" class="interlanguage-link-target">한국어</a></li><li class="interlanguage-link interwiki-mk"><a href="https://mk.wikipedia.org/wiki/Tcpdump" title="Tcpdump — македонский" lang="mk" hreflang="mk" class="interlanguage-link-target">Македонски</a></li><li class="interlanguage-link interwiki-nl"><a href="https://nl.wikipedia.org/wiki/Tcpdump" title="Tcpdump — нидерландский" lang="nl" hreflang="nl" class="interlanguage-link-target">Nederlands</a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/Tcpdump" title="Tcpdump — польский" lang="pl" hreflang="pl" class="interlanguage-link-target">Polski</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/Tcpdump" title="Tcpdump — португальский" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-sv"><a href="https://sv.wikipedia.org/wiki/Tcpdump" title="Tcpdump — шведский" lang="sv" hreflang="sv" class="interlanguage-link-target">Svenska</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.wikipedia.org/wiki/Tcpdump" title="Tcpdump — турецкий" lang="tr" hreflang="tr" class="interlanguage-link-target">Türkçe</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/Tcpdump" title="Tcpdump — украинский" lang="uk" hreflang="uk" class="interlanguage-link-target">Українська</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/Tcpdump" title="Tcpdump — китайский" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li></ul>
+		<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q306039#sitelinks-wikipedia" title="Править межъязыковые ссылки" class="wbc-editpage">Править ссылки</a></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 5 марта 2020 в 21:29.</li>
+	<li id="footer-info-copyright">Текст доступен по <a rel="license" href="//ru.wikipedia.org/wiki/Википедия:Текст_лицензии_Creative_Commons_Attribution-ShareAlike_3.0_Unported">лицензии Creative Commons Attribution-ShareAlike</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>; в отдельных случаях могут действовать дополнительные условия.
+<span class="noprint">Подробнее см. <a href="//foundation.wikimedia.org/wiki/Terms_of_Use/ru">Условия использования</a>.</span><br>
+Wikipedia® — зарегистрированный товарный знак некоммерческой организации <a href="//wikimediafoundation.org">Wikimedia Foundation, Inc.</a></li>
+</ul>
+
+	<ul id="footer-places" >
+	<li id="footer-places-privacy"><a href="https://meta.wikimedia.org/wiki/Privacy_policy/ru" class="extiw" title="m:Privacy policy/ru">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5" title="Википедия:Описание">Описание Википедии</a></li>
+	<li id="footer-places-disclaimer"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" title="Википедия:Отказ от ответственности">Отказ от ответственности</a></li>
+	<li id="footer-places-contact"><a href="//ru.wikipedia.org/wiki/Википедия:Контакты">Свяжитесь с нами</a></li>
+	<li id="footer-places-mobileview"><a href="//ru.m.wikipedia.org/w/index.php?title=Tcpdump&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Мобильная версия</a></li>
+	<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Разработчики</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/ru.wikipedia.org">Статистика</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Заявление о куки</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation" loading="lazy" /></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/static/images/footer/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+</ul>
+
+	<div style="clear: both;"></div>
+</footer>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.644","walltime":"0.855","ppvisitednodes":{"value":1934,"limit":1000000},"postexpandincludesize":{"value":70004,"limit":2097152},"templateargumentsize":{"value":3413,"limit":2097152},"expansiondepth":{"value":16,"limit":40},"expensivefunctioncount":{"value":18,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":3387,"limit":5000000},"entityaccesscount":{"value":23,"limit":400},"timingprofile":["100.00%  778.485      1 -total"," 79.04%  615.284      1 Шаблон:Карточка_программы"," 72.93%  567.766      1 Шаблон:Карточка"," 28.85%  224.584     15 Шаблон:Wikidata","  5.78%   44.976      1 Шаблон:Compu-soft-stub","  5.40%   42.050      1 Шаблон:Stub-meta","  4.86%   37.858      1 Шаблон:Ambox","  4.54%   35.368      3 Шаблон:Навигационная_таблица","  3.82%   29.725      1 Шаблон:Key","  3.76%   29.245      1 Шаблон:Lowercase"]},"scribunto":{"limitreport-timeusage":{"value":"0.462","limit":"10.000"},"limitreport-memusage":{"value":8506779,"limit":52428800},"limitreport-logs":"Loaded datatype commonsMedia of P154 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P170 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P178 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P112 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P277 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P1414 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P306 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P407 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype time of P577 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P400 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P1072 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P1073 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P275 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype time of P577 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\n"},"cachereport":{"origin":"mw2257","timestamp":"20201017123247","ttl":86400,"transientcontent":true}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Tcpdump","url":"https:\/\/ru.wikipedia.org\/wiki\/Tcpdump","sameAs":"http:\/\/www.wikidata.org\/entity\/Q306039","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q306039","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"\u0424\u043e\u043d\u0434 \u0412\u0438\u043a\u0438\u043c\u0435\u0434\u0438\u0430","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2007-02-18T15:57:39Z","dateModified":"2020-03-05T21:29:57Z","image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/ef\/Tcpdump_4.9.3_screenshot.png"}</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":264,"wgHostname":"mw2255"});});</script>
+</body></html>
