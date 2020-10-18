@@ -135,3 +135,10 @@ traceroute to www.ubuntu.com (91.189.91.44), 64 hops max
  12   184.104.195.170  204,035ms  184.105.64.54  203,412ms  220,325ms 
  13   184.105.64.54  188,613ms  209.51.171.154  205,107ms  243,077ms 
  14   209.51.171.154  172,753ms  91.189.91.44  197,944ms  215,872ms
+ 
+ (е)
+$ netstat --interfaces
+Kernel Interface table
+Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+lo       65536   362947      0      0 0        362947      0      0      0 LRU
+wlp2s0    1500   573005      0      0 0        415880      0      0      0 BMRU
