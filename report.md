@@ -639,7 +639,7 @@ kctl       0      0      3      8 com.apple.network.statistics
 ###### MacBook-Pro:~ mraker$ hostname
 MacBook-Pro.local
 
-###### MacBook-Pro:~ mraker$ ping google.com
+###### MacBook-Pro:~ mraker$ ping https://www.google.com/
 PING google.com (173.194.222.139): 56 data bytes
 64 bytes from 173.194.222.139: icmp_seq=0 ttl=111 time=9.348 ms
 64 bytes from 173.194.222.139: icmp_seq=1 ttl=111 time=9.799 ms
@@ -724,7 +724,36 @@ No exact OS matches for host (test conditions non-ideal).
 
 OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 10.14 seconds
-###### 
+###### tcpdump
+###### iptables нет на мак :(
+###### MacBook-Pro:~ mraker$ wget emkn.ru
+URL transformed to HTTPS due to an HSTS policy
+--2020-10-18 23:09:57--  https://emkn.ru/
+Распознаётся emkn.ru (emkn.ru)… 3.126.66.144
+Подключение к emkn.ru (emkn.ru)|3.126.66.144|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 302 Found
+Адрес: /login/ [переход]
+URL transformed to HTTPS due to an HSTS policy
+--2020-10-18 23:09:58--  https://emkn.ru/login/
+Повторное использование соединения с emkn.ru:443.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 4783 (4,7K) [text/html]
+Сохранение в: «index.html.1»
+
+index.html.1                        100%[================================================================>]   4,67K  --.-KB/s    за 0s      
+
+2020-10-18 23:09:58 (207 MB/s) - «index.html.1» сохранён [4783/4783]
+###### MacBook-Pro:~ mraker$ curl debian.org
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>302 Found</title>
+</head><body>
+<h1>Found</h1>
+<p>The document has moved <a href="https://www.debian.org/">here</a>.</p>
+<hr>
+<address>Apache Server at debian.org Port 80</address>
+</body></html>
+###### ssh
 ### Определить MAC адрес
 MacBook-Pro:~ mraker$ ifconfig en0 ether
 en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
@@ -1478,3 +1507,10 @@ net_api:
 	2 PF addrule operations since boot
 	0 PF addrule operation since boot by OS
 	0 vmnet start since boot
+
+### Сайт 
+
+https://markprudnikov.github.io/
+### Action
+
+https://github.com/markprudnikov/markprudnikov.github.io/runs/1271904724?check_suite_focus=true
