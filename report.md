@@ -766,7 +766,19 @@ index.html.1                        100%[=======================================
 <hr>
 <address>Apache Server at debian.org Port 80</address>
 </body></html>
-###### ssh ?
+###### MacBook-Pro:~ mraker$ ssh s264922@helios.se.ifmo.ru -p 2222
+The authenticity of host '[helios.se.ifmo.ru]:2222 ([77.234.214.82]:2222)' can't be established.
+RSA key fingerprint is SHA256:OnbUhmnwhXSmiRenSlhJjlm2KjfeUOz0DXg7FfIGB+Y.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[helios.se.ifmo.ru]:2222,[77.234.214.82]:2222' (RSA) to the list of known hosts.
+Password: 
+Last login: Sun Oct 18 23:49:44 2020 from 5x18x98x107.sta
+Oracle Corporation      SunOS 5.10      Generic Patch   January 2005
+s264922@helios:/home/s264922$ ls
+Desktop     Documents   grep        labaratory  mnt         task1
+dir1        eh          lab0        login.sql   run
+s264922@helios:/home/s264922$ exit
+Connection to helios.se.ifmo.ru closed.
 ### Определить MAC адрес
 MacBook-Pro:~ mraker$ ifconfig en0 ether
 en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
