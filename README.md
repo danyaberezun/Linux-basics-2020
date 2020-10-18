@@ -1,30 +1,38 @@
-# Linux-basics-2020
-В этом репозитории хранятся задания по курсу "Основы Linux" (МКН-осень 2020)
+## О чём
 
-Формат сдачи заданий: 
-1) Делаете fork данного репозитория.
-2) В каталог, соответствующий текущей практике, добавляете решение задания, заливаете результат в ваш fork-нутый репозиторий
-3) Для того, чтобы сдать задание создаете pull request с названием "[номер_вашей_группы] ФИО" в danyaberezun:Linux-basics-2020:master (NB: перед открытием pull request проверьте, что преподаватель не внес изменений; если надо --- сначала получите их (см. инструкцию ниже))
+* Простейшие утилиты
+  - ifconfig
+  - hostname, netstat
+  - ping, traceroute
+  - host, dig, whois
+  - nmap, tcpdump
+  - iptables
+  - wget, curl
+  - ssh
+* Сервисы GitHub
+  - работа с репозиториями (хранение, версионирование, ветвление, форки и пулл-реквесты, issue)
+  - организация проектов
+  - документирование (вики-страницы)
+  - GitHub Pages
+  - GitHub Actions
 
+## Материалы к занятию
 
-Чтобы получить задания на новую практику алгоритм такой:
+* [Настройка сети в ручную (Ubuntu)](https://help.ubuntu.ru/wiki/%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8_%D0%B2%D1%80%D1%83%D1%87%D0%BD%D1%83%D1%8E)
+* [Утилита tcpdump](https://ru.wikipedia.org/wiki/Tcpdump)
+* [Curl vs Wget](https://daniel.haxx.se/docs/curl-vs-wget.html)
+* [GitHub Actions](https://github.com/features/actions)
+* [Getting started with GitHub Actions](https://help.github.com/en/actions/getting-started-with-github-actions)
 
-``` git remote add original_repo https://github.com/danyaberezun/Linux-basics-2020 ```
+## План работы
 
-``` original_repo``` - это имя для remote-репозитория (имя может быть любым), а ```https://github.com/danyaberezun/Linux-basics-2020``` - ссылка на него
-
-Теперь, чтобы получить свежие задания, вам необходимо сделать следующее:
-
-Переключиться на master.
-
-Выкачать изменения из original_repo репозитория.
-
-Загрузить их в свою копию репозитория. Этот пункт важен, потому что иначе на каждый пулл-реквест у вас будет отражаться очень много изменений, которые есть у вас на локальной машине, но которых нет в вашем удаленном репозитории на гитхабе.
-
-Для этого нужно выполнить такую последовательность команд:
-```
-$ git checkout master
-$ git pull original_repo master
-$ git push origin master
-```
-# [Таблица с результатами](https://docs.google.com/spreadsheets/d/1xwO9Dj-AaPK2vbhRpaFZm33hqgvWxgfloKZ23v9yLsk/edit?usp=sharing)
+1. Создать отчёт, в котором
+  - Попинать утилиты
+  - Определить MAC-адрес
+  - Отключите и включите обратно сетевой интерфейс.
+  - Проверьте доступность узлов 8.8.8.8, http://www.debian.org
+  - Отобразите трассу до узла http://www.ubuntu.com
+  - Отобразите статистику работы сетевых интерфейсов
+2. Создайте себе сайт в рамках GitHub Pages (с произвольным содержимым)
+3. Выполните инструкции [туториала по созданию простейшего действия GitHub](https://help.github.com/en/actions/building-actions/creating-a-docker-container-action) в собственном репозитории
+4. Напишите bash-сценарий, который парсит настоящий README-файл, извлекает из него все ссылки и скачивает их в отдельный каталог
