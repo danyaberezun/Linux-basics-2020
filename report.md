@@ -724,7 +724,20 @@ No exact OS matches for host (test conditions non-ideal).
 
 OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 10.14 seconds
-###### tcpdump
+###### MacBook-Pro:~ mraker$ sudo tcpdump en0
+Password:
+tcpdump: data link type PKTAP
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on pktap, link-type PKTAP (Apple DLT_PKTAP), capture size 262144 bytes
+pktap_filter_packet: pcap_add_if_info(en0, 1) failed: pcap_if_info_set_add: pcap_compile_nopcap() failed
+pktap_filter_packet: pcap_add_if_info(en0, 1) failed: pcap_if_info_set_add: pcap_compile_nopcap() failed
+pktap_filter_packet: pcap_add_if_info(en0, 1) failed: pcap_if_info_set_add: pcap_compile_nopcap() failed
+pktap_filter_packet: pcap_add_if_info(en0, 1) failed: pcap_if_info_set_add: pcap_compile_nopcap() failed
+^C
+0 packets captured
+4 packets received by filter
+0 packets dropped by kernel
+MacBook-Pro:~ mraker$ 
 ###### iptables нет на мак :(
 ###### MacBook-Pro:~ mraker$ wget emkn.ru
 URL transformed to HTTPS due to an HSTS policy
@@ -753,7 +766,7 @@ index.html.1                        100%[=======================================
 <hr>
 <address>Apache Server at debian.org Port 80</address>
 </body></html>
-###### ssh
+###### ssh ?
 ### Определить MAC адрес
 MacBook-Pro:~ mraker$ ifconfig en0 ether
 en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
