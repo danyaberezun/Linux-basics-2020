@@ -1,0 +1,82 @@
+ifconfig:
+enp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.169  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::4dec:6b2a:abbb:1c6  prefixlen 64  scopeid 0x20<link>
+        ether 4c:cc:6a:43:04:07  txqueuelen 1000  (Ethernet)
+        RX packets 1097450  bytes 1554277595 (1.5 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 564360  bytes 142255181 (142.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Локальная петля (Loopback))
+        RX packets 7569  bytes 2776278 (2.7 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7569  bytes 2776278 (2.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+hostname:
+elect-MS-7996
+
+netstat | head:
+
+Активные соединения с интернетом (w/o servers)
+Proto Recv-Q Send-Q Local Address Foreign Address State      
+tcp        0      0 elect-MS-7996:55836     185.199.111.154:https   ESTABLISHED
+tcp        0      0 elect-MS-7996:51050     151.101.112.133:https   ESTABLISHED
+tcp        0      0 elect-MS-7996:35752     142.83.120.34.bc.:https ESTABLISHED
+tcp        0      0 elect-MS-7996:51048     151.101.112.133:https   ESTABLISHED
+tcp        0      0 elect-MS-7996:51046     151.101.112.133:https   ESTABLISHED
+tcp        0      0 elect-MS-7996:51054     151.101.112.133:https   ESTABLISHED
+tcp        0      0 elect-MS-7996:39530     yandex.ru:https         ESTABLISHED
+tcp        0      0 elect-MS-7996:33024     142.83.120.34.bc.:https ESTABLISHED
+PING google.com (64.233.164.138) 56(84) bytes of data.
+64 bytes from lf-in-f138.1e100.net (64.233.164.138): icmp_seq=1 ttl=110 time=20.1 ms
+64 bytes from lf-in-f138.1e100.net (64.233.164.138): icmp_seq=2 ttl=110 time=20.1 ms
+64 bytes from lf-in-f138.1e100.net (64.233.164.138): icmp_seq=3 ttl=110 time=20.1 ms
+64 bytes from lf-in-f138.1e100.net (64.233.164.138): icmp_seq=4 ttl=110 time=20.1 ms
+traceroute to ubuntu.com (91.189.91.44), 64 hops max
+  1   192.168.0.1  0,654ms  0,497ms  0,430ms 
+  2   46.173.32.1  0,993ms  62.122.176.233  1,158ms  0,692ms 
+  3   62.122.176.233  1,064ms  178.18.224.229  25,651ms  26,961ms 
+  4   178.18.224.229  25,970ms  184.105.65.125  44,647ms  44,785ms 
+  5   184.105.65.125  45,220ms  72.52.92.213  54,824ms  60,242ms 
+  6   72.52.92.213  54,070ms  72.52.92.166  118,074ms  117,639ms 
+  7   72.52.92.166  118,274ms  184.104.195.170  120,616ms  117,631ms 
+  8   184.104.195.170  118,062ms  184.105.64.54  123,983ms  122,599ms 
+  9   184.105.64.54  122,141ms  209.51.171.154  120,884ms  120,333ms 
+ 10   209.51.171.154  121,185ms  91.189.91.44  121,716ms  121,454ms 
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=110 time=22.3 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=110 time=22.1 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=110 time=22.2 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=110 time=22.1 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=110 time=22.0 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=110 time=22.1 ms
+
+--- 8.8.8.8 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5007ms
+rtt min/avg/max/mdev = 22.018/22.141/22.264/0.075 ms
+PING debian.org (128.31.0.62) 56(84) bytes of data.
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=1 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=2 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=3 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=4 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=5 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=6 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=7 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=8 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=9 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=10 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=11 ttl=47 time=136 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=12 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=13 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=14 ttl=47 time=135 ms
+64 bytes from mirror-csail.debian.org (128.31.0.62): icmp_seq=15 ttl=47 time=135 ms
+
+--- debian.org ping statistics ---
+15 packets transmitted, 15 received, 0% packet loss, time 14018ms
+rtt min/avg/max/mdev = 134.717/134.952/135.772/0.269 ms
