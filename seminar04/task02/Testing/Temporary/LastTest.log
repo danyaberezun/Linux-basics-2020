@@ -1,10 +1,10 @@
-Start testing: Oct 21 06:19 MSK
+Start testing: Oct 21 06:22 MSK
 ----------------------------------------------------------
 1/2 Testing: test1
 1/2 Test: test1
 Command: "/home/mikrise2/Linux-basics-2020/seminar04/task02/main" "0"
 Directory: /home/mikrise2/Linux-basics-2020/seminar04/task02
-"test1" start time: Oct 21 06:19 MSK
+"test1" start time: Oct 21 06:22 MSK
 Output:
 ----------------------------------------------------------
 0
@@ -13,7 +13,7 @@ Test time =   0.00 sec
 ----------------------------------------------------------
 Test Pass Reason:
 Required regular expression found. Regex=[0]
-"test1" end time: Oct 21 06:19 MSK
+"test1" end time: Oct 21 06:22 MSK
 "test1" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -21,7 +21,7 @@ Required regular expression found. Regex=[0]
 2/2 Test: test2
 Command: "/home/mikrise2/Linux-basics-2020/seminar04/task02/main" "1"
 Directory: /home/mikrise2/Linux-basics-2020/seminar04/task02
-"test2" start time: Oct 21 06:19 MSK
+"test2" start time: Oct 21 06:22 MSK
 Output:
 ----------------------------------------------------------
 1
@@ -30,8 +30,8 @@ Test time =   0.00 sec
 ----------------------------------------------------------
 Test Pass Reason:
 Required regular expression found. Regex=[1]
-"test2" end time: Oct 21 06:19 MSK
+"test2" end time: Oct 21 06:22 MSK
 "test2" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 21 06:19 MSK
+End testing: Oct 21 06:22 MSK
