@@ -1,0 +1,259 @@
+Пинание утилит: 
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ hostname
+maximka-Aspire-ES1-531
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ sudo tcpdump
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on wlp2s0, link-type EN10MB (Ethernet), capture size 262144 bytes
+21:40:40.284504 IP 93.186.225.201.https > maximka-Aspire-ES1-531.47768: Flags [P.], seq 3256922638:3256923069, ack 658620122, win 356, options [nop,nop,TS val 4099110109 ecr 938818780], length 431
+21:40:40.298127 IP maximka-Aspire-ES1-531.47768 > 93.186.225.201.https: Flags [P.], seq 1:132, ack 431, win 501, options [nop,nop,TS val 938823085 ecr 4099110109], length 131
+21:40:40.301178 IP 93.186.225.201.https > maximka-Aspire-ES1-531.47768: Flags [.], ack 132, win 356, options [nop,nop,TS val 4099110114 ecr 938823085], length 0
+21:40:40.498766 IP 93.186.225.201.https > maximka-Aspire-ES1-531.47788: Flags [P.], seq 2527406343:2527406756, ack 3769572036, win 356, options [nop,nop,TS val 4099110163 ecr 938819852], length 413
+21:40:40.498898 IP maximka-Aspire-ES1-531.47788 > 93.186.225.201.https: Flags [.], ack 413, win 501, options [nop,nop,TS val 938823286 ecr 4099110163], length 0
+21:40:40.572246 IP 93.186.225.201.https > maximka-Aspire-ES1-531.47768: Flags [P.], seq 431:795, ack 132, win 356, options [nop,nop,TS val 4099110182 ecr 938823085], length 364
+21:40:40.592486 IP maximka-Aspire-ES1-531.47768 > 93.186.225.201.https: Flags [P.], seq 132:263, ack 795, win 501, options [nop,nop,TS val 938823379 ecr 4099110182], length 131
+21:40:40.597482 IP 93.186.225.201.https > maximka-Aspire-ES1-531.47768: Flags [.], ack 263, win 356, options [nop,nop,TS val 4099110188 ecr 938823379], length 0
+21:40:40.756181 IP 93.186.225.201.https > maximka-Aspire-ES1-531.47768: Flags [P.], seq 795:1118, ack 263, win 356, options [nop,nop,TS val 4099110228 ecr 938823379], length 323
+21:40:40.772955 IP maximka-Aspire-ES1-531.47768 > 93.186.225.201.https: Flags [P.], seq 263:393, ack 1118, win 501, options [nop,nop,TS val 938823560 ecr 4099110228], length 130
+...
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ whois 196.239.239.239
+% This is the AfriNIC Whois server.
+% The AFRINIC whois database is subject to  the following terms of Use. See https://afrinic.net/whois/terms
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '196.232.0.0 - 196.239.255.255'
+
+% No abuse contact registered for 196.232.0.0 - 196.239.255.255
+
+inetnum:        196.232.0.0 - 196.239.255.255
+netname:        Smartphone
+descr:          SMARTPHONE
+country:        TN
+admin-c:        WF2-AFRINIC
+tech-c:         WF2-AFRINIC
+status:         ASSIGNED PA
+mnt-by:         ORANGE-TN-MNT
+source:         AFRINIC # Filtered
+parent:         196.224.0.0 - 196.239.255.255
+
+person:         Wassim Feki
+address:        Tunis 1003
+address:        TN
+phone:          tel:+216-30-013-001
+nic-hdl:        WF2-AFRINIC
+mnt-by:         GENERATED-S0CQKYJYWVG5XCK29NK2JYTFHWSLA4CP-MNT
+source:         AFRINIC # Filtered
+
+% Information related to '196.224.0.0/12AS37492'
+
+route:          196.224.0.0/12
+descr:          Orange Tunisie
+origin:         AS37492
+mnt-by:         ORANGE-TN-MNT
+source:         AFRINIC # Filtered
+
+
+
+Определение MAC-адреса:
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ ifconfig
+enp1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 30:65:ec:93:b0:ee  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1843  bytes 186325 (186.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1843  bytes 186325 (186.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.108  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::bd89:17bd:904e:fc31  prefixlen 64  scopeid 0x20<link>
+        ether a8:a7:95:22:82:cb  txqueuelen 1000  (Ethernet)
+        RX packets 110276  bytes 115568960 (115.5 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 44837  bytes 8014271 (8.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+
+Вклчючение и выклюение интерфейса:
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ sudo ifconfig enp1s0 down
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ ifconfig enp1s0
+enp1s0: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        ether 30:65:ec:93:b0:ee  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ sudo ifconfig enp1s0 up
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ ifconfig enp1s0
+enp1s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 30:65:ec:93:b0:ee  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+
+Доступность узлов:
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ ping -c 5 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=110 time=8.75 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=110 time=6.71 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=110 time=6.50 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=110 time=6.39 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=110 time=6.61 ms
+
+--- 8.8.8.8 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 6.390/6.995/8.758/0.889 ms
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ ping -c 5 www.debian.org
+PING www.debian.org (130.89.148.77) 56(84) bytes of data.
+64 bytes from klecker-misc.debian.org (130.89.148.77): icmp_seq=1 ttl=53 time=83.4 ms
+64 bytes from klecker-misc.debian.org (130.89.148.77): icmp_seq=2 ttl=53 time=77.5 ms
+64 bytes from klecker-misc.debian.org (130.89.148.77): icmp_seq=3 ttl=53 time=79.5 ms
+64 bytes from klecker-misc.debian.org (130.89.148.77): icmp_seq=4 ttl=53 time=90.3 ms
+64 bytes from klecker-misc.debian.org (130.89.148.77): icmp_seq=5 ttl=53 time=81.4 ms
+
+--- www.debian.org ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4003ms
+rtt min/avg/max/mdev = 77.581/82.470/90.332/4.399 ms
+
+
+Путь до убунты:
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ traceroute www.ubuntu.com
+traceroute to www.ubuntu.com (91.189.91.45), 30 hops max, 60 byte packets
+ 1  _gateway (192.168.0.1)  5.886 ms  5.795 ms  5.539 ms
+ 2  10.59.127.1 (10.59.127.1)  66.914 ms  66.862 ms  66.784 ms
+ 3  bgp10.unetcom.ru (91.192.191.153)  8.023 ms  7.961 ms  7.859 ms
+ 4  bgp7.unetcom.ru (91.215.123.167)  7.749 ms  7.645 ms  7.547 ms
+ 5  as6939.ix.dataix.ru (178.18.224.229)  30.572 ms  30.546 ms  30.456 ms
+ 6  * * *
+ 7  100ge16-1.core1.lon2.he.net (72.52.92.213)  52.615 ms  49.857 ms  51.063 ms
+ 8  100ge13-2.core1.nyc4.he.net (72.52.92.166)  115.245 ms  115.598 ms  115.040 ms
+ 9  ve951.core2.nyc4.he.net (184.104.195.170)  114.889 ms  116.844 ms  116.497 ms
+10  100ge3-2.core1.bos1.he.net (184.105.64.54)  120.646 ms  127.545 ms  126.445 ms
+11  209.51.171.154 (209.51.171.154)  127.228 ms  127.042 ms  118.615 ms
+12  fautso.canonical.com (91.189.91.45)  118.458 ms  118.137 ms  117.945 ms
+
+
+Статистика:
+
+maximka@maximka-Aspire-ES1-531:~/Linux-basics-2020$ netstat -s
+Ip:
+    Forwarding: 2
+    133687 total packets received
+    1 with invalid addresses
+    0 forwarded
+    0 incoming packets discarded
+    121346 incoming packets delivered
+    51990 requests sent out
+    2 outgoing packets dropped
+Icmp:
+    50 ICMP messages received
+    0 input ICMP message failed
+    ICMP input histogram:
+        destination unreachable: 10
+        timeout in transit: 30
+        echo replies: 10
+    15 ICMP messages sent
+    0 ICMP messages failed
+    ICMP output histogram:
+        destination unreachable: 5
+        echo requests: 10
+IcmpMsg:
+        InType0: 10
+        InType3: 10
+        InType11: 30
+        OutType3: 5
+        OutType8: 10
+Tcp:
+    810 active connection openings
+    0 passive connection openings
+    230 failed connection attempts
+    196 connection resets received
+    8 connections established
+    102633 segments received
+    43960 segments sent out
+    132 segments retransmitted
+    2 bad segments received
+    214 resets sent
+Udp:
+    20591 packets received
+    5 packets to unknown port received
+    75 packet receive errors
+    8218 packets sent
+    75 receive buffer errors
+    0 send buffer errors
+    IgnoredMulti: 963
+UdpLite:
+TcpExt:
+    120 TCP sockets finished time wait in fast timer
+    712 delayed acks sent
+    Quick ack mode was activated 33 times
+    76225 packet headers predicted
+    4253 acknowledgments not containing data payload received
+    2754 predicted acknowledgments
+    TCPSackRecovery: 2
+    Detected reordering 2 times using SACK
+    31 congestion windows recovered without slow start after partial ack
+    TCPLostRetransmit: 59
+    2 fast retransmits
+    TCPTimeouts: 109
+    TCPLossProbes: 24
+    TCPLossProbeRecovery: 9
+    TCPBacklogCoalesce: 3948
+    TCPDSACKOldSent: 33
+    TCPDSACKOfoSent: 2
+    TCPDSACKRecv: 3
+    46 connections reset due to unexpected data
+    88 connections reset due to early user close
+    3 connections aborted due to timeout
+    TCPSackShifted: 2
+    TCPSackMerged: 3
+    TCPSackShiftFallback: 6
+    TCPRcvCoalesce: 65295
+    TCPOFOQueue: 3593
+    TCPOFOMerge: 2
+    TCPChallengeACK: 2
+    TCPSYNChallenge: 2
+    TCPAutoCorking: 902
+    TCPSynRetrans: 72
+    TCPOrigDataSent: 9069
+    TCPHystartTrainDetect: 1
+    TCPHystartTrainCwnd: 23
+    TCPKeepAlive: 2009
+    TCPDelivered: 9619
+    TCPAckCompressed: 3338
+IpExt:
+    InMcastPkts: 1624
+    OutMcastPkts: 826
+    InBcastPkts: 963
+    OutBcastPkts: 18
+    InOctets: 147692973
+    OutOctets: 6789481
+    InMcastOctets: 114229
+    OutMcastOctets: 133738
+    InBcastOctets: 79152
+    OutBcastOctets: 1036
+    InNoECTPkts: 133687
+
+
+
