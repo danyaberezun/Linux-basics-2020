@@ -1,1 +1,11 @@
-# print your code here
+cmake_minimum_required(VERSION 3.18)
+project(fib)
+add_executable(fib src/main.cpp src/fast.cpp)
+
+enable_testing()
+function(test name arg result)
+    add_test(NAME ${name} COMMAND fib ${arg})
+    set_tests_properties(${name} PROPERTIES PASS_REGULAR_EXPRESSION ${result})
+endfunction(test)
+test(zero 0 0)
+test(moderate 33 3524578)
