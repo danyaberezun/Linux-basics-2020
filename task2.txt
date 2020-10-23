@@ -1,1 +1,41 @@
-# print your commands
+ivanvolkov@Ivans-Air:~/Documents/projects/Linux-basics-2020$ docker build --tag python-server .
+[+] Building 1.9s (7/7) FINISHED                                                                                                                                                                          
+ => [internal] load .dockerignore                                                                                                            0.1s
+ => => transferring context: 2B                                                                                                              0.0s
+ => [internal] load build definition from Dockerfile                                                                                         0.0s
+ => => transferring dockerfile: 36B                                                                                                          0.0s
+ => [internal] load metadata for docker.io/library/python:3.7-alpine                                                                         1.6s
+ => [internal] load build context                                                                                                            0.2s
+ => => transferring context: 36.85kB                                                                                                         0.2s
+ => [1/2] FROM docker.io/library/python:3.7-alpine@sha256:7e5e97330173204d867dd8f12850b6e884ab3fee31b3699bf8f3d53ead727acf                   0.0s
+ => CACHED [2/2] COPY . .                                                                                                                    0.0s
+ => exporting to image                                                                                                                       0.0s
+ => => exporting layers                                                                                                                      0.0s
+ => => writing image sha256:c13232454ff05dc113b14fcd14799a076d6d98cca9d51ba9fe1c7c9121945060                                                 0.0s
+ => => naming to docker.io/library/python-server                                                                                             0.0s
+
+ivanvolkov@Ivans-Air:~/Documents/projects/Linux-basics-2020$ docker run -p 65432:65432 python-server
+Connected by ('172.17.0.1', 59808)
+Traceback (most recent call last):
+  File "src/server.py", line 14, in <module>
+    conn.sendall("OK:".encode('utf-8')+ data)
+BrokenPipeError: [Errno 32] Broken pipe
+ivanvolkov@Ivans-Air:~/Documents/projects/Linux-basics-2020$
+
+
+#Параллельно в другом окне:
+
+ivanvolkov@Ivans-Air:~/Documents/projects/Linux-basics-2020$ telnet localhost 65432
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+abacaba
+OK:abacaba
+abc
+OK:abc
+KO
+OK:KO
+^]
+telnet> q
+Connection closed.
+ivanvolkov@Ivans-Air:~/Documents/projects/Linux-basics-2020$ 
