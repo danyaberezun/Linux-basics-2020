@@ -1,1 +1,67 @@
-# print your commands
+(base) MBP-Daniil-2:docker2 daniilpavlenko$ docker build --tag server .
+[+] Building 0.0s (2/2) FINISHED                                                                                      
+ => [internal] load build definition from Dockerfile                                                             0.0s
+ => => transferring dockerfile: 67B                                                                              0.0s
+ => [internal] load .dockerignore                                                                                0.0s
+ => => transferring context: 2B                                                                                  0.0s
+failed to solve with frontend dockerfile.v0: failed to create LLB definition: No build stage in current context
+(base) MBP-Daniil-2:docker2 daniilpavlenko$ docker build --tag server .
+[+] Building 57.9s (7/7) FINISHED                                                                                     
+ => [internal] load build definition from Dockerfile                                                             0.0s
+ => => transferring dockerfile: 101B                                                                             0.0s
+ => [internal] load .dockerignore                                                                                0.0s
+ => => transferring context: 2B                                                                                  0.0s
+ => [internal] load metadata for docker.io/library/python:3.8                                                    4.6s
+ => [internal] load build context                                                                                0.0s
+ => => transferring context: 554.34kB                                                                            0.0s
+ => [1/2] FROM docker.io/library/python:3.8@sha256:0d3333986c2684c699fefa9f39767bd185980ac6fe4ddc942967dd55fa5  53.0s
+ => => resolve docker.io/library/python:3.8@sha256:0d3333986c2684c699fefa9f39767bd185980ac6fe4ddc942967dd55fa5c  0.0s
+ => => sha256:29efd1eb1ee5b68683440f3dda64519426539e7839a5d4edb131ddab93cd0f45 2.22kB / 2.22kB                   0.0s
+ => => sha256:0d3333986c2684c699fefa9f39767bd185980ac6fe4ddc942967dd55fa5c344a 2.36kB / 2.36kB                   0.0s
+ => => sha256:101c41d0463bc77661fb3343235b16d536a92d2efb687046164d413e51bd4fc4 7.81MB / 7.81MB                   3.4s
+ => => sha256:8275efcd805f9905d7def23603618236284b0be6b9e47455c638fbfb03fa9208 10.00MB / 10.00MB                 3.5s
+ => => sha256:751620502a7a2905067c2f32d4982fb9b310b9808670ce82c0e2b40f5307a3ee 51.83MB / 51.83MB                14.5s
+ => => sha256:f5e423f5ce1f833fb2d6d7a521f13e8784bae08380d0145db7ab0af8b52e8b56 8.42kB / 8.42kB                   0.0s
+ => => extracting sha256:101c41d0463bc77661fb3343235b16d536a92d2efb687046164d413e51bd4fc4                        0.3s
+ => => sha256:0a5e725150a20c71bdc806daa04c9c9438aed5f5a4dd376f3be66fae213b1d43 192.26MB / 192.26MB              46.7s
+ => => sha256:397dba5694dbe6da34f1abfc75362ca3f23a0421505dd3502885e9bc9a167f42 6.15MB / 6.15MB                   6.3s
+ => => extracting sha256:8275efcd805f9905d7def23603618236284b0be6b9e47455c638fbfb03fa9208                        0.2s
+ => => sha256:b453803265bc2d6b00650681679288d8871fdaba67aceb28881c5dcb1fbaf816 18.19MB / 18.19MB                13.4s
+ => => sha256:a49354af7e01edfaa97954d2261cfc4d388884d0796f2f7332c44ee8d78f0d28 233B / 233B                      13.8s
+ => => sha256:7f7c8879a275c860b98da629884e116f34e7531db5595b6d8c22653883506ed2 2.12MB / 2.12MB                  14.6s
+ => => extracting sha256:751620502a7a2905067c2f32d4982fb9b310b9808670ce82c0e2b40f5307a3ee                        1.5s
+ => => extracting sha256:0a5e725150a20c71bdc806daa04c9c9438aed5f5a4dd376f3be66fae213b1d43                        4.5s
+ => => extracting sha256:397dba5694dbe6da34f1abfc75362ca3f23a0421505dd3502885e9bc9a167f42                        0.2s
+ => => extracting sha256:b453803265bc2d6b00650681679288d8871fdaba67aceb28881c5dcb1fbaf816                        0.5s
+ => => extracting sha256:a49354af7e01edfaa97954d2261cfc4d388884d0796f2f7332c44ee8d78f0d28                        0.0s
+ => => extracting sha256:7f7c8879a275c860b98da629884e116f34e7531db5595b6d8c22653883506ed2                        0.1s
+ => [2/2] COPY . .                                                                                               0.2s
+ => exporting to image                                                                                           0.0s
+ => => exporting layers                                                                                          0.0s
+ => => writing image sha256:9f87346573300d41ca8d3803e00436bbd49f9e918d2625ae8937f529802b8017                     0.0s
+ => => naming to docker.io/library/server                                                                        0.0s
+(base) MBP-Daniil-2:docker2 daniilpavlenko$ docker run --publish 65432:65432 server
+Connected by ('172.17.0.1', 38764)
+Traceback (most recent call last):
+  File "src/server.py", line 14, in <module>
+    conn.sendall("OK:".encode('utf-8')+ data)
+
+Параллельно в другом окне пишем:
+(base) MBP-Daniil-2:~ daniilpavlenko$ telnet localhost 65432
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+Hello!    
+OK:Hello!
+a 
+OK:a
+aba
+OK:aba
+abacaba
+OK:abacaba
+working!
+OK:working!
+^]
+telnet> q
+Connection closed.
+(base) MBP-Daniil-2:~ daniilpavlenko$ 
