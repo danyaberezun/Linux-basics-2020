@@ -1,1 +1,50 @@
 # print your commands
+kira@kira-Vostro-5568:~$ sudo docker pull python
+Using default tag: latest
+latest: Pulling from library/python
+e4c3d3e4f7b0: Already exists 
+101c41d0463b: Pull complete 
+8275efcd805f: Pull complete 
+751620502a7a: Pull complete 
+0a5e725150a2: Pull complete 
+397dba5694db: Pull complete 
+b1d09d0eabcb: Pull complete 
+475299e7c7f3: Pull complete 
+d2fe14d8e6bc: Pull complete 
+Digest: sha256:0a9325e9adb51dd65ec915036e270eae33087918fc1254f6a22a436741600b17
+Status: Downloaded newer image for python:latest
+docker.io/library/python:latest
+kira@kira-Vostro-5568:~$ cd Linux-basics-2020
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo docker build .
+Sending build context to Docker daemon  707.1kB
+Step 1/3 : FROM python
+ ---> 5336a27a9b1f
+Step 2/3 : COPY . .
+ ---> 40b1f5247a41
+Step 3/3 : CMD [ "python", "src/server.py" ]
+ ---> Running in dccf47841974
+Removing intermediate container dccf47841974
+ ---> fb98f0c7db61
+Successfully built fb98f0c7db61
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo docker run -p 65432
+"docker run" requires at least 1 argument.
+See 'docker run --help'.
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run a command in a new container
+kira@kira-Vostro-5568:~/Linux-basics-2020$ sudo docker run -p 65432:65432 fb98f0c7db61&
+[1] 15033
+kira@kira-Vostro-5568:~/Linux-basics-2020$ telnet localhost 65432
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+A
+OK:A
+query
+OK:query
+this
+OK:this
+works
+OK:works
+
