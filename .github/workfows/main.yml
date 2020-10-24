@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: Belfler/Linux-basics-2020@v1
+      uses: Belfler/Linux-basics-2020
       with:
         who-to-greet: 'Not Me'
     # Use the output from the `hello` step
