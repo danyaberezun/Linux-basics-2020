@@ -1,1 +1,50 @@
-# print your commands
+[pavel@p-nblkwax9x Linux-basics-2020]$ sudo docker build --tag server .
+Sending build context to Docker daemon   1.24MB
+Step 1/3 : FROM python
+latest: Pulling from library/python
+e4c3d3e4f7b0: Pull complete 
+101c41d0463b: Pull complete 
+8275efcd805f: Pull complete 
+751620502a7a: Pull complete 
+0a5e725150a2: Pull complete 
+397dba5694db: Pull complete 
+b1d09d0eabcb: Pull complete 
+475299e7c7f3: Pull complete 
+d2fe14d8e6bc: Pull complete 
+Digest: sha256:0a9325e9adb51dd65ec915036e270eae33087918fc1254f6a22a436741600b17
+Status: Downloaded newer image for python:latest
+ ---> 5336a27a9b1f
+Step 2/3 : COPY src/server.py .
+ ---> 8d94b258fe3b
+Step 3/3 : CMD ["python3", "server.py"]
+ ---> Running in 6f185850c525
+Removing intermediate container 6f185850c525
+ ---> 98abf50539dc
+Successfully built 98abf50539dc
+Successfully tagged server:latest
+[pavel@p-nblkwax9x Linux-basics-2020]$ sudo docker run -p 80:65432 --name idk -d server
+[sudo] пароль для pavel: 
+27b9da9fb37117bc75da4b0f21000471fcf5667159ebca0a33840625420b9731
+[pavel@p-nblkwax9x Linux-basics-2020]$ sudo telnet localhost 80
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+A
+OK:A
+B
+OK:B
+Hello world!
+OK:Hello world!
+^]
+telnet> 
+Connection closed.
+[pavel@p-nblkwax9x Linux-basics-2020]$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[pavel@p-nblkwax9x Linux-basics-2020]$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS                      PORTS               NAMES
+27b9da9fb371        server              "python3 server.py"   41 seconds ago      Exited (1) 13 seconds ago                       idk
+[pavel@p-nblkwax9x Linux-basics-2020]$ sudo docker rm idk
+idk
+[pavel@p-nblkwax9x Linux-basics-2020]$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
