@@ -1,1 +1,30 @@
-# print your commands
+boonker@MacBook-Pro-Roman qq % docker build --tag python-server .
+[+] Building 1.2s (7/7) FINISHED                                                
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 277B                                       0.0s
+ => [internal] load metadata for docker.io/library/python:3.8              1.2s
+ => [1/2] FROM docker.io/library/python:3.8@sha256:0d3333986c2684c699fefa  0.0s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 415B                                          0.0s
+ => CACHED [2/2] COPY . .                                                  0.0s
+ => exporting to image                                                     0.0s
+ => => exporting layers                                                    0.0s
+ => => writing image sha256:d79fb035a16fbe318bc06a432dc8367d0dd774e9afcba  0.0s
+ => => naming to docker.io/library/python-server                           0.0s
+boonker@MacBook-Pro-Roman qq % docker run -p 65432:65432 python-server
+
+boonker@MacBook-Pro-Roman ~ % telnet localhost 65432
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+A 
+OK:A
+B
+OK:B
+Hello, World!
+OK:Hello, World!
+^]
+telnet> q
+Connection closed.
