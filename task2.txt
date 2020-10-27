@@ -1,1 +1,45 @@
-# print your commands
+$ sudo docker build .
+Sending build context to Docker daemon  966.7kB
+Step 1/4 : FROM python:3.8-alpine
+3.8-alpine: Pulling from library/python
+188c0c94c7c5: Pull complete
+55578f60cda7: Pull complete
+bcfc1cf21055: Pull complete
+9a5a622b736a: Pull complete
+359339bdbdba: Pull complete
+Digest: sha256:9f5b3a12e3a9f7b2a96edde0a58b8620cdb94ed17d978403135ceca9cf0f0024
+Status: Downloaded newer image for python:3.8-alpine
+ ---> 8744555ae7bb
+Step 2/4 : WORKDIR /app
+ ---> Running in 084569565fce
+Removing intermediate container 084569565fce
+ ---> 7976fefa8829
+Step 3/4 : COPY ./src/server.py ./server.py
+ ---> ff706cb0416d
+Step 4/4 : CMD python server.py
+ ---> Running in 2f728a8e0314
+Removing intermediate container 2f728a8e0314
+ ---> e29633cf3a94
+Successfully built e29633cf3a94
+$ sudo docker run -p 65432:65432 --name pyserver -d e29633cf3a94
+99085617626e8c8844da4e7557f93b7abdaf4ae7eec65f58cc2bda95bb045afd
+belfler@DESKTOP-6MTEDK1:/mnt/c/Programming/lb$ telnet localhost 65432
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+hi
+OK:hi
+bye
+OK:bye
+^]
+telnet> ^CConnection closed.
+$ sudo docker stop pyserver
+pyserver
+$ sudo docker rm pyserver
+pyserver
+$ sudo docker rmi e29633c
+Deleted: sha256:e29633cf3a94add68c94e98150c78d3c7a0fd2cd76e61887def02d1d076f0af1
+Deleted: sha256:ff706cb0416da79cd9642eedf13e6959841d8c843b7fe06959047c7165663c69
+Deleted: sha256:5c1f116fcb86fc4cd67d9444b01dc546e2483d88a6be0e41c78aaff36eb3557b
+Deleted: sha256:7976fefa8829cba1607e6d22dbbb16ee5ca17318abc1fbca55fb8344d1812581
+Deleted: sha256:2adf1b37000b0d2916f9cf9226199c4fa9b2e6298c31cac84ecd1e3edb1810fc
