@@ -1,0 +1,9 @@
+# print your commands
+stephen@flaaxBook:~/linprac/Linux-basics-2020$ sudo docker run -it haskell
+GHCi, version 8.10.2: https://www.haskell.org/ghc/  :? for help
+Prelude> 2 + 3
+5
+Prelude> print "Hello world"
+"Hello world"
+Prelude> :q
+Leaving GHCi.

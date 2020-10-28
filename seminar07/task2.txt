@@ -1,0 +1,27 @@
+# print your commands
+stephen@flaaxBook:~/linprac/Linux-basics-2020/seminar07$ sudo docker build .
+Sending build context to Docker daemon  134.1kB
+Step 1/3 : FROM python:3
+ ---> 5336a27a9b1f
+Step 2/3 : COPY . .
+ ---> Using cache
+ ---> 8875efb966aa
+Step 3/3 : CMD ["python3", "src/server.py"]
+ ---> Using cache
+ ---> f610e38d0d41
+Successfully built f610e38d0d41
+stephen@flaaxBook:~/linprac/Linux-basics-2020/seminar07$ sudo docker run -p 65432 f610e38d0d41&
+[2] 24067
+stephen@flaaxBook:~/linprac/Linux-basics-2020/seminar07$ telnet localhost 65432
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+hello
+OK:hello
+hello again
+OK:hello again
+task2
+OK:task2
+^]
+telnet> q
+Connection closed.
