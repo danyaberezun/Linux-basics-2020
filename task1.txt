@@ -1,1 +1,13 @@
-# print your commands
+mikrise2@mikrise2-PC:~/Linux-basics-2020$ sudo bash
+root@mikrise2-PC:/home/mikrise2/Linux-basics-2020# docker run haskell
+GHCi, version 8.10.2: https://www.haskell.org/ghc/  :? for help
+Prelude> Leaving GHCi.
+root@mikrise2-PC:/home/mikrise2/Linux-basics-2020# 2+5
+2+5: command not found
+root@mikrise2-PC:/home/mikrise2/Linux-basics-2020# docker run -it --rm haskell:8
+GHCi, version 8.10.2: https://www.haskell.org/ghc/  :? for help
+Prelude> 2+5
+7
+Prelude> print "Hello world"
+"Hello world"
+
