@@ -5,4 +5,4 @@ EXPOSE 65432
 
 COPY . .
 
-CMD ["python3", "src/server.py"]
+ENTRYPOINT python3 src/server.py

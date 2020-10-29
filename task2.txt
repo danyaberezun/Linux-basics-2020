@@ -1,1 +1,13 @@
 # print your commands
+
+
+sudo docker run -p 65432:65432 --name idk -d server
+
+
+telnet localhost 65432
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+hello world
+OK:hello world
+

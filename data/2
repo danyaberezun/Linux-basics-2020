@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head><title>Daniel Stenberg - daniel.haxx.se</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="STYLESHEET" type="text/css" href="/daniel.css"> <link href="//fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> </head>
+
+<body bgcolor="#ffffff" text="#000040">
+<div class="topmenu">
+<a href="/">front</a> |
+<a href="/blog/">blog</a> |
+<a href="/talks.html">talks</a> |
+<a href="/videos/">videos</a> |
+<a href="/docs/">docs</a> |
+<a href="/photos.html">photos</a> |
+<a href="/podcasts.html">podcasts</a> |
+<a href="/address.html">contact</a> |
+<a href="/about.html">about me</a>
+</div>
+<div class="main">
+<style>
+div.minibox {
+    padding: 5px 15px 5px 15px;
+    margin-right: 20px;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 25px;
+    float: left;
+}
+.wolfssl {
+    font-size: 130%;
+}
+.rand {
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.talk {
+    float: left;
+    width: 20em;
+}
+.elsewhere {
+    float: left;
+    width: 15em;
+}
+    img {
+      border: 3px solid black;
+      margin: 30px 30px 30px 30px;
+      padding: 10px;
+      float: right;
+    }
+@media screen and (max-width: 480px) {
+    img {
+      max-width: 50%;
+      border: 1px solid black;
+      margin: 10px 10px 10px 10px;
+      padding: 0px;
+      float: right;
+    }
+}
+</style>
+<div class=title align=left> Daniel Stenberg </div>
+<div class="minibox">
+ <a
+ href="https://daniel.haxx.se/blog/2017/10/20/my-night-at-the-museum/">Polhem
+
+ Prize winner</a>
+</div>
+<div class="minibox">
+<a href="us-visa.html">Banned from the US</a>
+</div>
+<div class="minibox">
+<a href="https://daniel.haxx.se/blog/2016/12/01/2nd-best-in-sweden/">2nd best in Sweden</a>
+
+</div>
+<div style="clear: both;"/>
+<img src="daniel/b-daniel-gray.jpg" width=320 height=400 alt="Daniel Stenberg">
+<p style="font-size: 130%; font-style: italic;">
+Open Source, Free Software and open standards</p>
+<p> <b>I am</b> the author and maintainer of <a
+href="https://curl.haxx.se/">cURL and libcurl</a>. An internet protocol geek,
+
+an open source person and a developer. I've been programming for fun and
+profit since 1985. You'll find lots of info about my various <a
+href="projects/">projects</a> on these web pages and on <a
+href="https://github.com/bagder/">my GitHub profile</a>.
+
+<p> <b>I participate</b> within the <a href="http://www.ietf.org/">IETF</a>,
+
+primarily in the HTTPbis and QUIC working groups.
+<p> <b>I speak</b> in public <a href="talks.html">every now and then</a>.
+<p> <b>I stream</b> <a href="https://www.twitch.tv/curlhacker">curl
+
+development on twitch</a> occasionally.
+<p> <b>I live</b> and work in <a href="address.html">Huddinge</a>, just south
+of Stockholm, Sweden.
+<p> <b>I treasure</b> my wife and two kids.
+<p class="wolfssl"> <b>I work</b> for <a href="https://www.wolfssl.com/">wolfSSL</a>. I do
+
+commercial curl support. If you need help to fix curl problems, fix your app's
+use of libcurl, add features to curl, fix curl bugs, optimize your curl use or
+libcurl education for your developers... Then I'm your man. Contact us!
+<div style="clear: both;"/>
+<div class="talk">
+<div class=subtitle align=left> Upcoming talks by Daniel </div>
+<ul>
+<li> October 20-24, 2020. <a href="https://nerdear.la/en/">nerdear.la</a> <a href="https://nerdear.la/session/defensive-programming-at-curl/">Secure Development in the cURL factory</a> (<b>Online event</b>)
+
+<li> October 29, 2020. curl webinar (topic pending)
+<li> November 10-11, 2020. <a href="https://gotocph.com/">GOTO Copenhagen</a>. (<b>Online event</b>)
+
+</ul>
+See <a href="/talks.html">more talks</a>
+</div>
+<div class="rand">
+<div class=subtitle align=left> rand&#40;&#41; </div>
+<p>
+ <a href="/docs/">docs</a>
+<br> <a href="/stuff/">old code</a>
+<br> <a href="/hexpoetry/">hexadecimal poetry</a>
+<br> <a href="http://www.haxx.se/matrix/">Matrix Maker</a>
+
+<br> <a href="/computers.html">my computers</a>
+<br> <a href="/travel/">travel stuff</a>
+</div>
+<div class="elsewhere">
+<div class=subtitle align=left> Me elsewhere </div>
+<a href="https://www.facebook.com/stenberg.daniel">Facebook</a> |
+
+<a href="https://github.com/bagder/">GitHub</a> |
+
+<a href="https://www.internetmuseum.se/tidslinjen/curl-grundaren-daniel-stenberg-skapar-internets-budbarare/">Internetmusem</a> |
+
+<a href="https://keybase.io/bagder">Keybase</a> |
+
+<a href="https://www.linkedin.com/in/danielstenberg">LinkedIn</a> |
+
+<a href="https://mastodon.social/@bagder">Mastodon</a> |
+
+<a href="https://www.openhub.net/accounts/bagder">openhub</a> |
+
+<a href="https://www.slideshare.net/bagder/presentations">Slideshare</a> |
+
+<a href="https://stackoverflow.com/users/93747/daniel-stenberg">stackoverflow</a> |
+
+<a href="https://www.twitch.tv/curlhacker">Twitch</a> |
+
+<a href="https://twitter.com/bagder">twitter</a> |
+
+<a href="https://en.wikipedia.org/wiki/Daniel_Stenberg">Wikipedia</a> |
+
+<a href="https://www.youtube.com/user/danielhaxxse/">Youtube</a>
+
+</div>
+</div>
+</div>
+</body></html>
