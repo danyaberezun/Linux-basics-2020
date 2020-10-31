@@ -1,1 +1,33 @@
 # print your commands
+Foo:Linux-basics-2020 student$ docker pull haskell
+Using default tag: latest
+latest: Pulling from library/haskell
+e4c3d3e4f7b0: Already exists 
+1953f77b2099: Pull complete 
+49a93320d14b: Pull complete 
+a18bbbaf61b4: Pull complete 
+Digest: sha256:61fd2def20725f174a61d27b59e9d0e4f121f6637542bcbe03a4535f28aee7f5
+Status: Downloaded newer image for haskell:latest
+docker.io/library/haskell:latest
+
+Foo:Linux-basics-2020 student$ docker run -it --rm haskell
+GHCi, version 8.10.2: https://www.haskell.org/ghc/  :? for help
+Prelude> 2 + 2
+4
+Prelude> help
+
+<interactive>:2:1: error: Variable not in scope: help
+Prelude> help?
+
+<interactive>:3:6: error:
+    parse error (possibly incorrect indentation or mismatched brackets)
+Prelude> print "Hi Lary"
+"Hi Lary"
+Prelude> 
+Prelude> exit
+
+<interactive>:5:1: error: Variable not in scope: exit
+Prelude> 
+Prelude> 
+Prelude> :quit
+Leaving GHCi.

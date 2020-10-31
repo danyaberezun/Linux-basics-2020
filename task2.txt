@@ -1,1 +1,54 @@
 # print your commands
+Foo:Linux-basics-2020 student$ docker build -t python-server .
+Sending build context to Docker daemon  934.9kB
+Step 1/5 : FROM python
+latest: Pulling from library/python
+e4c3d3e4f7b0: Pull complete 
+101c41d0463b: Pull complete 
+8275efcd805f: Pull complete 
+751620502a7a: Pull complete 
+0a5e725150a2: Pull complete 
+397dba5694db: Pull complete 
+b1d09d0eabcb: Pull complete 
+475299e7c7f3: Pull complete 
+d2fe14d8e6bc: Pull complete 
+Digest: sha256:429b2fd1f6657e4176d81815dc9e66477d74f8cbf986883c024c9b97f7d4d5a6
+Status: Downloaded newer image for python:latest
+ ---> 5336a27a9b1f
+Step 2/5 : EXPOSE 65432
+ ---> Running in c857ac5a3a80
+Removing intermediate container c857ac5a3a80
+ ---> 9f2444f79893
+Step 3/5 : COPY src /usr/local/server/
+ ---> c343c1a022bd
+Step 4/5 : WORKDIR /usr/local/server
+ ---> Running in 410535abd67d
+Removing intermediate container 410535abd67d
+ ---> ec919efca1f1
+Step 5/5 : ENTRYPOINT [ "python3", "server.py"]
+ ---> Running in 31dd8a1884d1
+Removing intermediate container 31dd8a1884d1
+ ---> 57f61639a259
+Successfully built 57f61639a259
+Successfully tagged python-server:latest
+
+docker run -d -p 6000:65432 --name server python-server
+efffb3c01d429abb2be49f24d8b788c92d2f17e3fa92234429905f2e78e09ea2
+
+jacobp$ telnet localhost 6000
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+Hello
+OK:Hello
+Test
+OK:Test
+^C
+OK:
+^]
+
+curl localhost:6000
+OK:GET / HTTP/1.1
+Host: localhost:6000
+User-Agent: curl/7.54.0
+Accept: */*
