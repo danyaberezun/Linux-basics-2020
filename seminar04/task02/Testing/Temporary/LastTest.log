@@ -1,0 +1,37 @@
+Start testing: Nov 09 01:12 +05
+----------------------------------------------------------
+1/2 Testing: FirstTest
+1/2 Test: FirstTest
+Command: "/home/yu/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02/main" "1"
+Directory: /home/yu/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02
+"FirstTest" start time: Nov 09 01:12 +05
+Output:
+----------------------------------------------------------
+1
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found. Regex=[1]
+"FirstTest" end time: Nov 09 01:12 +05
+"FirstTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: SecondTest
+2/2 Test: SecondTest
+Command: "/home/yu/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02/main" "5"
+Directory: /home/yu/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02
+"SecondTest" start time: Nov 09 01:12 +05
+Output:
+----------------------------------------------------------
+5
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found. Regex=[5]
+"SecondTest" end time: Nov 09 01:12 +05
+"SecondTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 09 01:12 +05
