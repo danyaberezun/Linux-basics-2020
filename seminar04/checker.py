@@ -8,7 +8,7 @@ def findWholeWord(w):
 TASK_COUNT = 7
 completed_taks = 0
 
-for i in range(1, TASK_COUNT + 1):
+for i in range(1, TASK_COUNT):
     os.chdir(f'task0{i}/')
     p = subprocess.Popen(['python3', f'test0{i}.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout,stderr = p.communicate()
