@@ -1,0 +1,202 @@
+vagif@vagif-Lenovo-S20-30:~$ id
+uid=1000(vagif) gid=1000(vagif) группы=1000(vagif),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),131(lxd),132(sambashare)
+vagif@vagif-Lenovo-S20-30:~$ date
+Пн 09 ноя 2020 22:00:48 +05
+vagif@vagif-Lenovo-S20-30:~$ pwd
+/home/vagif
+vagif@vagif-Lenovo-S20-30:~$ ls
+ a.out        main.o     snap     Документы     Общедоступные
+ function.c   Makefile   work     Загрузки     'Рабочий стол'
+ helo.c       names.h    Yandex   Изображения   Шаблоны
+ main.c       random     Видео    Музыка
+vagif@vagif-Lenovo-S20-30:~$ ls -l
+итого 88
+-rwxrwxr-x 1 vagif vagif 16744 ноя  4 22:11  a.out
+-rw-rw-r-- 1 vagif vagif    69 ноя  5 16:04  function.c
+-rw-rw-r-- 1 vagif vagif   125 ноя  4 22:10  helo.c
+-rw-rw-r-- 1 vagif vagif    85 ноя  5 16:04  main.c
+-rw-rw-r-- 1 vagif vagif  1824 ноя  5 17:19  main.o
+-rw-rw-r-- 1 vagif vagif   179 ноя  5 17:11  Makefile
+-rw-rw-r-- 1 vagif vagif    69 ноя  5 16:04  names.h
+-rw-rw-r-- 1 vagif vagif     0 окт 31 13:31  random
+drwxr-xr-x 3 vagif vagif  4096 окт 30 14:27  snap
+drwxrwxr-x 3 vagif vagif  4096 ноя  9 21:07  work
+drwxrwxr-x 2 vagif vagif  4096 ноя  6 11:56  Yandex
+drwxr-xr-x 2 vagif vagif  4096 окт 29 00:03  Видео
+drwxr-xr-x 2 vagif vagif  4096 окт 29 00:03  Документы
+drwxr-xr-x 2 vagif vagif  4096 ноя  6 12:19  Загрузки
+drwxr-xr-x 2 vagif vagif  4096 окт 29 00:03  Изображения
+drwxr-xr-x 2 vagif vagif  4096 окт 29 00:03  Музыка
+drwxr-xr-x 2 vagif vagif  4096 окт 29 00:03  Общедоступные
+drwxr-xr-x 2 vagif vagif  4096 окт 30 14:27 'Рабочий стол'
+drwxr-xr-x 2 vagif vagif  4096 окт 29 00:03  Шаблоны
+vagif@vagif-Lenovo-S20-30:~$ mkdir work
+vagif@vagif-Lenovo-S20-30:~$ cd work
+vagif@vagif-Lenovo-S20-30:~/work$ echo 1 2 3 4 5 6 7 8 9 0 >> digits.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat digits.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat digits.txt >> 2line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat digits.txt >> 2line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 2line.txt >> 4line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 2line.txt >> 4line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 4line.txt >> 8line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 4line.txt >> 8line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 8line.txt >> 16line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 8line.txt >> 16line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 16line.txt >> 32line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 16line.txt >> 32line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 32line.txt >> 65line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat 32line.txt >> 65line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat digits.txt >> 65line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ wc 65line.txt
+  65  650 1300 65line.txt
+vagif@vagif-Lenovo-S20-30:~/work$ tail -n 5 /etc/passwd > last5.txt
+vagif@vagif-Lenovo-S20-30:~/work$ tail -n 5 /etc/passwd > last5.txt
+vagif@vagif-Lenovo-S20-30:~/work$ ls -l /etc > etcfiles
+vagif@vagif-Lenovo-S20-30:~/work$ wc etcfiles
+  228  2057 13274 etcfiles
+  
+Задание 1
+vagif@vagif-Lenovo-S20-30:~/work$ mkdir DirA
+vagif@vagif-Lenovo-S20-30:~/work$ mkdir DirB
+vagif@vagif-Lenovo-S20-30:~/work$ echo some > DirA/file1
+vagif@vagif-Lenovo-S20-30:~/work$ echo some > DirA/file2
+vagif@vagif-Lenovo-S20-30:~/work$ echo some > DirB/file3
+vagif@vagif-Lenovo-S20-30:~/work$ echo some > DirB/file4
+vagif@vagif-Lenovo-S20-30:~/work$ cat DirA/file1 DirA/file2 DirB/file3 DirB/file4 > DirAB
+vagif@vagif-Lenovo-S20-30:~/work$ rm -R DirA
+vagif@vagif-Lenovo-S20-30:~/work$ rm -R DirB
+
+Задание 2
+vagif@vagif-Lenovo-S20-30:~$ grep 'vagif' /etc/passwd
+vagif:x:1000:1000:Vagif,,,:/home/vagif:/bin/bash
+vagif@vagif-Lenovo-S20-30:~$ date --date='1 Jan 2021'
+Пт 01 янв 2021 00:00:00 +05
+
+Задание 3
+vagif@vagif-Lenovo-S20-30:~/work$ id > some.txt
+vagif@vagif-Lenovo-S20-30:~/work$ ls >> some.txt
+vagif@vagif-Lenovo-S20-30:~/work$ ps >> some.txt
+vagif@vagif-Lenovo-S20-30:~/work$ date  >> some.txt
+vagif@vagif-Lenovo-S20-30:~/work$ grep 'some' some.txt
+some.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cal -y 2019 > calendar.txt
+
+Задание 4
+vagif@vagif-Lenovo-S20-30:~/work$ ls /etc > etcls.txt
+vagif@vagif-Lenovo-S20-30:~/work$ head etcls.txt > etcls10.txt
+vagif@vagif-Lenovo-S20-30:~/work$ grep '.conf$' etcls10.txt
+adduser.conf
+apg.conf
+
+Задание 5
+vagif@vagif-Lenovo-S20-30:~/work$ echo  > a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod u-x a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod g-wx a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod o-rwx a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ ls -l a.txt
+-rw-r----- 1 vagif vagif 1 ноя 10 22:17 a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod g-r a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ ls -l a.txt
+-rw------- 1 vagif vagif 1 ноя 10 22:17 a.txt
+
+Задание 6
+vagif@vagif-Lenovo-S20-30:~/work$ mkdir file1
+vagif@vagif-Lenovo-S20-30:~/work$ mkdir file2
+vagif@vagif-Lenovo-S20-30:~/work$ mkdir file3
+vagif@vagif-Lenovo-S20-30:~/work$ tar --totals -cvf archive.tar file1 file2 file3
+file1/
+file2/
+file3/
+Всего записано байт: 10240 (10KiB, 75KiB/s)
+vagif@vagif-Lenovo-S20-30:~/work$ gzip archive.tar
+vagif@vagif-Lenovo-S20-30:~/work$ gunzip archive.tar.gz
+
+Задание 7
+vagif@vagif-Lenovo-S20-30:~/work$ echo  > a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod u-x a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod g-wx a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod o-rwx a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ ls -l a.txt
+-rw-r----- 1 vagif vagif 1 ноя 10 22:17 a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod o+w a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod ug-w a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ ls -l a.txt
+-r--r---w- 1 vagif vagif 1 ноя 10 22:17 a.txt
+
+Задание 8
+vagif@vagif-Lenovo-S20-30:~$ ls /usr/bin | grep "^z"
+zcat
+zcmp
+zdiff
+zdump
+zegrep
+zeisstopnm
+zenity
+zfgrep
+zforce
+zgrep
+zip
+zipcloak
+zipdetails
+zipgrep
+zipinfo
+zipnote
+zipsplit
+zjsdecode
+zless
+zmore
+znew
+vagif@vagif-Lenovo-S20-30:~$ find -ctime 1
+./.local/share/Trash
+./.local/share/Trash/expunged
+./.local/share/nano
+./work/8line.txt
+./work/32line.txt
+find: ‘./work/directory’: Отказано в доступе
+./work/16line.txt
+./work/2line.txt
+./work/digits.txt
+./work/first5.txt
+./work/4line.txt
+./work/65line.txt
+
+Задание 9
+vagif@vagif-Lenovo-S20-30:~/work$ find ~/ -user vagif | wc -l 
+19661
+vagif@vagif-Lenovo-S20-30:~/work$ tail -n 5 /etc/passwd
+pulse:x:123:128:PulseAudio daemon,,,:/var/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:124:65534::/run/gnome-initial-setup/:/bin/false
+gdm:x:125:130:Gnome Display Manager:/var/lib/gdm3:/bin/false
+vagif:x:1000:1000:Vagif,,,:/home/vagif:/bin/bash
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+vagif@vagif-Lenovo-S20-30:~/work$ tail -n 5 /etc/passwd | wc -w
+10
+
+Задание 10
+vagif@vagif-Lenovo-S20-30:~/work$ mkdir newdir
+vagif@vagif-Lenovo-S20-30:~/work$ echo > newfile
+vagif@vagif-Lenovo-S20-30:~/work$ ls -l
+итого 2
+drwxrwxr-x 2 vagif vagif  4096 ноя 10 23:44 newdir
+-rw-rw-r-- 1 vagif vagif     1 ноя 10 23:39 newfile
+vagif@vagif-Lenovo-S20-30:~$ ls /etc | head | grep ".conf$"
+adduser.conf
+apg.conf
+
+Задание 11
+vagif@vagif-Lenovo-S20-30:~/work$ echo > a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod o+w a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ chmod ug-w a.txt
+vagif@vagif-Lenovo-S20-30:~/work$ mv a.txt aaa.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat > aaa.txt
+bash: aaa.txt: Отказано в доступе
+vagif@vagif-Lenovo-S20-30:~/work$ chmod ug+w aaa.txt
+vagif@vagif-Lenovo-S20-30:~/work$ cat > aaa.txt
+some
+some
+some
+vagif@vagif-Lenovo-S20-30:~/work$ cat aaa.txt
+some
+some
+some
+vagif@vagif-Lenovo-S20-30:~/work$ rm aaa.txt
