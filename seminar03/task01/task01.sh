@@ -1,4 +1,7 @@
-#!/bin/bash
-if [[ -e rnd.txt ]]; then
-	rm rnd.txt
-fi
+#! /bin/bash
+Nsz=$RANDOM
+touch rnd.txt
+
+head -c $sz /dev/urandom >> rnd.txt
+
+echo $sz
