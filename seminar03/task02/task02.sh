@@ -1,7 +1,16 @@
 #! /bin/bash
-Nsz=$RANDOM
-touch rnd.txt
+val=$(( $(( $RANDOM << 15 )) + $RANDOM ))
+(( val >>= 4 ))
 
-head -c $sz /dev/urandom >> rnd.txt
+prime() {
+	if [[ $1 -lt 2 ]]; then
+		return 0
+	fi
 
-echo $sz
+	for ((i = 2 ; $(( i * i )) <= $1 ; i++)); do
+		if [[ $(( $1 % $i )) -eq 0 ]]; then
+			return 0
+		fi
+	done
+
+	return 1
