@@ -11,7 +11,7 @@ class Test7(unittest.TestCase):
 
         result = '2 1 3 4 5\n3 2 4 5 1\n4 3 5 1 2\n5 4 1 2 3\n1 5 2 3 4\n2 1 3 4 5\n'
 
-        result = result.replace(" ", "")
+        #result = result.replace(" ", "")
         self.assertEqual(result, stdout)
 
 
