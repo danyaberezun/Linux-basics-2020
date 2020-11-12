@@ -14,3 +14,13 @@ prime() {
 	done
 
 	return 1
+}
+
+prime $val
+res=$?
+
+if [[ $res -eq 1 ]]; then
+	echo "$val true"
+else
+	echo "$val false"
+fi
