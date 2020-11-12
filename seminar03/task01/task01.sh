@@ -1,4 +1,4 @@
 #!/bin/bash
-size=$RANDOM
-head -c $size /dev/random > rnd.txt
-echo $size
+if [[ -e rnd.txt ]]; then
+	rm rnd.txt
+fi
