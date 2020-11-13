@@ -7,4 +7,4 @@ chmod +x compile.out
 g++ $f -o compile.out
 ./compile.out
 rm compile.out
-don
+done
