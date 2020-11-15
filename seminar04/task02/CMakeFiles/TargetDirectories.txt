@@ -1,0 +1,8 @@
+/mnt/c/study/linux/seminar04/task02/CMakeFiles/rebuild_cache.dir
+/mnt/c/study/linux/seminar04/task02/CMakeFiles/edit_cache.dir
+/mnt/c/study/linux/seminar04/task02/CMakeFiles/test.dir
+/mnt/c/study/linux/seminar04/task02/CMakeFiles/fast.dir
+/mnt/c/study/linux/seminar04/task02/test/CMakeFiles/rebuild_cache.dir
+/mnt/c/study/linux/seminar04/task02/test/CMakeFiles/edit_cache.dir
+/mnt/c/study/linux/seminar04/task02/test/CMakeFiles/test.dir
+/mnt/c/study/linux/seminar04/task02/test/CMakeFiles/test_fast.dir

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/study/linux/seminar04/task02/test/test_fast.cpp
+../src/fast.hpp
+-
+cassert
+-
+stdio.h
+-
+
+src/fast.hpp
+cstddef
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/fast.dir/src/main.cpp.o CMakeFiles/fast.dir/src/fast.cpp.o  -o fast 

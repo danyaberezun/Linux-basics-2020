@@ -1,0 +1,18 @@
+Start testing: Nov 15 11:29 MSK
+----------------------------------------------------------
+1/1 Testing: fast
+1/1 Test: fast
+Command: "/mnt/c/study/linux/seminar04/task02/test/test_fast"
+Directory: /mnt/c/study/linux/seminar04/task02/test
+"fast" start time: Nov 15 11:29 MSK
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"fast" end time: Nov 15 11:29 MSK
+"fast" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 15 11:29 MSK

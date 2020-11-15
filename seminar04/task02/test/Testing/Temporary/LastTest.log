@@ -1,0 +1,19 @@
+Start testing: Nov 15 11:22 MSK
+----------------------------------------------------------
+Unable to find executable: test_fast
+1/1 Testing: fast
+1/1 Test: fast
+Command: ""
+Directory: /mnt/c/study/linux/seminar04/task02/test
+"fast" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"fast" end time: Nov 15 11:22 MSK
+"fast" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 15 11:22 MSK

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/study/linux/seminar04/task02/src/fast.cpp
+fast.hpp
+/mnt/c/study/linux/seminar04/task02/src/fast.hpp
+
+/mnt/c/study/linux/seminar04/task02/src/fast.hpp
+cstddef
+-
+
+/mnt/c/study/linux/seminar04/task02/src/main.cpp
+iostream
+-
+fast.hpp
+/mnt/c/study/linux/seminar04/task02/src/fast.hpp
+
