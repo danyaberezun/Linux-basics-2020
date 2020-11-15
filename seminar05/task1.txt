@@ -1,13 +1,15 @@
 # print your command here
 
-a. git init ...
+a. git init abcd
 
-b.
+b. nano bio.md main.cpp && git add * && git commit
 
-c.
+c. nano Makefile .gitignore && git add * && git commit
 
-d.
+d. nano bio.md && git add * && git commit ... and so on
 
-e.
+e. git branch cmake 73abdfe && git checkout cmake ... git commit
 
-f.
+f. 
+
+https://github.com/MrLolthe1st/linux_hw5
