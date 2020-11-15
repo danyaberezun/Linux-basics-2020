@@ -1,1 +1,28 @@
 # print your commands
+PS C:\study\linux> docker build --tag serv .
+[+] Building 2.5s (7/7) FINISHED
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 31B                                                                                0.0s
+ => [internal] load metadata for docker.io/library/python:3.8                                                      2.4s
+ => [internal] load build context                                                                                  0.1s
+ => => transferring context: 18.84kB                                                                               0.1s
+ => [1/2] FROM docker.io/library/python:3.8@sha256:b3b53308cac8f5c27038c4e136a3cd891dd237829e0c4a3a8929c10bbb1895  0.0s
+ => CACHED [2/2] COPY . .                                                                                          0.0s
+ => exporting to image                                                                                             0.0s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:fbbf7614e329dc0d438d75727a2ccd479dc95f15dd1a3d2f8ff7e8e9ebe55346                       0.0s
+ => => naming to docker.io/library/serv
+PS C:\study\linux> docker run -p 65432:65432 -d serv
+b967b775ec85c1a8d4d0ca2ab900c55eaad0a802a5faf627261f00f897d5be7e
+PS C:\study\linux> docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                      NAMES
+b967b775ec85        serv                "/bin/sh -c 'python …"   7 seconds ago       Up 5 seconds        0.0.0.0:65432->65432/tcp   condescending_faraday
+# Тут telnet почистил экран
+telnet localhost 65432 
+# И да, он отправляет по одному символу, а не строчку целиком :(
+ OK:12OK:23OK:3                                                                                                         OK:                                                                                                                     hOK:heOK:elOK:llOK:loOK:o OK: qOK:qoOK:oeOK:edOK:d                                                                      OK:                                                 
+PS C:\study\linux> docker stop b967b775ec85                                                                             b967b775ec85
+PS C:\study\linux> docker ps                                                                                            CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+PS C:\study\linux>   

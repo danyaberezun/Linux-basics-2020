@@ -1,1 +1,14 @@
-# print your commands
+PS C:\Users\Алексашка> docker pull haskell
+Using default tag: latest
+latest: Pulling from library/haskell
+e4c3d3e4f7b0: Pull complete                                                                                             b1c83af6f99d: Pull complete                                                                                             0de9b57465d4: Pull complete                                                                                             ffb2cf1bba80: Pull complete                                                                                             Digest: sha256:b08a5e08c528a39adebddee0d14fbd86725125d0fea439f3357a94658bddffb1
+Status: Downloaded newer image for haskell:latest
+docker.io/library/haskell:latest
+PS C:\Users\Алексашка> docker run -it --rm haskell
+GHCi, version 8.10.2: https://www.haskell.org/ghc/  :? for help
+Prelude> 2+3
+5
+Prelude> print "Hello world!"
+"Hello world!"
+Prelude> :q
+Leaving GHCi.
