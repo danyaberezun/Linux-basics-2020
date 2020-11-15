@@ -1,0 +1,4 @@
+/home/emiliya16/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02/CMakeFiles/rebuild_cache.dir
+/home/emiliya16/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02/CMakeFiles/edit_cache.dir
+/home/emiliya16/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02/CMakeFiles/test.dir
+/home/emiliya16/Desktop/linuxsecond/Linux-basics-2020/seminar04/task02/CMakeFiles/main.dir
